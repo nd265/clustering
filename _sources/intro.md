@@ -194,8 +194,7 @@ A data set is, at its core essence, a structured collection of numbers and chara
 Aside from that, there are really no strict rules; data sets can come in 
 many different forms! Perhaps the most common form of data set that you will
 find in the wild, however, is *tabular data*\index{tabular data}. Think spreadsheets in Microsoft Excel: tabular data are
-rectangular-shaped and spreadsheet-like, as shown in Figure
-\@ref(fig:img-spreadsheet-vs-dataframe). In this book, we will focus primarily on tabular data.
+rectangular-shaped and spreadsheet-like, as shown in {numref}`img-spreadsheet-vs-dataframe`. In this book, we will focus primarily on tabular data.
 
 Since we are using Python for data analysis in this book, the first step for us is to
 load the data into Python. When we load tabular data into
@@ -662,9 +661,9 @@ Bar plot of the ten Aboriginal languages most often reported by Canadian residen
 :::
 
 
-The result is shown in {numref}`{barplot-mother-tongue-labs}`. 
+The result is shown in {numref}`barplot-mother-tongue-labs`. 
 This is already quite an improvement! Let's tackle the next major issue with the visualization
-in {numref}`{barplot-mother-tongue-labs}`: the vertical x axis labels, which are
+in {numref}`barplot-mother-tongue-labs`: the vertical x axis labels, which are
 currently making it difficult to read the different language names.
 One solution is to rotate the plot such that the bars are horizontal rather than vertical.
 To accomplish this, we will swap the x and y coordinate axes:
