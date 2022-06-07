@@ -153,7 +153,7 @@ Tools for summarization are covered in detail in Chapters \@ref(reading)
 and \@ref(wrangling), but appear regularly throughout the text.
 2. **Visualization:** \index{visualization!overview} plotting data graphically. 
 Visualization is typically used to answer descriptive and exploratory questions,
-but plays a critical supporting role in answering all of the types of question in Table \@ref(tab:questions-table).
+but plays a critical supporting role in answering all of the types of question in {numref}`questions_table`.
 For example, you might use visualization to answer the following question:
 *Is there any relationship between race time and age for runners in this data set?* 
 This is covered in detail in Chapter \@ref(viz), but again appears regularly throughout the book.
