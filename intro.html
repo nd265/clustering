@@ -1742,6 +1742,62 @@ to fields in the dataset, accessed by field name(column names)</p>
 </div>
 </div>
 <div class="figure align-default" id="ten-lang-plot" style="width: 300px">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-edcb37218b0547cebd895a1a2d22eb81"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-edcb37218b0547cebd895a1a2d22eb81") {
+      outputDiv = document.getElementById("altair-viz-edcb37218b0547cebd895a1a2d22eb81");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-0cdfcf8245507d928490a47b75d8fff0"}, "mark": "bar", "encoding": {"x": {"field": "mother_tongue", "title": "Mother Tongue (Number of Canadian Residents)", "type": "quantitative"}, "y": {"field": "language", "title": "Language", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-0cdfcf8245507d928490a47b75d8fff0": [{"language": "Cree, n.o.s.", "mother_tongue": 64050}, {"language": "Inuktitut", "mother_tongue": 35210}, {"language": "Ojibway", "mother_tongue": 17885}, {"language": "Oji-Cree", "mother_tongue": 12855}, {"language": "Dene", "mother_tongue": 10700}, {"language": "Montagnais (Innu)", "mother_tongue": 10235}, {"language": "Mi'kmaq", "mother_tongue": 6690}, {"language": "Atikamekw", "mother_tongue": 6150}, {"language": "Plains Cree", "mother_tongue": 3065}, {"language": "Stoney", "mother_tongue": 3025}]}}, {"mode": "vega-lite"});
+</script></div></div>
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue</span><a class="headerlink" href="#ten-lang-plot" title="Permalink to this image">¶</a></p>
 </div>
 <blockquote>
@@ -1791,35 +1847,15 @@ to format the plot further, and we will explore these in Chapter
 </div>
 </div>
 <div class="figure align-default" id="id1" style="width: 300px">
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-<p>The result is shown in Figure &#64;ref(fig:barplot-mother-tongue-labs).
-This is already quite an improvement! Let’s tackle the next major issue with the visualization
-in Figure &#64;ref(fig:barplot-mother-tongue-labs): the vertical x axis labels, which are
-currently making it difficult to read the different language names.
-One solution is to rotate the plot such that the bars are horizontal rather than vertical.
-To accomplish this, we will swap the x and y coordinate axes:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ten_lang_plot</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">ten_lang</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;mother_tongue&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Mother Tongue (Number of Canadian Residents)&#39;</span><span class="p">),</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;language&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Language&#39;</span><span class="p">)</span>
-    <span class="p">))</span>
-<span class="n">ten_lang_plot</span>
-</pre></div>
-</div>
-</div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-81f6000856da47bba7535fa8211569a0"></div>
+<div id="altair-viz-edcb37218b0547cebd895a1a2d22eb81"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-81f6000856da47bba7535fa8211569a0") {
-      outputDiv = document.getElementById("altair-viz-81f6000856da47bba7535fa8211569a0");
+    if (outputDiv.id !== "altair-viz-edcb37218b0547cebd895a1a2d22eb81") {
+      outputDiv = document.getElementById("altair-viz-edcb37218b0547cebd895a1a2d22eb81");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1867,40 +1903,36 @@ To accomplish this, we will swap the x and y coordinate axes:</p>
     }
   })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-0cdfcf8245507d928490a47b75d8fff0"}, "mark": "bar", "encoding": {"x": {"field": "mother_tongue", "title": "Mother Tongue (Number of Canadian Residents)", "type": "quantitative"}, "y": {"field": "language", "title": "Language", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-0cdfcf8245507d928490a47b75d8fff0": [{"language": "Cree, n.o.s.", "mother_tongue": 64050}, {"language": "Inuktitut", "mother_tongue": 35210}, {"language": "Ojibway", "mother_tongue": 17885}, {"language": "Oji-Cree", "mother_tongue": 12855}, {"language": "Dene", "mother_tongue": 10700}, {"language": "Montagnais (Innu)", "mother_tongue": 10235}, {"language": "Mi'kmaq", "mother_tongue": 6690}, {"language": "Atikamekw", "mother_tongue": 6150}, {"language": "Plains Cree", "mother_tongue": 3065}, {"language": "Stoney", "mother_tongue": 3025}]}}, {"mode": "vega-lite"});
 </script></div></div>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure align-default" id="id2" style="width: 300px">
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Horizontal bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue. There are no more serious issues with this visualization, but it could be refined further.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
-<p>Another big step forward, as shown in Figure &#64;ref(fig:barplot-mother-tongue-flipped)! There
-are no more serious issues with the visualization. Now comes time to refine
-the visualization to make it even more well-suited to answering the question
-we asked earlier in this chapter. For example, the visualization could be made more transparent by
-organizing the bars according to the number of Canadian residents reporting
-each language, rather than in alphabetical order. We can reorder the bars using
-the <code class="docutils literal notranslate"><span class="pre">sort</span></code> \index{reorder} argument, which orders a variable (here <code class="docutils literal notranslate"><span class="pre">language</span></code>) based on the
-values of the variable(<code class="docutils literal notranslate"><span class="pre">mother_tongue</span></code>) on the <code class="docutils literal notranslate"><span class="pre">x-axis</span></code>.</p>
-<p>\newpage</p>
+<p>The result is shown in Figure &#64;ref(fig:barplot-mother-tongue-labs).
+This is already quite an improvement! Let’s tackle the next major issue with the visualization
+in Figure &#64;ref(fig:barplot-mother-tongue-labs): the vertical x axis labels, which are
+currently making it difficult to read the different language names.
+One solution is to rotate the plot such that the bars are horizontal rather than vertical.
+To accomplish this, we will swap the x and y coordinate axes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_ten_lang_plot</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ten_lang_plot</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">ten_lang</span><span class="p">)</span>
     <span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
         <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;mother_tongue&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Mother Tongue (Number of Canadian Residents)&#39;</span><span class="p">),</span>
-        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;language&#39;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Language&#39;</span><span class="p">)</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;language&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Language&#39;</span><span class="p">)</span>
     <span class="p">))</span>
-<span class="n">sorted_ten_lang_plot</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="figure align-default" id="id2" style="width: 300px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-fdb2db3f6f584e5da96785f57d962f53"></div>
+<div id="altair-viz-edcb37218b0547cebd895a1a2d22eb81"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-fdb2db3f6f584e5da96785f57d962f53") {
-      outputDiv = document.getElementById("altair-viz-fdb2db3f6f584e5da96785f57d962f53");
+    if (outputDiv.id !== "altair-viz-edcb37218b0547cebd895a1a2d22eb81") {
+      outputDiv = document.getElementById("altair-viz-edcb37218b0547cebd895a1a2d22eb81");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1946,8 +1978,30 @@ values of the variable(<code class="docutils literal notranslate"><span class="p
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-0cdfcf8245507d928490a47b75d8fff0"}, "mark": "bar", "encoding": {"x": {"field": "mother_tongue", "title": "Mother Tongue (Number of Canadian Residents)", "type": "quantitative"}, "y": {"field": "language", "sort": "x", "title": "Language", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-0cdfcf8245507d928490a47b75d8fff0": [{"language": "Cree, n.o.s.", "mother_tongue": 64050}, {"language": "Inuktitut", "mother_tongue": 35210}, {"language": "Ojibway", "mother_tongue": 17885}, {"language": "Oji-Cree", "mother_tongue": 12855}, {"language": "Dene", "mother_tongue": 10700}, {"language": "Montagnais (Innu)", "mother_tongue": 10235}, {"language": "Mi'kmaq", "mother_tongue": 6690}, {"language": "Atikamekw", "mother_tongue": 6150}, {"language": "Plains Cree", "mother_tongue": 3065}, {"language": "Stoney", "mother_tongue": 3025}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-0cdfcf8245507d928490a47b75d8fff0"}, "mark": "bar", "encoding": {"x": {"field": "mother_tongue", "title": "Mother Tongue (Number of Canadian Residents)", "type": "quantitative"}, "y": {"field": "language", "title": "Language", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-0cdfcf8245507d928490a47b75d8fff0": [{"language": "Cree, n.o.s.", "mother_tongue": 64050}, {"language": "Inuktitut", "mother_tongue": 35210}, {"language": "Ojibway", "mother_tongue": 17885}, {"language": "Oji-Cree", "mother_tongue": 12855}, {"language": "Dene", "mother_tongue": 10700}, {"language": "Montagnais (Innu)", "mother_tongue": 10235}, {"language": "Mi'kmaq", "mother_tongue": 6690}, {"language": "Atikamekw", "mother_tongue": 6150}, {"language": "Plains Cree", "mother_tongue": 3065}, {"language": "Stoney", "mother_tongue": 3025}]}}, {"mode": "vega-lite"});
 </script></div></div>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Horizontal bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue. There are no more serious issues with this visualization, but it could be refined further.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Another big step forward, as shown in Figure &#64;ref(fig:barplot-mother-tongue-flipped)! There
+are no more serious issues with the visualization. Now comes time to refine
+the visualization to make it even more well-suited to answering the question
+we asked earlier in this chapter. For example, the visualization could be made more transparent by
+organizing the bars according to the number of Canadian residents reporting
+each language, rather than in alphabetical order. We can reorder the bars using
+the <code class="docutils literal notranslate"><span class="pre">sort</span></code> \index{reorder} argument, which orders a variable (here <code class="docutils literal notranslate"><span class="pre">language</span></code>) based on the
+values of the variable(<code class="docutils literal notranslate"><span class="pre">mother_tongue</span></code>) on the <code class="docutils literal notranslate"><span class="pre">x-axis</span></code>.</p>
+<p>\newpage</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_ten_lang_plot</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">ten_lang</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;mother_tongue&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Mother Tongue (Number of Canadian Residents)&#39;</span><span class="p">),</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;language&#39;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Language&#39;</span><span class="p">)</span>
+    <span class="p">))</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1957,13 +2011,13 @@ values of the variable(<code class="docutils literal notranslate"><span class="p
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-a28dbc68100a4065ad26dea3d588272d"></div>
+<div id="altair-viz-8617f3b27f544bd7b1dc62b23d615605"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a28dbc68100a4065ad26dea3d588272d") {
-      outputDiv = document.getElementById("altair-viz-a28dbc68100a4065ad26dea3d588272d");
+    if (outputDiv.id !== "altair-viz-8617f3b27f544bd7b1dc62b23d615605") {
+      outputDiv = document.getElementById("altair-viz-8617f3b27f544bd7b1dc62b23d615605");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2015,13 +2069,13 @@ values of the variable(<code class="docutils literal notranslate"><span class="p
 <div class="figure align-default" id="sorted-ten-lang-plot" style="width: 300px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-a28dbc68100a4065ad26dea3d588272d"></div>
+<div id="altair-viz-8617f3b27f544bd7b1dc62b23d615605"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a28dbc68100a4065ad26dea3d588272d") {
-      outputDiv = document.getElementById("altair-viz-a28dbc68100a4065ad26dea3d588272d");
+    if (outputDiv.id !== "altair-viz-8617f3b27f544bd7b1dc62b23d615605") {
+      outputDiv = document.getElementById("altair-viz-8617f3b27f544bd7b1dc62b23d615605");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2121,77 +2175,20 @@ these steps in much more detail!</p>
                  <span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
                   <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;mother_tongue&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Mother Tongue (Number of Canadian Residents)&quot;</span><span class="p">),</span>
                   <span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;language&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Language&quot;</span><span class="p">)))</span>
-<span class="n">ten_lang_plot</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<div id="altair-viz-f60f9a103ea744c6858d18fc9c3e86e7"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f60f9a103ea744c6858d18fc9c3e86e7") {
-      outputDiv = document.getElementById("altair-viz-f60f9a103ea744c6858d18fc9c3e86e7");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-0cdfcf8245507d928490a47b75d8fff0"}, "mark": "bar", "encoding": {"x": {"field": "mother_tongue", "title": "Mother Tongue (Number of Canadian Residents)", "type": "quantitative"}, "y": {"field": "language", "title": "Language", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-0cdfcf8245507d928490a47b75d8fff0": [{"language": "Cree, n.o.s.", "mother_tongue": 64050}, {"language": "Inuktitut", "mother_tongue": 35210}, {"language": "Ojibway", "mother_tongue": 17885}, {"language": "Oji-Cree", "mother_tongue": 12855}, {"language": "Dene", "mother_tongue": 10700}, {"language": "Montagnais (Innu)", "mother_tongue": 10235}, {"language": "Mi'kmaq", "mother_tongue": 6690}, {"language": "Atikamekw", "mother_tongue": 6150}, {"language": "Plains Cree", "mother_tongue": 3065}, {"language": "Stoney", "mother_tongue": 3025}]}}, {"mode": "vega-lite"});
-</script></div></div>
 </div>
 <div class="figure align-default" id="id3" style="width: 300px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-701c924ee71848b9808c9ebd90e84ac1"></div>
+<div id="altair-viz-edcb37218b0547cebd895a1a2d22eb81"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-701c924ee71848b9808c9ebd90e84ac1") {
-      outputDiv = document.getElementById("altair-viz-701c924ee71848b9808c9ebd90e84ac1");
+    if (outputDiv.id !== "altair-viz-edcb37218b0547cebd895a1a2d22eb81") {
+      outputDiv = document.getElementById("altair-viz-edcb37218b0547cebd895a1a2d22eb81");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
