@@ -635,7 +635,7 @@ to format the plot further, and we will explore these in Chapter
 {numref}`barplot-mother-tongue-labs` Bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue with x and y labels. Note that this visualization is not done yet; there are still improvements to be made.
 
 ```{code-cell} ipython3
-ten_lang_plot = (
+barplot_mother_tongue = (
     alt.Chart(ten_lang)
     .mark_bar().encode(
         x=alt.X('language', title='Language'),
@@ -648,7 +648,7 @@ ten_lang_plot = (
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
 
-glue('barplot-mother-tongue-labs', ten_lang_plot, display=True)
+glue('barplot-mother-tongue-labs', barplot_mother_tongue, display=True)
 
 ```
 
@@ -670,7 +670,7 @@ To accomplish this, we will swap the x and y coordinate axes:
 
 
 ```{code-cell} ipython3
-ten_lang_plot = (
+barplot_mother_tongue_axis = (
     alt.Chart(ten_lang)
     .mark_bar().encode(
         x=alt.X('mother_tongue', title='Mother Tongue (Number of Canadian Residents)'),
@@ -682,19 +682,19 @@ ten_lang_plot = (
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
 
-glue('barplot-mother-tongue-labs_axis', ten_lang_plot, display=True)
+glue('barplot-mother-tongue-labs-axis', barplot_mother_tongue_axis, display=True)
 
 ```
 
 
-:::{glue:figure} barplot-mother-tongue-labs_axis
+:::{glue:figure} barplot-mother-tongue-labs-axis
 :figwidth: 700px
-:name: barplot-mother-tongue-labs_axis
+:name: barplot-mother-tongue-labs-axis
 
 Horizontal bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue. There are no more serious issues with this visualization, but it could be refined further.
 :::
 
-Another big step forward, as shown in {numref}`barplot-mother-tongue-labs_axis`! There 
+Another big step forward, as shown in {numref}`barplot-mother-tongue-labs-axis`! There 
 are no more serious issues with the visualization. Now comes time to refine
 the visualization to make it even more well-suited to answering the question
 we asked earlier in this chapter. For example, the visualization could be made more transparent by
@@ -706,7 +706,7 @@ values of the variable(`mother_tongue`) on the `x-axis`.
 \newpage
 
 ```{code-cell} ipython3
-sorted_ten_lang_plot = (
+ordered_barplot_mother_tongue = (
     alt.Chart(ten_lang)
     .mark_bar().encode(
         x=alt.X('mother_tongue', title='Mother Tongue (Number of Canadian Residents)'),
@@ -720,7 +720,7 @@ sorted_ten_lang_plot = (
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
 
-glue('barplot-mother-tongue-reorder', sorted_ten_lang_plot, display=True)
+glue('barplot-mother-tongue-reorder', ordered_barplot_mother_tongue, display=True)
 
 ```
 
@@ -791,14 +791,14 @@ ten_lang_plot = (alt.Chart(ten_lang)
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
 
-glue('ten_lang_plot', ten_lang_plot, display=True)
+glue('final_plot', ten_lang_plot, display=True)
 
 ```
 
 
-:::{glue:figure} ten_lang_plot_2
+:::{glue:figure} final_plot
 :figwidth: 700px
-:name: ten_lang_plot_2
+:name: final_plot
 
 Bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue
 :::
