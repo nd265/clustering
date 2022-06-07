@@ -587,13 +587,13 @@ ten_lang_plot = (
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
 
-glue('ten_lang_plot', ten_lang_plot, display=True)
+glue('ten_lang_plot_1', ten_lang_plot, display=True)
 
 ```
 
-:::{glue:figure} ten_lang_plot
+:::{glue:figure} ten_lang_plot_1
 :figwidth: 300px
-:name: ten_lang_plot
+:name: ten_lang_plot_1
 
 Bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue
 :::
@@ -652,22 +652,22 @@ ten_lang_plot = (
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
 
-glue('ten_lang_plot', ten_lang_plot, display=True)
+glue('barplot-mother-tongue-labs', ten_lang_plot, display=True)
 
 ```
 
 
-:::{glue:figure} ten_lang_plot
-:figwidth: 300px
-:name: ten_lang_plot
+:::{glue:figure} barplot-mother-tongue-labs
+:figwidth: 700px
+:name: barplot-mother-tongue-labs
 
-Bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue
+Bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue with x and y labels. Note that this visualization is not done yet; there are still improvements to be made.
 :::
 
 
-The result is shown in Figure \@ref(fig:barplot-mother-tongue-labs). 
+The result is shown in {numref}`{barplot-mother-tongue-labs}`. 
 This is already quite an improvement! Let's tackle the next major issue with the visualization
-in Figure \@ref(fig:barplot-mother-tongue-labs): the vertical x axis labels, which are
+in {numref}`{barplot-mother-tongue-labs}`: the vertical x axis labels, which are
 currently making it difficult to read the different language names.
 One solution is to rotate the plot such that the bars are horizontal rather than vertical.
 To accomplish this, we will swap the x and y coordinate axes:
@@ -686,19 +686,19 @@ ten_lang_plot = (
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
 
-glue('ten_lang_plot', ten_lang_plot, display=True)
+glue('barplot-mother-tongue-labs_axis', ten_lang_plot, display=True)
 
 ```
 
 
-:::{glue:figure} ten_lang_plot
-:figwidth: 300px
-:name: ten_lang_plot
+:::{glue:figure} barplot-mother-tongue-labs_axis
+:figwidth: 700px
+:name: barplot-mother-tongue-labs_axis
 
 Horizontal bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue. There are no more serious issues with this visualization, but it could be refined further.
 :::
 
-Another big step forward, as shown in Figure \@ref(fig:barplot-mother-tongue-flipped)! There 
+Another big step forward, as shown in {numref}`barplot-mother-tongue-labs_axis`! There 
 are no more serious issues with the visualization. Now comes time to refine
 the visualization to make it even more well-suited to answering the question
 we asked earlier in this chapter. For example, the visualization could be made more transparent by
@@ -729,15 +729,15 @@ glue('sorted_ten_lang_plot', sorted_ten_lang_plot, display=True)
 ```
 
 
-:::{glue:figure} sorted_ten_lang_plot
-:figwidth: 300px
-:name: sorted_ten_lang_plot
+:::{glue:figure} barplot-mother-tongue-reorder
+:figwidth: 700px
+:name: barplot-mother-tongue-reorder
 
 Bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue with bars reordered.
 :::        
 
 
-Figure \@ref(fig:barplot-mother-tongue-reorder) provides a very clear and well-organized
+{numref}`barplot-mother-tongue-reorder` provides a very clear and well-organized
 answer to our original question; we can see what the ten most often reported Aboriginal languages
 were, according to the 2016 Canadian census, and how many people speak each of them. For
 instance, we can see that the Aboriginal language most often reported was Cree
@@ -800,9 +800,9 @@ glue('ten_lang_plot', ten_lang_plot, display=True)
 ```
 
 
-:::{glue:figure} ten_lang_plot
-:figwidth: 300px
-:name: ten_lang_plot
+:::{glue:figure} ten_lang_plot_2
+:figwidth: 700px
+:name: ten_lang_plot_2
 
 Bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue
 :::
