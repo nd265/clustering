@@ -1744,13 +1744,13 @@ to fields in the dataset, accessed by field name(column names)</p>
 <div class="figure align-default" id="ten-lang-plot" style="width: 300px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-edcb37218b0547cebd895a1a2d22eb81"></div>
+<div id="altair-viz-d28761680e6840f5ab3911f93f80a2a3"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-edcb37218b0547cebd895a1a2d22eb81") {
-      outputDiv = document.getElementById("altair-viz-edcb37218b0547cebd895a1a2d22eb81");
+    if (outputDiv.id !== "altair-viz-d28761680e6840f5ab3911f93f80a2a3") {
+      outputDiv = document.getElementById("altair-viz-d28761680e6840f5ab3911f93f80a2a3");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1849,13 +1849,13 @@ to format the plot further, and we will explore these in Chapter
 <div class="figure align-default" id="id1" style="width: 300px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-edcb37218b0547cebd895a1a2d22eb81"></div>
+<div id="altair-viz-d28761680e6840f5ab3911f93f80a2a3"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-edcb37218b0547cebd895a1a2d22eb81") {
-      outputDiv = document.getElementById("altair-viz-edcb37218b0547cebd895a1a2d22eb81");
+    if (outputDiv.id !== "altair-viz-d28761680e6840f5ab3911f93f80a2a3") {
+      outputDiv = document.getElementById("altair-viz-d28761680e6840f5ab3911f93f80a2a3");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1926,13 +1926,13 @@ To accomplish this, we will swap the x and y coordinate axes:</p>
 <div class="figure align-default" id="id2" style="width: 300px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-edcb37218b0547cebd895a1a2d22eb81"></div>
+<div id="altair-viz-d28761680e6840f5ab3911f93f80a2a3"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-edcb37218b0547cebd895a1a2d22eb81") {
-      outputDiv = document.getElementById("altair-viz-edcb37218b0547cebd895a1a2d22eb81");
+    if (outputDiv.id !== "altair-viz-d28761680e6840f5ab3911f93f80a2a3") {
+      outputDiv = document.getElementById("altair-viz-d28761680e6840f5ab3911f93f80a2a3");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2003,79 +2003,16 @@ values of the variable(<code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">glue</span><span class="p">(</span><span class="s1">&#39;sorted_ten_lang_plot&#39;</span><span class="p">,</span> <span class="n">sorted_ten_lang_plot</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<div id="altair-viz-8617f3b27f544bd7b1dc62b23d615605"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8617f3b27f544bd7b1dc62b23d615605") {
-      outputDiv = document.getElementById("altair-viz-8617f3b27f544bd7b1dc62b23d615605");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-0cdfcf8245507d928490a47b75d8fff0"}, "mark": "bar", "encoding": {"x": {"field": "mother_tongue", "title": "Mother Tongue (Number of Canadian Residents)", "type": "quantitative"}, "y": {"field": "language", "sort": "x", "title": "Language", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-0cdfcf8245507d928490a47b75d8fff0": [{"language": "Cree, n.o.s.", "mother_tongue": 64050}, {"language": "Inuktitut", "mother_tongue": 35210}, {"language": "Ojibway", "mother_tongue": 17885}, {"language": "Oji-Cree", "mother_tongue": 12855}, {"language": "Dene", "mother_tongue": 10700}, {"language": "Montagnais (Innu)", "mother_tongue": 10235}, {"language": "Mi'kmaq", "mother_tongue": 6690}, {"language": "Atikamekw", "mother_tongue": 6150}, {"language": "Plains Cree", "mother_tongue": 3065}, {"language": "Stoney", "mother_tongue": 3025}]}}, {"mode": "vega-lite"});
-</script></div></div>
-</div>
 <div class="figure align-default" id="sorted-ten-lang-plot" style="width: 300px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-8617f3b27f544bd7b1dc62b23d615605"></div>
+<div id="altair-viz-7f8d041c9dd14fafb6d055b972ca8505"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8617f3b27f544bd7b1dc62b23d615605") {
-      outputDiv = document.getElementById("altair-viz-8617f3b27f544bd7b1dc62b23d615605");
+    if (outputDiv.id !== "altair-viz-7f8d041c9dd14fafb6d055b972ca8505") {
+      outputDiv = document.getElementById("altair-viz-7f8d041c9dd14fafb6d055b972ca8505");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2182,13 +2119,13 @@ these steps in much more detail!</p>
 <div class="figure align-default" id="id3" style="width: 300px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-edcb37218b0547cebd895a1a2d22eb81"></div>
+<div id="altair-viz-d28761680e6840f5ab3911f93f80a2a3"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-edcb37218b0547cebd895a1a2d22eb81") {
-      outputDiv = document.getElementById("altair-viz-edcb37218b0547cebd895a1a2d22eb81");
+    if (outputDiv.id !== "altair-viz-d28761680e6840f5ab3911f93f80a2a3") {
+      outputDiv = document.getElementById("altair-viz-d28761680e6840f5ab3911f93f80a2a3");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",

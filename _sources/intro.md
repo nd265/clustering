@@ -722,7 +722,7 @@ sorted_ten_lang_plot = (
 +++
 
 ```{code-cell} ipython3
-:tags: []
+:tags: ["remove-cell"]
 
 glue('sorted_ten_lang_plot', sorted_ten_lang_plot, display=True)
 
