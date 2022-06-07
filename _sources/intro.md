@@ -547,10 +547,7 @@ First, we need to import the `altair` package.
 
 
 
-```{r barplot-mother-tongue, fig.width=5, fig.height=3, warning=FALSE, fig.cap = "Bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue. Note that this visualization is not done yet; there are still improvements to be made."}
-ggplot(ten_lang, aes(x = language, y = mother_tongue)) +
-  geom_bar(stat = "identity")
-```
+
 
 ```{code-cell} ipython3
 import altair as alt
@@ -574,7 +571,7 @@ to fields in the dataset, accessed by field name(column names)
 ```{code-cell} ipython3
 :tags: []
 
-ten_lang_plot = (
+barplot_mother_tongue = (
     alt.Chart(ten_lang)
     .mark_bar().encode(
         x='language',
@@ -587,13 +584,13 @@ ten_lang_plot = (
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
 
-glue('ten_lang_plot_1', ten_lang_plot, display=True)
+glue('barplot-mother-tongue', barplot_mother_tongue, display=True)
 
 ```
 
-:::{glue:figure} ten_lang_plot_1
-:figwidth: 300px
-:name: ten_lang_plot_1
+:::{glue:figure} barplot-mother-tongue
+:figwidth: 700px
+:name: barplot-mother-tongue
 
 Bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue
 :::
@@ -636,7 +633,7 @@ words (e.g. `"Mother Tongue (Number of Canadian Residents)"`) as arguments to
 to format the plot further, and we will explore these in Chapter
 \@ref(viz).
 
-(ref:barplot-mother-tongue-labs) Bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue with x and y labels. Note that this visualization is not done yet; there are still improvements to be made.
+{numref}`barplot-mother-tongue-labs` Bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue with x and y labels. Note that this visualization is not done yet; there are still improvements to be made.
 
 ```{code-cell} ipython3
 ten_lang_plot = (
@@ -724,7 +721,7 @@ sorted_ten_lang_plot = (
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
 
-glue('sorted_ten_lang_plot', sorted_ten_lang_plot, display=True)
+glue('barplot-mother-tongue-reorder', sorted_ten_lang_plot, display=True)
 
 ```
 
