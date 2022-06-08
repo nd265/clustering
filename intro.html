@@ -560,7 +560,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Python and the Pandas<a class="headerlink" href="#python-and-the-pandas" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>This chapter provides an introduction to data science and the Python programming language.
+<p>his chapter provides an introduction to data science and the Python programming language.
 The goal here is to get your hands dirty right from the start! We will walk through an entire data analysis,
 and along the way introduce different types of data analysis question, some fundamental programming
 concepts in Python, and the basics of loading, cleaning, and visualizing data. In the following chapters, we will
@@ -576,7 +576,7 @@ with data science!</p>
 <li><p>Read tabular data with <code class="docutils literal notranslate"><span class="pre">read_csv</span></code>.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">help()</span></code> to access help and documentation tools in Python.</p></li>
 <li><p>Create new variables and objects in Python.</p></li>
-<li><p>Do indexing and slicing with .loc[].</p></li>
+<li><p>Do indexing and slicing with <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> properties.</p></li>
 <li><p>Select columns of a dataframe using df[] notation.</p></li>
 <li><p>Visualize data with an <code class="docutils literal notranslate"><span class="pre">altair</span></code> bar plot.</p></li>
 </ul>
@@ -750,7 +750,7 @@ collect the data on, e.g., voters, cities, etc. We refer to the columns as \inde
 <strong>variables</strong>; these are the characteristics of those observations, e.g., voters’ political
 affiliations, cities’ populations, etc.</p>
 <div class="figure align-default" id="img-spreadsheet-vs-dataframe">
-<a class="reference internal image-reference" href="_images/spreadsheet_vs_dataframe.PNG"><img alt="_images/spreadsheet_vs_dataframe.PNG" src="_images/spreadsheet_vs_dataframe.PNG" style="height: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/spreadsheet_vs_df.png"><img alt="_images/spreadsheet_vs_df.png" src="_images/spreadsheet_vs_df.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">A spreadsheet versus a data frame in Python</span><a class="headerlink" href="#img-spreadsheet-vs-dataframe" title="Permalink to this image">¶</a></p>
 </div>
 <p>The first kind of data file that we will learn how to load into Python as a data
@@ -1487,7 +1487,8 @@ order the <code class="docutils literal notranslate"><span class="pre">mother_to
 the top ten rows. This is where the <code class="docutils literal notranslate"><span class="pre">sort_values</span></code> function and <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> property come to the
 rescue! \index{arrange}\index{slice}</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">sort_values</span></code> function allows us to order the rows of a data frame by the
-values of a particular column.  We need to pass the column name as a list by which we want to sort the dataframe
+values of a particular column.  We need to specify the column name
+by which we want to sort the dataframe by passing it to the argument <code class="docutils literal notranslate"><span class="pre">by</span></code>.
 Since we want to choose the ten Aboriginal languages most often reported as a mother tongue
 language, we will use the <code class="docutils literal notranslate"><span class="pre">sort_values</span></code> function to order the rows in our
 <code class="docutils literal notranslate"><span class="pre">selected_lang</span></code> data frame by the <code class="docutils literal notranslate"><span class="pre">mother_tongue</span></code> column. We want to
@@ -1495,7 +1496,7 @@ arrange the rows in descending order (from largest to smallest),
 so we specify the argument <code class="docutils literal notranslate"><span class="pre">ascending</span></code> as <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arranged_lang</span> <span class="o">=</span> <span class="n">selected_lang</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;mother_tongue&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arranged_lang</span> <span class="o">=</span> <span class="n">selected_lang</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;mother_tongue&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">arranged_lang</span>
 </pre></div>
 </div>
@@ -1739,13 +1740,13 @@ to fields in the dataset, accessed by field name(column names)</p>
 <div class="figure align-default" id="barplot-mother-tongue" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-410b9f495f204f5595c18c7b80efedeb"></div>
+<div id="altair-viz-4f6107825cd24abe80d020eef34bb47b"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-410b9f495f204f5595c18c7b80efedeb") {
-      outputDiv = document.getElementById("altair-viz-410b9f495f204f5595c18c7b80efedeb");
+    if (outputDiv.id !== "altair-viz-4f6107825cd24abe80d020eef34bb47b") {
+      outputDiv = document.getElementById("altair-viz-4f6107825cd24abe80d020eef34bb47b");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1828,7 +1829,6 @@ words (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;M
 <code class="docutils literal notranslate"><span class="pre">alt.X</span></code> and <code class="docutils literal notranslate"><span class="pre">alt.Y</span></code>, we surround them with double quotation marks. We can do many other modifications
 to format the plot further, and we will explore these in Chapter
 &#64;ref(viz).</p>
-<p><a class="reference internal" href="#barplot-mother-tongue-labs"><span class="std std-numref">Fig. 4</span></a> Bar plot of the ten Aboriginal languages most often reported by Canadian residents as their mother tongue with x and y labels. Note that this visualization is not done yet; there are still improvements to be made.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">barplot_mother_tongue</span> <span class="o">=</span> <span class="p">(</span>
@@ -1844,13 +1844,13 @@ to format the plot further, and we will explore these in Chapter
 <div class="figure align-default" id="barplot-mother-tongue-labs" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-a166058de73c4b8da7aa11c19b1a2c56"></div>
+<div id="altair-viz-e7b36bafa9814d0db3057de291d7f248"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a166058de73c4b8da7aa11c19b1a2c56") {
-      outputDiv = document.getElementById("altair-viz-a166058de73c4b8da7aa11c19b1a2c56");
+    if (outputDiv.id !== "altair-viz-e7b36bafa9814d0db3057de291d7f248") {
+      outputDiv = document.getElementById("altair-viz-e7b36bafa9814d0db3057de291d7f248");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1921,13 +1921,13 @@ To accomplish this, we will swap the x and y coordinate axes:</p>
 <div class="figure align-default" id="barplot-mother-tongue-labs-axis" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-6cc809d8bb62492a9fc777418a40bb9f"></div>
+<div id="altair-viz-e201f05c9a294a5a83d5e4b27bcc9dea"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-6cc809d8bb62492a9fc777418a40bb9f") {
-      outputDiv = document.getElementById("altair-viz-6cc809d8bb62492a9fc777418a40bb9f");
+    if (outputDiv.id !== "altair-viz-e201f05c9a294a5a83d5e4b27bcc9dea") {
+      outputDiv = document.getElementById("altair-viz-e201f05c9a294a5a83d5e4b27bcc9dea");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2001,13 +2001,13 @@ values of the variable(<code class="docutils literal notranslate"><span class="p
 <div class="figure align-default" id="barplot-mother-tongue-reorder" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-acdc3d420f2340e6880b6de25d5c22d5"></div>
+<div id="altair-viz-42fa229b00744a48b74cfb229eff1b12"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-acdc3d420f2340e6880b6de25d5c22d5") {
-      outputDiv = document.getElementById("altair-viz-acdc3d420f2340e6880b6de25d5c22d5");
+    if (outputDiv.id !== "altair-viz-42fa229b00744a48b74cfb229eff1b12") {
+      outputDiv = document.getElementById("altair-viz-42fa229b00744a48b74cfb229eff1b12");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2114,13 +2114,13 @@ these steps in much more detail!</p>
 <div class="figure align-default" id="final-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-a786529bef8b4c9a8a1d1fdb37d7aad0"></div>
+<div id="altair-viz-a58df200c83b41718f29daf4f98ca0fe"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a786529bef8b4c9a8a1d1fdb37d7aad0") {
-      outputDiv = document.getElementById("altair-viz-a786529bef8b4c9a8a1d1fdb37d7aad0");
+    if (outputDiv.id !== "altair-viz-a58df200c83b41718f29daf4f98ca0fe") {
+      outputDiv = document.getElementById("altair-viz-a58df200c83b41718f29daf4f98ca0fe");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
