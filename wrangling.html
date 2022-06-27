@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -37,19 +38,17 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -89,7 +88,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Python and the Pandas
+   R and the Tidyverse hello worldV
   </a>
  </li>
 </ul>
@@ -228,7 +227,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -269,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -656,397 +655,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Cleaning and wrangling data {#wrangling}</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-learning-objectives">
-   Chapter learning objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-frames-vectors-and-lists">
-   Data frames, vectors, and lists
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-a-data-frame">
-     What is a data frame?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-a-vector">
-     What is a vector?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-a-list">
-     What is a list?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-does-this-have-to-do-with-data-frames">
-     What does this have to do with data frames?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tidy-data">
-   Tidy data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tidying-up-going-from-wide-to-long-using-pivot-longer">
-     Tidying up: going from wide to long using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       pivot_longer
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tidying-up-going-from-long-to-wide-using-pivot-wider-pivot-wider">
-     Tidying up: going from long to wide using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       pivot_wider
-      </span>
-     </code>
-     {#pivot-wider}
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tidying-up-using-separate-to-deal-with-multiple-delimiters-separate">
-     Tidying up: using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       separate
-      </span>
-     </code>
-     to deal with multiple delimiters  {#separate}
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-select-to-extract-a-range-of-columns">
-   Using
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     select
-    </span>
-   </code>
-   to extract a range of columns
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-filter-to-extract-rows">
-   Using
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     filter
-    </span>
-   </code>
-   to extract rows
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extracting-rows-that-have-a-certain-value-with">
-     Extracting rows that have a certain value with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       ==
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extracting-rows-that-do-not-have-a-certain-value-with">
-     Extracting rows that do not have a certain value with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       !=
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extracting-rows-satisfying-multiple-conditions-using-or-filter-and">
-     Extracting rows satisfying multiple conditions using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       ,
-      </span>
-     </code>
-     or
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       &amp;
-      </span>
-     </code>
-     {#filter-and}
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extracting-rows-satisfying-at-least-one-condition-using">
-     Extracting rows satisfying at least one condition using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       |
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extracting-rows-with-values-in-a-vector-using-in">
-     Extracting rows with values in a vector using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       %in%
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#extracting-rows-above-or-below-a-threshold-using-and">
-     Extracting rows above or below a threshold using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       &gt;
-      </span>
-     </code>
-     and
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       &lt;
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#using-mutate-to-modify-or-add-columns">
-   Using
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     mutate
-    </span>
-   </code>
-   to modify or add columns
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-mutate-to-modify-columns">
-     Using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       mutate
-      </span>
-     </code>
-     to modify columns
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-mutate-to-create-new-columns">
-     Using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       mutate
-      </span>
-     </code>
-     to create new columns
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#combining-functions-using-the-pipe-operator">
-   Combining functions using the pipe operator,
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     |&gt;
-    </span>
-   </code>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-to-combine-filter-and-select">
-     Using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       |&gt;
-      </span>
-     </code>
-     to combine
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       filter
-      </span>
-     </code>
-     and
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       select
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-with-more-than-two-functions">
-     Using
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       |&gt;
-      </span>
-     </code>
-     with more than two functions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aggregating-data-with-summarize-and-map">
-   Aggregating data with
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     summarize
-    </span>
-   </code>
-   and
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     map
-    </span>
-   </code>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculating-summary-statistics-on-whole-columns">
-     Calculating summary statistics on whole columns
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculating-summary-statistics-when-there-are-nas">
-     Calculating summary statistics when there are
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       NA
-      </span>
-     </code>
-     s
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculating-summary-statistics-for-groups-of-rows">
-     Calculating summary statistics for groups of rows
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#calculating-summary-statistics-on-many-columns">
-     Calculating summary statistics on many columns
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#summarize-and-across-for-calculating-summary-statistics-on-many-columns">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         summarize
-        </span>
-       </code>
-       and
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         across
-        </span>
-       </code>
-       for calculating summary statistics on many columns {-}
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#map-for-calculating-summary-statistics-on-many-columns">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         map
-        </span>
-       </code>
-       for calculating summary statistics on many columns {-}
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apply-functions-across-many-columns-with-mutate-and-across">
-   Apply functions across many columns with
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     mutate
-    </span>
-   </code>
-   and
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     across
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apply-functions-across-columns-within-one-row-with-rowwise-and-mutate">
-   Apply functions across columns within one row with
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     rowwise
-    </span>
-   </code>
-   and
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     mutate
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#additional-resources">
-   Additional resources
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
+        
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="cleaning-and-wrangling-data-wrangling">
@@ -2477,8 +2086,8 @@ loop</a>.</p></li>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+        
+            <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="reading.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -2495,17 +2104,19 @@ loop</a>.</p></li>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+        
         </div>
     </div>
     <footer class="footer">
-  <p>
-    
-      By UBC<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
+    <div class="container">
+      <p>
+        
+          By UBC<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 
