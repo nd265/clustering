@@ -38,22 +38,20 @@
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Statistical inference {#inference}" href="inference.html" />
@@ -231,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -272,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
@@ -349,94 +347,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
     <div id="main-content" class="row">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Clustering {#clustering}</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#chapter-learning-objectives">
-   Chapter learning objectives
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clustering">
-   Clustering
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#k-means">
-   K-means
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#measuring-cluster-quality">
-     Measuring cluster quality
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-clustering-algorithm">
-     The clustering algorithm
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#random-restarts">
-     Random restarts
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#choosing-k">
-     Choosing K
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-pre-processing-for-k-means">
-   Data pre-processing for K-means
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#k-means-in-python">
-   K-means in Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#additional-resources">
-   Additional resources
-  </a>
- </li>
-</ul>
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
+        
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="clustering-clustering">
 <h1>Clustering {#clustering}<a class="headerlink" href="#clustering-clustering" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -562,7 +480,7 @@ because the K-means clustering algorithm uses random numbers.</p>
 <p>\index{seed!set.seed}</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -570,18 +488,135 @@ because the K-means clustering algorithm uses random numbers.</p>
 <p>Now we can load and preview the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/penguins_standardized.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/penguins_standardized.csv&quot;</span><span class="p">)</span>
 <span class="n">penguin_data</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>flipper_length_standardized</th>
+      <th>bill_length_standardized</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.189773</td>
+      <td>-0.641361</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-1.328412</td>
+      <td>-1.144917</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.921755</td>
+      <td>-1.517922</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.921755</td>
+      <td>-1.107617</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-1.409743</td>
+      <td>-0.846513</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.677761</td>
+      <td>-0.641361</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-0.271104</td>
+      <td>-1.238168</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.433767</td>
+      <td>-0.902464</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1.192860</td>
+      <td>0.720106</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1.355522</td>
+      <td>0.645505</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1.355522</td>
+      <td>0.962559</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1.762179</td>
+      <td>0.440353</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1.111528</td>
+      <td>1.205012</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0.786203</td>
+      <td>0.123299</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>-0.271104</td>
+      <td>0.626855</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>-0.271104</td>
+      <td>0.757407</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-0.108442</td>
+      <td>1.783170</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>-0.759092</td>
+      <td>0.776057</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Next, we can create a scatter plot using this data set
 to see if we can detect subtypes or groups in our data set.</p>
 <p>\newpage</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scatter_plot</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">penguin_data</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scatter plot of standardized bill length versus standardized flipper length.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scatter_plot</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">penguin_data</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scatter plot of standardized bill length versus standardized flipper length.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;flipper_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Flipper Length (standardized)&quot;</span><span class="p">),</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;bill_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bill Length (standardized)&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
     <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
@@ -622,7 +657,7 @@ Figure &#64;ref(fig:10-toy-example-clustering) shows these groups
 denoted by colored scatter points.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;brown&quot;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;brown&quot;</span><span class="p">]</span>
 
 <span class="n">colored_scatter_plot</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scatter plot of standardized bill length versus standardized flipper length with colored groups.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;flipper_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Flipper Length (standardized)&quot;</span><span class="p">),</span>
@@ -663,7 +698,7 @@ have.</p>
 <h3>Measuring cluster quality<a class="headerlink" href="#measuring-cluster-quality" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clus</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;cluster&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s2">&quot;bill_length_standardized&quot;</span><span class="p">,</span> <span class="s2">&quot;flipper_length_standardized&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clus</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;cluster&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s2">&quot;bill_length_standardized&quot;</span><span class="p">,</span> <span class="s2">&quot;flipper_length_standardized&quot;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -681,8 +716,8 @@ over data points in the cluster. For example, suppose we have a
 cluster containing four observations, and we are using two variables, <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, to cluster the data.
 Then we would compute the coordinates, <span class="math notranslate nohighlight">\(\mu_x\)</span> and <span class="math notranslate nohighlight">\(\mu_y\)</span>, of the cluster center via</p>
 <p><span class="math notranslate nohighlight">\(\mu_x = \frac{1}{4}(x_1+x_2+x_3+x_4) \quad \mu_y = \frac{1}{4}(y_1+y_2+y_3+y_4)\)</span></p>
-<p>In the first cluster from the example, there are  data points. These are shown with their cluster center
-(flipper_length_standardized =  and bill_length_standardized = ) highlighted
+<p>In the first cluster from the example, there are <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">4</span></code></span> data points. These are shown with their cluster center
+(flipper_length_standardized = <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">-0.35</span></code></span> and bill_length_standardized = <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">0.99</span></code></span>) highlighted
 in Figure &#64;ref(fig:10-toy-example-clus1-center).</p>
 <p>(ref:10-toy-example-clus1-center) Cluster 1 from the <code class="docutils literal notranslate"><span class="pre">penguin_data</span></code> data set example. Observations are in blue, with the cluster center highlighted in red.</p>
 <div class="figure align-default" id="toy-example-clus1-center-1">
@@ -694,7 +729,7 @@ in Figure &#64;ref(fig:10-toy-example-clus1-center).</p>
 and the cluster center.
 We use the straight-line / Euclidean distance formula
 that we learned about in Chapter &#64;ref(classification).
-In the -observation cluster example above,
+In the <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">4</span></code></span>-observation cluster example above,
 we would compute the WSSD <span class="math notranslate nohighlight">\(S^2\)</span> via</p>
 <p><span class="math notranslate nohighlight">\(S^2 = \left((x_1 - \mu_x)^2 + (y_1 - \mu_y)^2\right) + \left((x_2 - \mu_x)^2 + (y_2 - \mu_y)^2\right) + \left((x_3 - \mu_x)^2 + (y_3 - \mu_y)^2\right)  +  \left((x_4 - \mu_x)^2 + (y_4 - \mu_y)^2\right)\)</span></p>
 <p>These distances are denoted by lines in Figure &#64;ref(fig:10-toy-example-clus1-dists) for the first cluster of the penguin data example.</p>
@@ -828,17 +863,134 @@ below using an unscaled and unstandardized version of the data set in this chapt
 <p>First, here is what the raw (i.e., not standardized) data looks like:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">not_standardized_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/penguins_not_standardized.csv&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">not_standardized_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/penguins_not_standardized.csv&quot;</span><span class="p">)</span>
 <span class="n">not_standardized_data</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bill_length_mm</th>
+      <th>flipper_length_mm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>39.2</td>
+      <td>196</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>36.5</td>
+      <td>182</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>34.5</td>
+      <td>187</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>36.7</td>
+      <td>187</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>38.1</td>
+      <td>181</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>39.2</td>
+      <td>190</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>36.0</td>
+      <td>195</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>37.8</td>
+      <td>193</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>46.5</td>
+      <td>213</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>46.1</td>
+      <td>215</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>47.8</td>
+      <td>215</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>45.0</td>
+      <td>220</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>49.1</td>
+      <td>212</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>43.3</td>
+      <td>208</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>46.0</td>
+      <td>195</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>46.7</td>
+      <td>195</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>52.2</td>
+      <td>197</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>46.8</td>
+      <td>189</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>And then we apply the <code class="docutils literal notranslate"><span class="pre">StandardScaler()</span></code> function to both the columns in the data frame
 using <code class="docutils literal notranslate"><span class="pre">fit_transform()</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 <span class="n">standardized_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">not_standardized_data</span><span class="p">),</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bill_length_mm&#39;</span><span class="p">,</span> <span class="s1">&#39;flipper_length_mm&#39;</span><span class="p">])</span>
     
@@ -846,6 +998,123 @@ using <code class="docutils literal notranslate"><span class="pre">fit_transform
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bill_length_mm</th>
+      <th>flipper_length_mm</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.659955</td>
+      <td>-0.195275</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-1.178110</td>
+      <td>-1.366924</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-1.561929</td>
+      <td>-0.948478</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-1.139728</td>
+      <td>-0.948478</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.871055</td>
+      <td>-1.450614</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.659955</td>
+      <td>-0.697410</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-1.274065</td>
+      <td>-0.278964</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.928628</td>
+      <td>-0.446343</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.740983</td>
+      <td>1.227442</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.664219</td>
+      <td>1.394821</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.990465</td>
+      <td>1.394821</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.453119</td>
+      <td>1.813267</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1.239947</td>
+      <td>1.143753</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0.126873</td>
+      <td>0.808996</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0.645029</td>
+      <td>-0.278964</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0.779365</td>
+      <td>-0.278964</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1.834866</td>
+      <td>-0.111586</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.798556</td>
+      <td>-0.781100</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="k-means-in-python">
@@ -857,16 +1126,21 @@ algorithm uses a random initialization of assignments, but since we set the rand
 earlier, the clustering will be reproducible.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
 <span class="n">penguin_clust</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1234</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">standardized_data</span><span class="p">)</span>
 <span class="n">penguin_clust</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KMeans(n_clusters=3, random_state=1234)
 </pre></div>
 </div>
 </div>
@@ -881,26 +1155,167 @@ frame, and returns a data frame with the data and the cluster assignments for
 each point:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">penguin_clust</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">standardized_data</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">penguin_clust</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">standardized_data</span><span class="p">)</span>
 <span class="n">predictions</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0], dtype=int32)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clustered_data</span> <span class="o">=</span> <span class="n">standardized_data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clustered_data</span> <span class="o">=</span> <span class="n">standardized_data</span>
 <span class="n">clustered_data</span> <span class="o">=</span> <span class="n">clustered_data</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">clusters</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">)</span>
 <span class="n">clustered_data</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bill_length_mm</th>
+      <th>flipper_length_mm</th>
+      <th>clusters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.659955</td>
+      <td>-0.195275</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-1.178110</td>
+      <td>-1.366924</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-1.561929</td>
+      <td>-0.948478</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-1.139728</td>
+      <td>-0.948478</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.871055</td>
+      <td>-1.450614</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.659955</td>
+      <td>-0.697410</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-1.274065</td>
+      <td>-0.278964</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.928628</td>
+      <td>-0.446343</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.740983</td>
+      <td>1.227442</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.664219</td>
+      <td>1.394821</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.990465</td>
+      <td>1.394821</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.453119</td>
+      <td>1.813267</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1.239947</td>
+      <td>1.143753</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0.126873</td>
+      <td>0.808996</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0.645029</td>
+      <td>-0.278964</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>0.779365</td>
+      <td>-0.278964</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1.834866</td>
+      <td>-0.111586</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.798556</td>
+      <td>-0.781100</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Now that we have this information in a tidy data frame, we can make a visualization
 of the cluster assignments for each point, as shown in Figure &#64;ref(fig:10-plot-clusters-2).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_plot</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_plot</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">clustered_data</span><span class="p">)</span>
     <span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span>
     <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
@@ -913,12 +1328,123 @@ of the cluster assignments for each point, as shown in Figure &#64;ref(fig:10-pl
 
 
 <span class="n">cluster_plot</span>
-
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-53d79c08812b41968d7dc9bd3c7117d1"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-53d79c08812b41968d7dc9bd3c7117d1") {
+      outputDiv = document.getElementById("altair-viz-53d79c08812b41968d7dc9bd3c7117d1");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 20, "titleFontSize": 20}}, "data": {"name": "data-f9ba5372ad17f212b1b1827985326fef"}, "mark": "circle", "encoding": {"color": {"field": "clusters", "scale": {"scheme": "dark2"}, "title": "Cluster", "type": "ordinal"}, "x": {"field": "flipper_length_mm", "title": "Flipper Length (standardized)", "type": "quantitative"}, "y": {"field": "bill_length_mm", "title": "Bill Length (standardized)", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-f9ba5372ad17f212b1b1827985326fef": [{"bill_length_mm": -0.6599548427421356, "flipper_length_mm": -0.19527492342808553, "clusters": 1}, {"bill_length_mm": -1.1781100181422628, "flipper_length_mm": -1.366924463996594, "clusters": 1}, {"bill_length_mm": -1.561928666586801, "flipper_length_mm": -0.948478199507841, "clusters": 1}, {"bill_length_mm": -1.1397281532978085, "flipper_length_mm": -0.948478199507841, "clusters": 1}, {"bill_length_mm": -0.871055099386632, "flipper_length_mm": -1.4506137168943447, "clusters": 1}, {"bill_length_mm": -0.6599548427421356, "flipper_length_mm": -0.6974104408145891, "clusters": 1}, {"bill_length_mm": -1.2740646802533975, "flipper_length_mm": -0.27896417632583614, "clusters": 1}, {"bill_length_mm": -0.9286278966533135, "flipper_length_mm": -0.4463426821213374, "clusters": 1}, {"bill_length_mm": 0.7409832240804287, "flipper_length_mm": 1.2274423758336748, "clusters": 2}, {"bill_length_mm": 0.6642194943915214, "flipper_length_mm": 1.394820881629176, "clusters": 2}, {"bill_length_mm": 0.990465345569378, "flipper_length_mm": 1.394820881629176, "clusters": 2}, {"bill_length_mm": 0.453119237747025, "flipper_length_mm": 1.813267146117929, "clusters": 2}, {"bill_length_mm": 1.2399474670583288, "flipper_length_mm": 1.1437531229359241, "clusters": 2}, {"bill_length_mm": 0.12687338656916688, "flipper_length_mm": 0.8089961113449218, "clusters": 2}, {"bill_length_mm": 0.6450285619692941, "flipper_length_mm": -0.27896417632583614, "clusters": 0}, {"bill_length_mm": 0.7793650889248831, "flipper_length_mm": -0.27896417632583614, "clusters": 0}, {"bill_length_mm": 1.8348663721473635, "flipper_length_mm": -0.11158567053033494, "clusters": 0}, {"bill_length_mm": 0.7985560213471089, "flipper_length_mm": -0.7810996937123398, "clusters": 0}]}}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-53d9537853cc434895f5b3a443da25a0"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-53d9537853cc434895f5b3a443da25a0") {
+      outputDiv = document.getElementById("altair-viz-53d9537853cc434895f5b3a443da25a0");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 20, "titleFontSize": 20}}, "data": {"name": "data-f9ba5372ad17f212b1b1827985326fef"}, "mark": "circle", "encoding": {"color": {"field": "clusters", "scale": {"scheme": "dark2"}, "title": "Cluster", "type": "ordinal"}, "x": {"field": "flipper_length_mm", "title": "Flipper Length (standardized)", "type": "quantitative"}, "y": {"field": "bill_length_mm", "title": "Bill Length (standardized)", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-f9ba5372ad17f212b1b1827985326fef": [{"bill_length_mm": -0.6599548427421356, "flipper_length_mm": -0.19527492342808553, "clusters": 1}, {"bill_length_mm": -1.1781100181422628, "flipper_length_mm": -1.366924463996594, "clusters": 1}, {"bill_length_mm": -1.561928666586801, "flipper_length_mm": -0.948478199507841, "clusters": 1}, {"bill_length_mm": -1.1397281532978085, "flipper_length_mm": -0.948478199507841, "clusters": 1}, {"bill_length_mm": -0.871055099386632, "flipper_length_mm": -1.4506137168943447, "clusters": 1}, {"bill_length_mm": -0.6599548427421356, "flipper_length_mm": -0.6974104408145891, "clusters": 1}, {"bill_length_mm": -1.2740646802533975, "flipper_length_mm": -0.27896417632583614, "clusters": 1}, {"bill_length_mm": -0.9286278966533135, "flipper_length_mm": -0.4463426821213374, "clusters": 1}, {"bill_length_mm": 0.7409832240804287, "flipper_length_mm": 1.2274423758336748, "clusters": 2}, {"bill_length_mm": 0.6642194943915214, "flipper_length_mm": 1.394820881629176, "clusters": 2}, {"bill_length_mm": 0.990465345569378, "flipper_length_mm": 1.394820881629176, "clusters": 2}, {"bill_length_mm": 0.453119237747025, "flipper_length_mm": 1.813267146117929, "clusters": 2}, {"bill_length_mm": 1.2399474670583288, "flipper_length_mm": 1.1437531229359241, "clusters": 2}, {"bill_length_mm": 0.12687338656916688, "flipper_length_mm": 0.8089961113449218, "clusters": 2}, {"bill_length_mm": 0.6450285619692941, "flipper_length_mm": -0.27896417632583614, "clusters": 0}, {"bill_length_mm": 0.7793650889248831, "flipper_length_mm": -0.27896417632583614, "clusters": 0}, {"bill_length_mm": 1.8348663721473635, "flipper_length_mm": -0.11158567053033494, "clusters": 0}, {"bill_length_mm": 0.7985560213471089, "flipper_length_mm": -0.7810996937123398, "clusters": 0}]}}, {"mode": "vega-lite"});
+</script></div></div>
 <p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">The data colored by the cluster assignments returned by K-means.</span><a class="headerlink" href="#cluster-plot" title="Permalink to this image">¶</a></p>
 </div>
 <p>As mentioned above, we also need to select K by finding
@@ -927,7 +1453,12 @@ We can obtain the total WSSD (<code class="docutils literal notranslate"><span c
 clustering using <code class="docutils literal notranslate"><span class="pre">broom</span></code>’s <code class="docutils literal notranslate"><span class="pre">glance</span></code> function. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust</span><span class="o">.</span><span class="n">inertia_</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust</span><span class="o">.</span><span class="n">inertia_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.730719092276117
 </pre></div>
 </div>
 </div>
@@ -937,7 +1468,7 @@ create a data frame with a column named <code class="docutils literal notranslat
 each value of K we want to run K-means with (here, 1 to 9).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;k&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span><span class="o">.</span><span class="n">transpose</span><span class="p">()})</span>
 </pre></div>
 </div>
@@ -955,7 +1486,7 @@ we have to put each model object in a list using the <code class="docutils liter
 We demonstrate how to do this below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">penguin_clusts</span><span class="o">=</span><span class="n">penguin_clust_ks</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
         <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">2020</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">standardized_data</span><span class="p">)</span>
     <span class="p">)</span>
@@ -964,16 +1495,160 @@ We demonstrate how to do this below:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>k</th>
+      <th>penguin_clusts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>KMeans(n_clusters=1, n_init=3, random_state=2020)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>KMeans(n_clusters=2, n_init=3, random_state=2020)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>KMeans(n_clusters=3, n_init=3, random_state=2020)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>KMeans(n_clusters=4, n_init=3, random_state=2020)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>KMeans(n_clusters=5, n_init=3, random_state=2020)</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>KMeans(n_clusters=6, n_init=3, random_state=2020)</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>KMeans(n_clusters=7, n_init=3, random_state=2020)</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>KMeans(n_init=3, random_state=2020)</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>KMeans(n_clusters=9, n_init=3, random_state=2020)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">inertia</span><span class="o">=</span><span class="n">penguin_clust_ks</span><span class="p">[</span><span class="s2">&quot;penguin_clusts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">inertia_</span><span class="p">)</span>
 <span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;penguin_clusts&#39;</span><span class="p">])</span>
 <span class="n">penguin_clust_ks</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>k</th>
+      <th>inertia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>36.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>11.576264</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>4.730719</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>3.343613</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2.362131</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>1.849067</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>1.293320</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>1.058469</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>0.891223</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>If we take a look at our data frame <code class="docutils literal notranslate"><span class="pre">penguin_clust_ks</span></code> now,
 we see that it has two columns: one with the value for K,
@@ -1027,7 +1702,7 @@ elbow_plot
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">elbow_plot</span><span class="o">=</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elbow_plot</span><span class="o">=</span><span class="p">(</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">penguin_clust_ks</span><span class="p">)</span>
     <span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
     <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
@@ -1042,8 +1717,120 @@ elbow_plot
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-264a99f836ca473ea839003b188cd930"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-264a99f836ca473ea839003b188cd930") {
+      outputDiv = document.getElementById("altair-viz-264a99f836ca473ea839003b188cd930");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-c43c9bf55491de3ec6b94e110a456591"}, "mark": {"type": "line", "color": "black", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-c43c9bf55491de3ec6b94e110a456591": [{"k": 1, "inertia": 35.99999999999999}, {"k": 2, "inertia": 11.576264153631982}, {"k": 3, "inertia": 4.730719092276117}, {"k": 4, "inertia": 3.3436127899809343}, {"k": 5, "inertia": 2.3621308411553095}, {"k": 6, "inertia": 1.8490674361826995}, {"k": 7, "inertia": 1.293320075597939}, {"k": 8, "inertia": 1.05846895925639}, {"k": 9, "inertia": 0.8912231535823041}]}}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 <div class="figure align-default" id="elbow-plot" style="width: 700px">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-d0be97c100874ee68eaf64caf7920f94"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-d0be97c100874ee68eaf64caf7920f94") {
+      outputDiv = document.getElementById("altair-viz-d0be97c100874ee68eaf64caf7920f94");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-c43c9bf55491de3ec6b94e110a456591"}, "mark": {"type": "line", "color": "black", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-c43c9bf55491de3ec6b94e110a456591": [{"k": 1, "inertia": 35.99999999999999}, {"k": 2, "inertia": 11.576264153631982}, {"k": 3, "inertia": 4.730719092276117}, {"k": 4, "inertia": 3.3436127899809343}, {"k": 5, "inertia": 2.3621308411553095}, {"k": 6, "inertia": 1.8490674361826995}, {"k": 7, "inertia": 1.293320075597939}, {"k": 8, "inertia": 1.05846895925639}, {"k": 9, "inertia": 0.8912231535823041}]}}, {"mode": "vega-lite"});
+</script></div></div>
 <p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters.</span><a class="headerlink" href="#elbow-plot" title="Permalink to this image">¶</a></p>
 </div>
 <p>It looks like 3 clusters is the right choice for this data.
@@ -1139,8 +1926,8 @@ popular technique for reducing the number of predictors in a dataset.</p></li>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+        
+            <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="regression2.html" title="previous page">
         <i class="fas fa-angle-left"></i>
@@ -1157,17 +1944,19 @@ popular technique for reducing the number of predictors in a dataset.</p></li>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+        
         </div>
     </div>
     <footer class="footer">
-  <p>
-    
-      By UBC<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
+    <div class="container">
+      <p>
+        
+          By UBC<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 
