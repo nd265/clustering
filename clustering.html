@@ -1222,10 +1222,7 @@ earlier, the clustering will be reproducible.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KMeans(n_clusters=3, random_state=1234)
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KMeans(n_clusters=3, random_state=1234)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">KMeans</label><div class="sk-toggleable__content"><pre>KMeans(n_clusters=3, random_state=1234)</pre></div></div></div></div></div></div></div>
 </div>
 <p>As you can see above, the clustering object returned by <code class="docutils literal notranslate"><span class="pre">KMeans</span></code> has a lot of information
 that can be used to visualize the clusters, pick K, and evaluate the total WSSD.
@@ -1402,7 +1399,7 @@ of the cluster assignments for each point, as shown in Figure &#64;ref(fig:10-pl
     <span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span>
     <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
          <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;flipper_length_mm&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Flipper Length (standardized)&quot;</span><span class="p">),</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;bill_length_mm&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bill Length (standardized)&quot;</span><span class="p">),</span>
+         <span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;bill_length_mm&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bill Length (standardized)&quot;</span><span class="p">),</span>
     <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">&quot;clusters:O&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Cluster&quot;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;dark2&quot;</span><span class="p">)),</span>
     <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
     <span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
@@ -1415,13 +1412,13 @@ of the cluster assignments for each point, as shown in Figure &#64;ref(fig:10-pl
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-53d79c08812b41968d7dc9bd3c7117d1"></div>
+<div id="altair-viz-d506da9b826d43f9b4bb95322de1e52a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-53d79c08812b41968d7dc9bd3c7117d1") {
-      outputDiv = document.getElementById("altair-viz-53d79c08812b41968d7dc9bd3c7117d1");
+    if (outputDiv.id !== "altair-viz-d506da9b826d43f9b4bb95322de1e52a") {
+      outputDiv = document.getElementById("altair-viz-d506da9b826d43f9b4bb95322de1e52a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1473,13 +1470,13 @@ of the cluster assignments for each point, as shown in Figure &#64;ref(fig:10-pl
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-53d9537853cc434895f5b3a443da25a0"></div>
+<div id="altair-viz-d6fcec09ef824278a063e8f7ba877b1e"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-53d9537853cc434895f5b3a443da25a0") {
-      outputDiv = document.getElementById("altair-viz-53d9537853cc434895f5b3a443da25a0");
+    if (outputDiv.id !== "altair-viz-d6fcec09ef824278a063e8f7ba877b1e") {
+      outputDiv = document.getElementById("altair-viz-d6fcec09ef824278a063e8f7ba877b1e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1568,9 +1565,10 @@ we have to put each model object in a list using the <code class="docutils liter
 We demonstrate how to do this below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">penguin_clusts</span><span class="o">=</span><span class="n">penguin_clust_ks</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
-        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">2020</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">standardized_data</span><span class="p">)</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s2">&quot;random&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">standardized_data</span><span class="p">)</span>
     <span class="p">)</span>
 <span class="p">)</span>
 <span class="n">penguin_clust_ks</span>
@@ -1604,47 +1602,368 @@ We demonstrate how to do this below:</p>
     <tr>
       <th>0</th>
       <td>1</td>
-      <td>KMeans(n_clusters=1, n_init=3, random_state=2020)</td>
+      <td>KMeans(init='random', n_clusters=1, n_init=3)</td>
     </tr>
     <tr>
       <th>1</th>
       <td>2</td>
-      <td>KMeans(n_clusters=2, n_init=3, random_state=2020)</td>
+      <td>KMeans(init='random', n_clusters=2, n_init=3)</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3</td>
-      <td>KMeans(n_clusters=3, n_init=3, random_state=2020)</td>
+      <td>KMeans(init='random', n_clusters=3, n_init=3)</td>
     </tr>
     <tr>
       <th>3</th>
       <td>4</td>
-      <td>KMeans(n_clusters=4, n_init=3, random_state=2020)</td>
+      <td>KMeans(init='random', n_clusters=4, n_init=3)</td>
     </tr>
     <tr>
       <th>4</th>
       <td>5</td>
-      <td>KMeans(n_clusters=5, n_init=3, random_state=2020)</td>
+      <td>KMeans(init='random', n_clusters=5, n_init=3)</td>
     </tr>
     <tr>
       <th>5</th>
       <td>6</td>
-      <td>KMeans(n_clusters=6, n_init=3, random_state=2020)</td>
+      <td>KMeans(init='random', n_clusters=6, n_init=3)</td>
     </tr>
     <tr>
       <th>6</th>
       <td>7</td>
-      <td>KMeans(n_clusters=7, n_init=3, random_state=2020)</td>
+      <td>KMeans(init='random', n_clusters=7, n_init=3)</td>
     </tr>
     <tr>
       <th>7</th>
       <td>8</td>
-      <td>KMeans(n_init=3, random_state=2020)</td>
+      <td>KMeans(init='random', n_init=3)</td>
     </tr>
     <tr>
       <th>8</th>
       <td>9</td>
-      <td>KMeans(n_clusters=9, n_init=3, random_state=2020)</td>
+      <td>KMeans(init='random', n_clusters=9, n_init=3)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>If we take a look at our data frame <code class="docutils literal notranslate"><span class="pre">penguin_clust_ks</span></code> now,
+we see that it has two columns: one with the value for K,
+and the other holding the clustering model object in a list column.</p>
+<p>If we wanted to get one of the clusterings out
+of the list column in the data frame,
+we could use a familiar friend: <code class="docutils literal notranslate"><span class="pre">pull</span></code>.
+<code class="docutils literal notranslate"><span class="pre">pull</span></code> will return to us a data frame column as a simpler data structure,
+here that would be a list.
+And then to extract the first item of the list,
+we can use the <code class="docutils literal notranslate"><span class="pre">pluck</span></code> function. We pass<br />
+it the index for the element we would like to extract
+(here, <code class="docutils literal notranslate"><span class="pre">1</span></code>).</p>
+<p>Next, we use <code class="docutils literal notranslate"><span class="pre">mutate</span></code> again to apply <code class="docutils literal notranslate"><span class="pre">glance</span></code> \index{glance}
+to each of the K-means clustering objects to get the clustering statistics
+(including WSSD).
+The output of <code class="docutils literal notranslate"><span class="pre">glance</span></code> is a data frame,
+and so we need to create another list column (using <code class="docutils literal notranslate"><span class="pre">list</span></code>) for this to work.
+This results in a complex data frame with 3 columns, one for K, one for the
+K-means clustering objects, and one for the clustering statistics:</p>
+<div class="highlight-{r notranslate"><div class="highlight"><pre><span></span>penguin_clust_ks &lt;- tibble(k = 1:9) |&gt;
+  rowwise() |&gt;
+  mutate(penguin_clusts = list(kmeans(standardized_data, k)),
+         glanced = list(glance(penguin_clusts)))
+
+penguin_clust_ks
+</pre></div>
+</div>
+<p>Finally we extract the total WSSD from the column named <code class="docutils literal notranslate"><span class="pre">glanced</span></code>.
+Given that each item in this list column is a data frame,
+we will need to use the <code class="docutils literal notranslate"><span class="pre">unnest</span></code> function
+to unpack the data frames into simpler column data types.</p>
+<div class="highlight-{r notranslate"><div class="highlight"><pre><span></span>clustering_statistics &lt;- penguin_clust_ks |&gt;
+  unnest(glanced)
+
+clustering_statistics
+</pre></div>
+</div>
+<p>Now that we have <code class="docutils literal notranslate"><span class="pre">tot.withinss</span></code> and <code class="docutils literal notranslate"><span class="pre">k</span></code> as columns in a data frame, we can make a line plot
+(Figure &#64;ref(fig:10-plot-choose-k)) and search for the “elbow” to find which value of K to use.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elbow_plot</span><span class="o">=</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">penguin_clust_ks</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;K&quot;</span><span class="p">),</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;inertia&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Total within-cluster sum of squares&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">elbow_plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/site-packages/altair/vegalite/v4/api.py:2020,</span> in <span class="ni">Chart.to_dict</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2018</span>     <span class="n">copy</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">InlineData</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">[{}])</span>
+<span class="g g-Whitespace">   </span><span class="mi">2019</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">Chart</span><span class="p">,</span> <span class="n">copy</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2020</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/site-packages/altair/vegalite/v4/api.py:374,</span> in <span class="ni">TopLevelMixin.to_dict</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">372</span> <span class="n">copy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">373</span> <span class="n">original_data</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">copy</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="n">Undefined</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">374</span> <span class="n">copy</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">_prepare_data</span><span class="p">(</span><span class="n">original_data</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">376</span> <span class="k">if</span> <span class="n">original_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">Undefined</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="n">context</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">original_data</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/site-packages/altair/vegalite/v4/api.py:97,</span> in <span class="ni">_prepare_data</span><span class="nt">(data, context)</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span> <span class="c1"># consolidate inline data to top-level datasets</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span> <span class="k">if</span> <span class="n">context</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">data_transformers</span><span class="o">.</span><span class="n">consolidate_datasets</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">97</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">_consolidate_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span> <span class="c1"># if data is still not a recognized type, then return</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">Data</span><span class="p">)):</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/site-packages/altair/vegalite/v4/api.py:64,</span> in <span class="ni">_consolidate_data</span><span class="nt">(data, context)</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span>         <span class="n">kwds</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s2">&quot;values&quot;</span><span class="p">}</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="k">if</span> <span class="n">values</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">Undefined</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">64</span>     <span class="n">name</span> <span class="o">=</span> <span class="n">_dataset_name</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">NamedData</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>     <span class="n">context</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;datasets&quot;</span><span class="p">,</span> <span class="p">{})[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/site-packages/altair/vegalite/v4/api.py:37,</span> in <span class="ni">_dataset_name</span><span class="nt">(values)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="k">if</span> <span class="n">values</span> <span class="o">==</span> <span class="p">[{}]:</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="k">return</span> <span class="s2">&quot;empty&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">37</span> <span class="n">values_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="n">hsh</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">values_json</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="k">return</span> <span class="s2">&quot;data-&quot;</span> <span class="o">+</span> <span class="n">hsh</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/json/__init__.py:234,</span> in <span class="ni">dumps</span><span class="nt">(obj, skipkeys, ensure_ascii, check_circular, allow_nan, cls, indent, separators, default, sort_keys, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="bp">cls</span> <span class="o">=</span> <span class="n">JSONEncoder</span>
+<span class="ne">--&gt; </span><span class="mi">234</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span>     <span class="n">skipkeys</span><span class="o">=</span><span class="n">skipkeys</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="n">ensure_ascii</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="n">check_circular</span><span class="o">=</span><span class="n">check_circular</span><span class="p">,</span> <span class="n">allow_nan</span><span class="o">=</span><span class="n">allow_nan</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="n">separators</span><span class="o">=</span><span class="n">separators</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="o">**</span><span class="n">kw</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/json/encoder.py:199,</span> in <span class="ni">JSONEncoder.encode</span><span class="nt">(self, o)</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span>         <span class="k">return</span> <span class="n">encode_basestring</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="c1"># This doesn&#39;t pass the iterator directly to &#39;&#39;.join() because the</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span> <span class="c1"># exceptions aren&#39;t as detailed.  The list call should be roughly</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="c1"># equivalent to the PySequence_Fast that &#39;&#39;.join() would do.</span>
+<span class="ne">--&gt; </span><span class="mi">199</span> <span class="n">chunks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterencode</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">_one_shot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span>     <span class="n">chunks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/json/encoder.py:257,</span> in <span class="ni">JSONEncoder.iterencode</span><span class="nt">(self, o, _one_shot)</span>
+<span class="g g-Whitespace">    </span><span class="mi">252</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">253</span>     <span class="n">_iterencode</span> <span class="o">=</span> <span class="n">_make_iterencode</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span>         <span class="n">markers</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="n">_encoder</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">indent</span><span class="p">,</span> <span class="n">floatstr</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">255</span>         <span class="bp">self</span><span class="o">.</span><span class="n">key_separator</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">item_separator</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_keys</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">256</span>         <span class="bp">self</span><span class="o">.</span><span class="n">skipkeys</span><span class="p">,</span> <span class="n">_one_shot</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">257</span> <span class="k">return</span> <span class="n">_iterencode</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/json/encoder.py:179,</span> in <span class="ni">JSONEncoder.default</span><span class="nt">(self, o)</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">o</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span>     <span class="sd">&quot;&quot;&quot;Implement this method in a subclass such that it returns</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span><span class="sd">     a serializable object for ``o``, or calls the base implementation</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span><span class="sd">     (to raise a ``TypeError``).</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">177</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">179</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Object of type </span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1"> &#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span>                     <span class="sa">f</span><span class="s1">&#39;is not JSON serializable&#39;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: Object of type KMeans is not JSON serializable
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alt.Chart(...)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="figure align-default" id="elbow-plot" style="width: 700px">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-bccd9f09ec6e46538522b1c0ad8d079e"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-bccd9f09ec6e46538522b1c0ad8d079e") {
+      outputDiv = document.getElementById("altair-viz-bccd9f09ec6e46538522b1c0ad8d079e");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-9fa2661317729b4606b2ae74808069a1"}, "mark": {"type": "line", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-9fa2661317729b4606b2ae74808069a1": [{"k": 1, "inertia": 35.99999999999999}, {"k": 2, "inertia": 11.576264153631982}, {"k": 3, "inertia": 4.730719092276117}, {"k": 4, "inertia": 3.3436127899809343}, {"k": 5, "inertia": 2.3621308411553095}, {"k": 6, "inertia": 1.6783833850432375}, {"k": 7, "inertia": 1.3087316666611315}, {"k": 8, "inertia": 1.0659421816324675}, {"k": 9, "inertia": 0.8002969878568551}]}}, {"mode": "vega-lite"});
+</script></div></div>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters.</span><a class="headerlink" href="#elbow-plot" title="Permalink to this image">¶</a></p>
+</div>
+<p>It looks like 3 clusters is the right choice for this data.
+But why is there a “bump” in the total WSSD plot here?
+Shouldn’t total WSSD always decrease as we add more clusters?
+Technically yes, but remember:  K-means can get “stuck” in a bad solution.
+Unfortunately, for K = 8 we had an unlucky initialization
+and found a bad clustering! \index{K-means!restart, nstart}
+We can help prevent finding a bad clustering
+by trying a few different random initializations
+via the <code class="docutils literal notranslate"><span class="pre">nstart</span></code> argument (Figure &#64;ref(fig:10-choose-k-nstart)
+shows a setup where we use 10 restarts).
+When we do this, K-means clustering will be performed
+the number of times specified by the <code class="docutils literal notranslate"><span class="pre">nstart</span></code> argument,
+and R will return to us the best clustering from this.
+The more times we perform K-means clustering,
+the more likely we are to find a good clustering (if one exists).
+What value should you choose for <code class="docutils literal notranslate"><span class="pre">nstart</span></code>? The answer is that it depends
+on many factors: the size and characteristics of your data set,
+as well as the speed and size of your computer.
+The larger the <code class="docutils literal notranslate"><span class="pre">nstart</span></code> value the better from an analysis perspective,
+but there is a trade-off that doing many clusterings
+could take a long time.
+So this is something that needs to be balanced.</p>
+<div class="highlight-{r notranslate"><div class="highlight"><pre><span></span>penguin_clust_ks &lt;- tibble(k = 1:9) |&gt;
+  rowwise() |&gt;
+  mutate(penguin_clusts = list(kmeans(standardized_data, nstart = 10, k)),
+         glanced = list(glance(penguin_clusts)))
+
+clustering_statistics &lt;- penguin_clust_ks |&gt;
+  unnest(glanced)
+
+elbow_plot &lt;- ggplot(clustering_statistics, aes(x = k, y = tot.withinss)) +
+  geom_point() +
+  geom_line() +
+  xlab(&quot;K&quot;) +
+  ylab(&quot;Total within-cluster sum of squares&quot;) +
+  scale_x_continuous(breaks = 1:9) + 
+  theme(text = element_text(size = 12))
+
+elbow_plot
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+    <span class="n">penguin_clusts</span><span class="o">=</span><span class="n">penguin_clust_ks</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">standardized_data</span><span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">penguin_clust_ks</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>k</th>
+      <th>penguin_clusts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>KMeans(n_clusters=1, n_init=3)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>KMeans(n_clusters=2, n_init=3)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>KMeans(n_clusters=3, n_init=3)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>KMeans(n_clusters=4, n_init=3)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>KMeans(n_clusters=5, n_init=3)</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>KMeans(n_clusters=6, n_init=3)</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>KMeans(n_clusters=7, n_init=3)</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>KMeans(n_init=3)</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>KMeans(n_clusters=9, n_init=3)</td>
     </tr>
   </tbody>
 </table>
@@ -1711,82 +2030,32 @@ We demonstrate how to do this below:</p>
     <tr>
       <th>5</th>
       <td>6</td>
-      <td>1.849067</td>
+      <td>1.678383</td>
     </tr>
     <tr>
       <th>6</th>
       <td>7</td>
-      <td>1.293320</td>
+      <td>1.308732</td>
     </tr>
     <tr>
       <th>7</th>
       <td>8</td>
-      <td>1.058469</td>
+      <td>1.065942</td>
     </tr>
     <tr>
       <th>8</th>
       <td>9</td>
-      <td>0.891223</td>
+      <td>0.800297</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>If we take a look at our data frame <code class="docutils literal notranslate"><span class="pre">penguin_clust_ks</span></code> now,
-we see that it has two columns: one with the value for K,
-and the other holding the clustering model object in a list column.</p>
-<p>If we wanted to get one of the clusterings out
-of the list column in the data frame,
-we could use a familiar friend: <code class="docutils literal notranslate"><span class="pre">pull</span></code>.
-<code class="docutils literal notranslate"><span class="pre">pull</span></code> will return to us a data frame column as a simpler data structure,
-here that would be a list.
-And then to extract the first item of the list,
-we can use the <code class="docutils literal notranslate"><span class="pre">pluck</span></code> function. We pass<br />
-it the index for the element we would like to extract
-(here, <code class="docutils literal notranslate"><span class="pre">1</span></code>).</p>
-<p>Next, we use <code class="docutils literal notranslate"><span class="pre">mutate</span></code> again to apply <code class="docutils literal notranslate"><span class="pre">glance</span></code> \index{glance}
-to each of the K-means clustering objects to get the clustering statistics
-(including WSSD).
-The output of <code class="docutils literal notranslate"><span class="pre">glance</span></code> is a data frame,
-and so we need to create another list column (using <code class="docutils literal notranslate"><span class="pre">list</span></code>) for this to work.
-This results in a complex data frame with 3 columns, one for K, one for the
-K-means clustering objects, and one for the clustering statistics:</p>
-<div class="highlight-{r notranslate"><div class="highlight"><pre><span></span>penguin_clust_ks &lt;- tibble(k = 1:9) |&gt;
-  rowwise() |&gt;
-  mutate(penguin_clusts = list(kmeans(standardized_data, k)),
-         glanced = list(glance(penguin_clusts)))
-
-penguin_clust_ks
-</pre></div>
-</div>
-<p>Finally we extract the total WSSD from the column named <code class="docutils literal notranslate"><span class="pre">glanced</span></code>.
-Given that each item in this list column is a data frame,
-we will need to use the <code class="docutils literal notranslate"><span class="pre">unnest</span></code> function
-to unpack the data frames into simpler column data types.</p>
-<div class="highlight-{r notranslate"><div class="highlight"><pre><span></span>clustering_statistics &lt;- penguin_clust_ks |&gt;
-  unnest(glanced)
-
-clustering_statistics
-</pre></div>
-</div>
-<p>Now that we have <code class="docutils literal notranslate"><span class="pre">tot.withinss</span></code> and <code class="docutils literal notranslate"><span class="pre">k</span></code> as columns in a data frame, we can make a line plot
-(Figure &#64;ref(fig:10-plot-choose-k)) and search for the “elbow” to find which value of K to use.</p>
-<div class="highlight-{r notranslate"><div class="highlight"><pre><span></span>elbow_plot &lt;- ggplot(clustering_statistics, aes(x = k, y = tot.withinss)) +
-  geom_point() +
-  geom_line() +
-  xlab(&quot;K&quot;) +
-  ylab(&quot;Total within-cluster sum of squares&quot;) +
-  scale_x_continuous(breaks = 1:9) + 
-  theme(text = element_text(size = 12))
-
-elbow_plot
-</pre></div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elbow_plot</span><span class="o">=</span><span class="p">(</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">penguin_clust_ks</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
         <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;K&quot;</span><span class="p">),</span>
         <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;inertia&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Total within-cluster sum of squares&quot;</span><span class="p">),</span>
@@ -1794,20 +2063,20 @@ elbow_plot
     <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
     <span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="p">)</span>
-<span class="c1">### END SOLUTION </span>
+
 <span class="n">elbow_plot</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-264a99f836ca473ea839003b188cd930"></div>
+<div id="altair-viz-09e93129e76c4932832b584beb60ab39"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-264a99f836ca473ea839003b188cd930") {
-      outputDiv = document.getElementById("altair-viz-264a99f836ca473ea839003b188cd930");
+    if (outputDiv.id !== "altair-viz-09e93129e76c4932832b584beb60ab39") {
+      outputDiv = document.getElementById("altair-viz-09e93129e76c4932832b584beb60ab39");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1853,19 +2122,19 @@ elbow_plot
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-c43c9bf55491de3ec6b94e110a456591"}, "mark": {"type": "line", "color": "black", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-c43c9bf55491de3ec6b94e110a456591": [{"k": 1, "inertia": 35.99999999999999}, {"k": 2, "inertia": 11.576264153631982}, {"k": 3, "inertia": 4.730719092276117}, {"k": 4, "inertia": 3.3436127899809343}, {"k": 5, "inertia": 2.3621308411553095}, {"k": 6, "inertia": 1.8490674361826995}, {"k": 7, "inertia": 1.293320075597939}, {"k": 8, "inertia": 1.05846895925639}, {"k": 9, "inertia": 0.8912231535823041}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-9fa2661317729b4606b2ae74808069a1"}, "mark": {"type": "line", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-9fa2661317729b4606b2ae74808069a1": [{"k": 1, "inertia": 35.99999999999999}, {"k": 2, "inertia": 11.576264153631982}, {"k": 3, "inertia": 4.730719092276117}, {"k": 4, "inertia": 3.3436127899809343}, {"k": 5, "inertia": 2.3621308411553095}, {"k": 6, "inertia": 1.6783833850432375}, {"k": 7, "inertia": 1.3087316666611315}, {"k": 8, "inertia": 1.0659421816324675}, {"k": 9, "inertia": 0.8002969878568551}]}}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
-<div class="figure align-default" id="elbow-plot" style="width: 700px">
+<div class="figure align-default" id="id1" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-d0be97c100874ee68eaf64caf7920f94"></div>
+<div id="altair-viz-bccd9f09ec6e46538522b1c0ad8d079e"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d0be97c100874ee68eaf64caf7920f94") {
-      outputDiv = document.getElementById("altair-viz-d0be97c100874ee68eaf64caf7920f94");
+    if (outputDiv.id !== "altair-viz-bccd9f09ec6e46538522b1c0ad8d079e") {
+      outputDiv = document.getElementById("altair-viz-bccd9f09ec6e46538522b1c0ad8d079e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1911,50 +2180,9 @@ elbow_plot
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-c43c9bf55491de3ec6b94e110a456591"}, "mark": {"type": "line", "color": "black", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-c43c9bf55491de3ec6b94e110a456591": [{"k": 1, "inertia": 35.99999999999999}, {"k": 2, "inertia": 11.576264153631982}, {"k": 3, "inertia": 4.730719092276117}, {"k": 4, "inertia": 3.3436127899809343}, {"k": 5, "inertia": 2.3621308411553095}, {"k": 6, "inertia": 1.8490674361826995}, {"k": 7, "inertia": 1.293320075597939}, {"k": 8, "inertia": 1.05846895925639}, {"k": 9, "inertia": 0.8912231535823041}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-9fa2661317729b4606b2ae74808069a1"}, "mark": {"type": "line", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-9fa2661317729b4606b2ae74808069a1": [{"k": 1, "inertia": 35.99999999999999}, {"k": 2, "inertia": 11.576264153631982}, {"k": 3, "inertia": 4.730719092276117}, {"k": 4, "inertia": 3.3436127899809343}, {"k": 5, "inertia": 2.3621308411553095}, {"k": 6, "inertia": 1.6783833850432375}, {"k": 7, "inertia": 1.3087316666611315}, {"k": 8, "inertia": 1.0659421816324675}, {"k": 9, "inertia": 0.8002969878568551}]}}, {"mode": "vega-lite"});
 </script></div></div>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters.</span><a class="headerlink" href="#elbow-plot" title="Permalink to this image">¶</a></p>
-</div>
-<p>It looks like 3 clusters is the right choice for this data.
-But why is there a “bump” in the total WSSD plot here?
-Shouldn’t total WSSD always decrease as we add more clusters?
-Technically yes, but remember:  K-means can get “stuck” in a bad solution.
-Unfortunately, for K = 8 we had an unlucky initialization
-and found a bad clustering! \index{K-means!restart, nstart}
-We can help prevent finding a bad clustering
-by trying a few different random initializations
-via the <code class="docutils literal notranslate"><span class="pre">nstart</span></code> argument (Figure &#64;ref(fig:10-choose-k-nstart)
-shows a setup where we use 10 restarts).
-When we do this, K-means clustering will be performed
-the number of times specified by the <code class="docutils literal notranslate"><span class="pre">nstart</span></code> argument,
-and R will return to us the best clustering from this.
-The more times we perform K-means clustering,
-the more likely we are to find a good clustering (if one exists).
-What value should you choose for <code class="docutils literal notranslate"><span class="pre">nstart</span></code>? The answer is that it depends
-on many factors: the size and characteristics of your data set,
-as well as the speed and size of your computer.
-The larger the <code class="docutils literal notranslate"><span class="pre">nstart</span></code> value the better from an analysis perspective,
-but there is a trade-off that doing many clusterings
-could take a long time.
-So this is something that needs to be balanced.</p>
-<div class="highlight-{r notranslate"><div class="highlight"><pre><span></span>penguin_clust_ks &lt;- tibble(k = 1:9) |&gt;
-  rowwise() |&gt;
-  mutate(penguin_clusts = list(kmeans(standardized_data, nstart = 10, k)),
-         glanced = list(glance(penguin_clusts)))
-
-clustering_statistics &lt;- penguin_clust_ks |&gt;
-  unnest(glanced)
-
-elbow_plot &lt;- ggplot(clustering_statistics, aes(x = k, y = tot.withinss)) +
-  geom_point() +
-  geom_line() +
-  xlab(&quot;K&quot;) +
-  ylab(&quot;Total within-cluster sum of squares&quot;) +
-  scale_x_continuous(breaks = 1:9) + 
-  theme(text = element_text(size = 12))
-
-elbow_plot
-</pre></div>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="exercises">
