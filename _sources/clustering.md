@@ -738,7 +738,7 @@ This results in a data frame with 4 columns, one for K, one for the
 K-means clustering objects, and 2 for the clustering statistics:
 
 ```{code-cell} ipython3
-penguin_clust_ks = penguin_clust_ks.assign(
+penguin_clust_df = penguin_clust_ks.assign(
     inertia=penguin_clust_ks["penguin_clusts"].apply(lambda x: x.inertia_),
     n_iter =penguin_clust_ks["penguin_clusts"].apply(lambda x: x.n_iter_)
 
@@ -746,7 +746,7 @@ penguin_clust_ks = penguin_clust_ks.assign(
     
 
 
-penguin_clust_ks
+penguin_clust_df
 ```
 
 
@@ -757,7 +757,7 @@ Now that we have `inertia` and `k` as columns in a data frame, we can make a lin
 
 ```{code-cell} ipython3
 elbow_plot=(
-    alt.Chart(penguin_clust_ks)
+    alt.Chart(penguin_clust_df)
     .mark_line(point=True)
     .encode(
         x=alt.X("k", title="K"),
@@ -812,18 +812,18 @@ So this is something that needs to be balanced.
 
 
 ```{code-cell} ipython3
-penguin_clust_ks = penguin_clust_ks.assign(
+penguin_clust_df = penguin_clust_ks.assign(
     penguin_clusts=penguin_clust_ks['k'].apply(
         lambda x: KMeans(n_clusters=x, n_init=3, init='k-means++').fit(standardized_data)
     )
 )
 
-penguin_clust_ks = penguin_clust_ks.assign(
+penguin_clust_df = penguin_clust_ks.assign(
     inertia=penguin_clust_ks["penguin_clusts"].apply(lambda x: x.inertia_)
 )
 
 elbow_plot=(
-    alt.Chart(penguin_clust_ks)
+    alt.Chart(penguin_clust_df)
     .mark_line(point=True)
     .encode(
         x=alt.X("k", title="K"),

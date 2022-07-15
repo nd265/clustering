@@ -1431,13 +1431,13 @@ of the cluster assignments for each point, as shown in Figure &#64;ref(fig:10-pl
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-b16d1f3cbf0949558df2fd28c8ecb867"></div>
+<div id="altair-viz-10f3b588b9e146c89d594a69233d77ec"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b16d1f3cbf0949558df2fd28c8ecb867") {
-      outputDiv = document.getElementById("altair-viz-b16d1f3cbf0949558df2fd28c8ecb867");
+    if (outputDiv.id !== "altair-viz-10f3b588b9e146c89d594a69233d77ec") {
+      outputDiv = document.getElementById("altair-viz-10f3b588b9e146c89d594a69233d77ec");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1638,7 +1638,7 @@ to each of the K-means clustering objects to get the clustering statistics</p>
 K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_df</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">inertia</span><span class="o">=</span><span class="n">penguin_clust_ks</span><span class="p">[</span><span class="s2">&quot;penguin_clusts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">inertia_</span><span class="p">),</span>
     <span class="n">n_iter</span> <span class="o">=</span><span class="n">penguin_clust_ks</span><span class="p">[</span><span class="s2">&quot;penguin_clusts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">n_iter_</span><span class="p">)</span>
 
@@ -1646,7 +1646,7 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
     
 
 
-<span class="n">penguin_clust_ks</span>
+<span class="n">penguin_clust_df</span>
 </pre></div>
 </div>
 </div>
@@ -1748,7 +1748,7 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elbow_plot</span><span class="o">=</span><span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">penguin_clust_ks</span><span class="p">)</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">penguin_clust_df</span><span class="p">)</span>
     <span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
         <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;K&quot;</span><span class="p">),</span>
@@ -1962,18 +1962,18 @@ could take a long time.
 So this is something that needs to be balanced.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_df</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">penguin_clusts</span><span class="o">=</span><span class="n">penguin_clust_ks</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
         <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">standardized_data</span><span class="p">)</span>
     <span class="p">)</span>
 <span class="p">)</span>
 
-<span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+<span class="n">penguin_clust_df</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">inertia</span><span class="o">=</span><span class="n">penguin_clust_ks</span><span class="p">[</span><span class="s2">&quot;penguin_clusts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">inertia_</span><span class="p">)</span>
 <span class="p">)</span>
 
 <span class="n">elbow_plot</span><span class="o">=</span><span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">penguin_clust_ks</span><span class="p">)</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">penguin_clust_df</span><span class="p">)</span>
     <span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
         <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;K&quot;</span><span class="p">),</span>
