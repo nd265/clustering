@@ -742,7 +742,7 @@ penguin_clust_df = penguin_clust_ks.assign(
     inertia=penguin_clust_ks["penguin_clusts"].apply(lambda x: x.inertia_),
     n_iter =penguin_clust_ks["penguin_clusts"].apply(lambda x: x.n_iter_)
 
-)
+).drop(columns=['penguin_clusts'])
     
 
 
@@ -820,7 +820,7 @@ penguin_clust_df = penguin_clust_ks.assign(
 
 penguin_clust_df = penguin_clust_ks.assign(
     inertia=penguin_clust_ks["penguin_clusts"].apply(lambda x: x.inertia_)
-)
+).drop(columns=['penguin_clusts'])
 
 elbow_plot=(
     alt.Chart(penguin_clust_df)
