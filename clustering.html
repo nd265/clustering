@@ -1431,13 +1431,13 @@ of the cluster assignments for each point, as shown in Figure &#64;ref(fig:10-pl
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-6641678b8a264c9eaea400a067874f6b"></div>
+<div id="altair-viz-eed0dffc5fea423e8359e9db788abc3a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-6641678b8a264c9eaea400a067874f6b") {
-      outputDiv = document.getElementById("altair-viz-6641678b8a264c9eaea400a067874f6b");
+    if (outputDiv.id !== "altair-viz-eed0dffc5fea423e8359e9db788abc3a") {
+      outputDiv = document.getElementById("altair-viz-eed0dffc5fea423e8359e9db788abc3a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1764,141 +1764,20 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
     <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
     <span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="p">)</span>
-
-<span class="n">elbow_plot</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<div id="altair-viz-35b0e5a8b60745d19217bf2a8059f812"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-35b0e5a8b60745d19217bf2a8059f812") {
-      outputDiv = document.getElementById("altair-viz-35b0e5a8b60745d19217bf2a8059f812");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-75c103bebf85d08a1a8f7d306c57c62d"}, "mark": {"type": "line", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-75c103bebf85d08a1a8f7d306c57c62d": [{"k": 1, "inertia": 35.99999999999999, "n_iter": 2}, {"k": 2, "inertia": 11.576264153631982, "n_iter": 3}, {"k": 3, "inertia": 4.730719092276117, "n_iter": 3}, {"k": 4, "inertia": 4.046971636164045, "n_iter": 2}, {"k": 5, "inertia": 2.3621308411553095, "n_iter": 4}, {"k": 6, "inertia": 1.8490674361826995, "n_iter": 4}, {"k": 7, "inertia": 2.4152411605291895, "n_iter": 3}, {"k": 8, "inertia": 1.0359735206766723, "n_iter": 4}, {"k": 9, "inertia": 0.9713796058938011, "n_iter": 2}]}}, {"mode": "vega-lite"});
-</script></div></div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">glue</span><span class="p">(</span><span class="s1">&#39;elbow_plot&#39;</span><span class="p">,</span> <span class="n">elbow_plot</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<div id="altair-viz-c382b3aaa0f64f949db0f93ca6e105ae"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c382b3aaa0f64f949db0f93ca6e105ae") {
-      outputDiv = document.getElementById("altair-viz-c382b3aaa0f64f949db0f93ca6e105ae");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-75c103bebf85d08a1a8f7d306c57c62d"}, "mark": {"type": "line", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-75c103bebf85d08a1a8f7d306c57c62d": [{"k": 1, "inertia": 35.99999999999999, "n_iter": 2}, {"k": 2, "inertia": 11.576264153631982, "n_iter": 3}, {"k": 3, "inertia": 4.730719092276117, "n_iter": 3}, {"k": 4, "inertia": 4.046971636164045, "n_iter": 2}, {"k": 5, "inertia": 2.3621308411553095, "n_iter": 4}, {"k": 6, "inertia": 1.8490674361826995, "n_iter": 4}, {"k": 7, "inertia": 2.4152411605291895, "n_iter": 3}, {"k": 8, "inertia": 1.0359735206766723, "n_iter": 4}, {"k": 9, "inertia": 0.9713796058938011, "n_iter": 2}]}}, {"mode": "vega-lite"});
-</script></div></div>
 </div>
 <div class="figure align-default" id="elbow-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-318e83131e6e4eb9aad3d5e656e46c43"></div>
+<div id="altair-viz-d5cb6eb758cc407796dfe111bc9676a9"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-318e83131e6e4eb9aad3d5e656e46c43") {
-      outputDiv = document.getElementById("altair-viz-318e83131e6e4eb9aad3d5e656e46c43");
+    if (outputDiv.id !== "altair-viz-d5cb6eb758cc407796dfe111bc9676a9") {
+      outputDiv = document.getElementById("altair-viz-d5cb6eb758cc407796dfe111bc9676a9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1994,140 +1873,20 @@ So this is something that needs to be balanced.</p>
     <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
     <span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="p">)</span>
-<span class="n">elbow_plot</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<div id="altair-viz-5b8be1257b314df3a61cbcb587ff0c82"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5b8be1257b314df3a61cbcb587ff0c82") {
-      outputDiv = document.getElementById("altair-viz-5b8be1257b314df3a61cbcb587ff0c82");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-772b44915409097b31df568cff60d910"}, "mark": {"type": "line", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-772b44915409097b31df568cff60d910": [{"k": 1, "inertia": 35.99999999999999, "n_iter": 2}, {"k": 2, "inertia": 11.576264153631982, "n_iter": 3}, {"k": 3, "inertia": 4.730719092276117, "n_iter": 3}, {"k": 4, "inertia": 3.3436127899809343, "n_iter": 2}, {"k": 5, "inertia": 2.3621308411553095, "n_iter": 4}, {"k": 6, "inertia": 1.6783833850432375, "n_iter": 4}, {"k": 7, "inertia": 1.3087316666611315, "n_iter": 3}, {"k": 8, "inertia": 1.0659421816324675, "n_iter": 4}, {"k": 9, "inertia": 0.8002969878568551, "n_iter": 2}]}}, {"mode": "vega-lite"});
-</script></div></div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">glue</span><span class="p">(</span><span class="s1">&#39;elbow_plot&#39;</span><span class="p">,</span> <span class="n">elbow_plot</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<div id="altair-viz-318e83131e6e4eb9aad3d5e656e46c43"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-318e83131e6e4eb9aad3d5e656e46c43") {
-      outputDiv = document.getElementById("altair-viz-318e83131e6e4eb9aad3d5e656e46c43");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-772b44915409097b31df568cff60d910"}, "mark": {"type": "line", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-772b44915409097b31df568cff60d910": [{"k": 1, "inertia": 35.99999999999999, "n_iter": 2}, {"k": 2, "inertia": 11.576264153631982, "n_iter": 3}, {"k": 3, "inertia": 4.730719092276117, "n_iter": 3}, {"k": 4, "inertia": 3.3436127899809343, "n_iter": 2}, {"k": 5, "inertia": 2.3621308411553095, "n_iter": 4}, {"k": 6, "inertia": 1.6783833850432375, "n_iter": 4}, {"k": 7, "inertia": 1.3087316666611315, "n_iter": 3}, {"k": 8, "inertia": 1.0659421816324675, "n_iter": 4}, {"k": 9, "inertia": 0.8002969878568551, "n_iter": 2}]}}, {"mode": "vega-lite"});
-</script></div></div>
 </div>
 <div class="figure align-default" id="id1" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-318e83131e6e4eb9aad3d5e656e46c43"></div>
+<div id="altair-viz-d5cb6eb758cc407796dfe111bc9676a9"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-318e83131e6e4eb9aad3d5e656e46c43") {
-      outputDiv = document.getElementById("altair-viz-318e83131e6e4eb9aad3d5e656e46c43");
+    if (outputDiv.id !== "altair-viz-d5cb6eb758cc407796dfe111bc9676a9") {
+      outputDiv = document.getElementById("altair-viz-d5cb6eb758cc407796dfe111bc9676a9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",

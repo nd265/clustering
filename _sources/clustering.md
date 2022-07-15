@@ -770,12 +770,12 @@ elbow_plot=(
     .configure_axis(labelFontSize=15, titleFontSize=20)
 )
 
-elbow_plot
+
 ```
 
 
 ```{code-cell} ipython3
-:tags: ["hide-cell"]
+:tags: ["remove-cell"]
 glue('elbow_plot', elbow_plot, display=True)
 ```
 
@@ -837,13 +837,13 @@ elbow_plot=(
     .properties(width=400, height=400)
     .configure_axis(labelFontSize=15, titleFontSize=20)
 )
-elbow_plot
+
 
 ```
 
 
 ```{code-cell} ipython3
-:tags: ["hide-cell"]
+:tags: ["remove-cell"]
 glue('elbow_plot', elbow_plot, display=True)
 ```
 
