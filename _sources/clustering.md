@@ -767,8 +767,9 @@ elbow_plot=(
     .configure_axis(labelFontSize=15, titleFontSize=20)
 )
 
-
 ```
+
+++
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
 glue('elbow_plot', elbow_plot, display=True)
@@ -780,6 +781,7 @@ glue('elbow_plot', elbow_plot, display=True)
 
 A plot showing the total WSSD versus the number of clusters.
 :::
+
 
 
 
@@ -832,6 +834,8 @@ elbow_plot=(
 
 
 ```
+
+++
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
 glue('elbow_plot', elbow_plot, display=True)
@@ -841,9 +845,8 @@ glue('elbow_plot', elbow_plot, display=True)
 :figwidth: 700px 
 :name: elbow_plot
 
-A plot showing the total WSSD versus the number of clusters.
+A plot showing the total WSSD versus the number of clusters when K-means is run with 10 restarts.
 :::
-
 
 ## Exercises
 
