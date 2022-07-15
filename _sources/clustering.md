@@ -767,6 +767,7 @@ elbow_plot=(
     .configure_axis(labelFontSize=15, titleFontSize=20)
 )
 
+elbow_plot
 ```
 
 

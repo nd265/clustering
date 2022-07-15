@@ -1431,13 +1431,13 @@ of the cluster assignments for each point, as shown in Figure &#64;ref(fig:10-pl
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-c5ea4d5d3c7d414aadd2445fa2ccb212"></div>
+<div id="altair-viz-0a6722f7a4ae486983fedbe608b36842"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c5ea4d5d3c7d414aadd2445fa2ccb212") {
-      outputDiv = document.getElementById("altair-viz-c5ea4d5d3c7d414aadd2445fa2ccb212");
+    if (outputDiv.id !== "altair-viz-0a6722f7a4ae486983fedbe608b36842") {
+      outputDiv = document.getElementById("altair-viz-0a6722f7a4ae486983fedbe608b36842");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1757,6 +1757,88 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
     <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
     <span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="p">)</span>
+
+<span class="n">elbow_plot</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/site-packages/altair/vegalite/v4/api.py:2020,</span> in <span class="ni">Chart.to_dict</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2018</span>     <span class="n">copy</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">InlineData</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="p">[{}])</span>
+<span class="g g-Whitespace">   </span><span class="mi">2019</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">Chart</span><span class="p">,</span> <span class="n">copy</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2020</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/site-packages/altair/vegalite/v4/api.py:374,</span> in <span class="ni">TopLevelMixin.to_dict</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">372</span> <span class="n">copy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">373</span> <span class="n">original_data</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">copy</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="n">Undefined</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">374</span> <span class="n">copy</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">_prepare_data</span><span class="p">(</span><span class="n">original_data</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">376</span> <span class="k">if</span> <span class="n">original_data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">Undefined</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="n">context</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">original_data</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/site-packages/altair/vegalite/v4/api.py:97,</span> in <span class="ni">_prepare_data</span><span class="nt">(data, context)</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span> <span class="c1"># consolidate inline data to top-level datasets</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span> <span class="k">if</span> <span class="n">context</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">data_transformers</span><span class="o">.</span><span class="n">consolidate_datasets</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">97</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">_consolidate_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span> <span class="c1"># if data is still not a recognized type, then return</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">Data</span><span class="p">)):</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/site-packages/altair/vegalite/v4/api.py:64,</span> in <span class="ni">_consolidate_data</span><span class="nt">(data, context)</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span>         <span class="n">kwds</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s2">&quot;values&quot;</span><span class="p">}</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="k">if</span> <span class="n">values</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">Undefined</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">64</span>     <span class="n">name</span> <span class="o">=</span> <span class="n">_dataset_name</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">NamedData</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span>     <span class="n">context</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;datasets&quot;</span><span class="p">,</span> <span class="p">{})[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/site-packages/altair/vegalite/v4/api.py:37,</span> in <span class="ni">_dataset_name</span><span class="nt">(values)</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="k">if</span> <span class="n">values</span> <span class="o">==</span> <span class="p">[{}]:</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="k">return</span> <span class="s2">&quot;empty&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">37</span> <span class="n">values_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="n">hsh</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">values_json</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="k">return</span> <span class="s2">&quot;data-&quot;</span> <span class="o">+</span> <span class="n">hsh</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/json/__init__.py:234,</span> in <span class="ni">dumps</span><span class="nt">(obj, skipkeys, ensure_ascii, check_circular, allow_nan, cls, indent, separators, default, sort_keys, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">232</span> <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="bp">cls</span> <span class="o">=</span> <span class="n">JSONEncoder</span>
+<span class="ne">--&gt; </span><span class="mi">234</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span>     <span class="n">skipkeys</span><span class="o">=</span><span class="n">skipkeys</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="n">ensure_ascii</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="n">check_circular</span><span class="o">=</span><span class="n">check_circular</span><span class="p">,</span> <span class="n">allow_nan</span><span class="o">=</span><span class="n">allow_nan</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="n">separators</span><span class="o">=</span><span class="n">separators</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">default</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="n">sort_keys</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="o">**</span><span class="n">kw</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/json/encoder.py:199,</span> in <span class="ni">JSONEncoder.encode</span><span class="nt">(self, o)</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span>         <span class="k">return</span> <span class="n">encode_basestring</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="c1"># This doesn&#39;t pass the iterator directly to &#39;&#39;.join() because the</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span> <span class="c1"># exceptions aren&#39;t as detailed.  The list call should be roughly</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="c1"># equivalent to the PySequence_Fast that &#39;&#39;.join() would do.</span>
+<span class="ne">--&gt; </span><span class="mi">199</span> <span class="n">chunks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">iterencode</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">_one_shot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">chunks</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span>     <span class="n">chunks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/json/encoder.py:257,</span> in <span class="ni">JSONEncoder.iterencode</span><span class="nt">(self, o, _one_shot)</span>
+<span class="g g-Whitespace">    </span><span class="mi">252</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">253</span>     <span class="n">_iterencode</span> <span class="o">=</span> <span class="n">_make_iterencode</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span>         <span class="n">markers</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="n">_encoder</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">indent</span><span class="p">,</span> <span class="n">floatstr</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">255</span>         <span class="bp">self</span><span class="o">.</span><span class="n">key_separator</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">item_separator</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_keys</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">256</span>         <span class="bp">self</span><span class="o">.</span><span class="n">skipkeys</span><span class="p">,</span> <span class="n">_one_shot</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">257</span> <span class="k">return</span> <span class="n">_iterencode</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/dsci/lib/python3.9/json/encoder.py:179,</span> in <span class="ni">JSONEncoder.default</span><span class="nt">(self, o)</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">o</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span>     <span class="sd">&quot;&quot;&quot;Implement this method in a subclass such that it returns</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span><span class="sd">     a serializable object for ``o``, or calls the base implementation</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span><span class="sd">     (to raise a ``TypeError``).</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">177</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">179</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Object of type </span><span class="si">{</span><span class="n">o</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1"> &#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span>                     <span class="sa">f</span><span class="s1">&#39;is not JSON serializable&#39;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: Object of type KMeans is not JSON serializable
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>alt.Chart(...)
 </pre></div>
 </div>
 </div>
