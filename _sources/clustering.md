@@ -19,8 +19,6 @@ kernelspec:
 
 
 ```{code-cell} ipython3
-import warnings
-warnings.filterwarnings("ignore")
 
 import pandas as pd
 import numpy as np
@@ -29,6 +27,13 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.compose import make_column_transformer
 
 import altair as alt
+
+```
+
+```{code-cell} ipython3
+:tags: ["remove-cell"]
+import warnings
+warnings.filterwarnings("ignore")
 
 ```
 
@@ -292,6 +297,7 @@ have.
 
 
 ```{code-cell} ipython3
+:tags: ["remove-cell"]
 clus = data[data["cluster"] == 2].loc[:,["bill_length_standardized", "flipper_length_standardized"]]
 ```
 
@@ -587,8 +593,7 @@ standardized_data
 ## K-means in Python
 
 To perform K-means clustering in Python, we use the `KMeans` function. \index{K-means!kmeans function} It takes at
-least two arguments: the data frame containing the data you wish to cluster,
-and K, the number of clusters (here we choose K = 3). Note that since the K-means
+least one argument: K, the number of clusters (here we choose K = 3). Note that since the K-means
 algorithm uses a random initialization of assignments, but since we set the random seed, the clustering will be reproducible.
 
 
@@ -608,11 +613,11 @@ penguin_clust
 
 ```{code-cell} ipython3
 
-print(penguin_clust.inertia_)
-print(penguin_clust.cluster_centers_)
-print(penguin_clust.n_iter_)
-print(penguin_clust.labels_)
-print(penguin_clust.n_clusters)
+print(f"Inertia/WSSD : {penguin_clust.inertia_}")
+print(f"Cluster centres : {penguin_clust.cluster_centers_}")
+print(f"No. of iterations : {penguin_clust.n_iter_}")
+print(f"Cluster labels : {penguin_clust.labels_}")
+
 ```
 
 As you can see above, the clustering object is returned by `KMeans` 
@@ -655,9 +660,6 @@ cluster_plot = (
     ).properties(width=400, height=400)
     .configure_axis(labelFontSize=20, titleFontSize=20)
 )
-
-
-
 
 
 ```
@@ -719,7 +721,7 @@ and the other holding the clustering model objects.
 penguin_clust_ks
 ```
 
-If we wanted to get one of the clusterings out of the column in the data frame, we could use a familiar friend: `.iloc` property. And then to extract the `inertia` or any other attribute of the cluster object, we can simply access it using the `.` operator. Below, we will extract the details of the cluster object, where `k=2`
+If we wanted to get one of the clusterings out of the column in the data frame, we could use a familiar friend: `.iloc` property. And then to extract the `inertia` or any other attribute of the cluster object, we can simply access it using the dot `.` operator. Below, we will extract the details of the cluster object, where `k=2`
 
 
 ```{code-cell} ipython3
@@ -756,7 +758,6 @@ Now that we have `inertia` and `k` as columns in a data frame, we can make a lin
 ```{code-cell} ipython3
 
 penguin_clust_ks = penguin_clust_ks.drop(columns = 'penguin_clusts')
-penguin_clust_ks
 ```
 
 ```{code-cell} ipython3
@@ -798,27 +799,19 @@ Technically yes, but remember:  K-means can get "stuck" in a bad solution.
 Unfortunately, for K = 7 we had an unlucky initialization
 and found a bad clustering! \index{K-means!restart, nstart} 
 We can help prevent finding a bad clustering 
-by trying a few different random initializations 
-via the `nstart` argument (Figure \@ref(fig:10-choose-k-nstart) 
-shows a setup where we use 10 restarts). 
-When we do this, K-means clustering will be performed 
-the number of times specified by the `nstart` argument,
-and R will return to us the best clustering from this.
+by removing the `init='random'` as the argument in `KMeans`.
+The default value for `init` argument is `k-means++`, which selects 
+initial cluster centers for k-mean clustering in a smart way to speed up convergence
+
 The more times we perform K-means clustering,
 the more likely we are to find a good clustering (if one exists).
-What value should you choose for `nstart`? The answer is that it depends
-on many factors: the size and characteristics of your data set,
-as well as the speed and size of your computer.
-The larger the `nstart` value the better from an analysis perspective, 
-but there is a trade-off that doing many clusterings 
-could take a long time.
-So this is something that needs to be balanced.
 
+Below, we try `KMeans` without the `init` argument and notice that the clustering doesn't get stuck.
 
 ```{code-cell} ipython3
 penguin_clust_ks = penguin_clust_ks.assign(
     penguin_clusts=penguin_clust_ks['k'].apply(
-        lambda x: KMeans(n_clusters=x, n_init=3, init='k-means++').fit(standardized_data)
+        lambda x: KMeans(n_clusters=x, n_init=3).fit(standardized_data)
     )
 )
 

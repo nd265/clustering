@@ -436,10 +436,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Clustering {#clustering}<a class="headerlink" href="#clustering-clustering" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
-
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
@@ -778,13 +775,6 @@ have.</p>
 <h2>K-means<a class="headerlink" href="#k-means" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="measuring-cluster-quality">
 <h3>Measuring cluster quality<a class="headerlink" href="#measuring-cluster-quality" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clus</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;cluster&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s2">&quot;bill_length_standardized&quot;</span><span class="p">,</span> <span class="s2">&quot;flipper_length_standardized&quot;</span><span class="p">]]</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>The K-means algorithm is a procedure that groups data into K clusters.
 It starts with an initial clustering of the data, and then iteratively
 improves it by making adjustments to the assignment of data
@@ -1202,8 +1192,7 @@ using <code class="docutils literal notranslate"><span class="pre">fit_transform
 <div class="section" id="k-means-in-python">
 <h2>K-means in Python<a class="headerlink" href="#k-means-in-python" title="Permalink to this headline">¶</a></h2>
 <p>To perform K-means clustering in Python, we use the <code class="docutils literal notranslate"><span class="pre">KMeans</span></code> function. \index{K-means!kmeans function} It takes at
-least two arguments: the data frame containing the data you wish to cluster,
-and K, the number of clusters (here we choose K = 3). Note that since the K-means
+least one argument: K, the number of clusters (here we choose K = 3). Note that since the K-means
 algorithm uses a random initialization of assignments, but since we set the random seed, the clustering will be reproducible.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1225,22 +1214,20 @@ algorithm uses a random initialization of assignments, but since we set the rand
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">penguin_clust</span><span class="o">.</span><span class="n">inertia_</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">penguin_clust</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">penguin_clust</span><span class="o">.</span><span class="n">n_iter_</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">penguin_clust</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">penguin_clust</span><span class="o">.</span><span class="n">n_clusters</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Inertia/WSSD : </span><span class="si">{</span><span class="n">penguin_clust</span><span class="o">.</span><span class="n">inertia_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cluster centres : </span><span class="si">{</span><span class="n">penguin_clust</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No. of iterations : </span><span class="si">{</span><span class="n">penguin_clust</span><span class="o">.</span><span class="n">n_iter_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cluster labels : </span><span class="si">{</span><span class="n">penguin_clust</span><span class="o">.</span><span class="n">labels_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.730719092276117
-[[ 1.01445401 -0.36265343]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Inertia/WSSD : 4.730719092276117
+Cluster centres : [[ 1.01445401 -0.36265343]
  [-1.03417802 -0.79156085]
  [ 0.70260136  1.29718342]]
-2
-[1 1 1 1 1 1 1 1 2 2 2 2 2 2 0 0 0 0]
-3
+No. of iterations : 2
+Cluster labels : [1 1 1 1 1 1 1 1 2 2 2 2 2 2 0 0 0 0]
 </pre></div>
 </div>
 </div>
@@ -1431,13 +1418,13 @@ of the cluster assignments for each point, as shown in Figure &#64;ref(fig:10-pl
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-43cf15d08ba842fbba8c587eda76b616"></div>
+<div id="altair-viz-2b409f2a56cf48a58127e6285cb58dd4"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-43cf15d08ba842fbba8c587eda76b616") {
-      outputDiv = document.getElementById("altair-viz-43cf15d08ba842fbba8c587eda76b616");
+    if (outputDiv.id !== "altair-viz-2b409f2a56cf48a58127e6285cb58dd4") {
+      outputDiv = document.getElementById("altair-viz-2b409f2a56cf48a58127e6285cb58dd4");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1610,7 +1597,7 @@ and the other holding the clustering model objects.</p>
 </table>
 </div></div></div>
 </div>
-<p>If we wanted to get one of the clusterings out of the column in the data frame, we could use a familiar friend: <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> property. And then to extract the <code class="docutils literal notranslate"><span class="pre">inertia</span></code> or any other attribute of the cluster object, we can simply access it using the <code class="docutils literal notranslate"><span class="pre">.</span></code> operator. Below, we will extract the details of the cluster object, where <code class="docutils literal notranslate"><span class="pre">k=2</span></code></p>
+<p>If we wanted to get one of the clusterings out of the column in the data frame, we could use a familiar friend: <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> property. And then to extract the <code class="docutils literal notranslate"><span class="pre">inertia</span></code> or any other attribute of the cluster object, we can simply access it using the dot <code class="docutils literal notranslate"><span class="pre">.</span></code> operator. Below, we will extract the details of the cluster object, where <code class="docutils literal notranslate"><span class="pre">k=2</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;penguin_clusts&#39;</span><span class="p">]</span>
@@ -1748,92 +1735,9 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;penguin_clusts&#39;</span><span class="p">)</span>
-<span class="n">penguin_clust_ks</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>k</th>
-      <th>inertia</th>
-      <th>n_iter</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>36.000000</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>11.576264</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>4.730719</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>4.046972</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>2.362131</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>6</td>
-      <td>1.849067</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>7</td>
-      <td>2.415241</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>8</td>
-      <td>1.035974</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>9</td>
-      <td>0.971380</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1854,13 +1758,13 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="figure align-default" id="plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-46a63d68127042f7a1a31facf1000e25"></div>
+<div id="altair-viz-88f166fdd59145a186bfedeacf87ba50"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-46a63d68127042f7a1a31facf1000e25") {
-      outputDiv = document.getElementById("altair-viz-46a63d68127042f7a1a31facf1000e25");
+    if (outputDiv.id !== "altair-viz-88f166fdd59145a186bfedeacf87ba50") {
+      outputDiv = document.getElementById("altair-viz-88f166fdd59145a186bfedeacf87ba50");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1917,26 +1821,17 @@ Technically yes, but remember:  K-means can get “stuck” in a bad solution.
 Unfortunately, for K = 7 we had an unlucky initialization
 and found a bad clustering! \index{K-means!restart, nstart}
 We can help prevent finding a bad clustering
-by trying a few different random initializations
-via the <code class="docutils literal notranslate"><span class="pre">nstart</span></code> argument (Figure &#64;ref(fig:10-choose-k-nstart)
-shows a setup where we use 10 restarts).
-When we do this, K-means clustering will be performed
-the number of times specified by the <code class="docutils literal notranslate"><span class="pre">nstart</span></code> argument,
-and R will return to us the best clustering from this.
-The more times we perform K-means clustering,
-the more likely we are to find a good clustering (if one exists).
-What value should you choose for <code class="docutils literal notranslate"><span class="pre">nstart</span></code>? The answer is that it depends
-on many factors: the size and characteristics of your data set,
-as well as the speed and size of your computer.
-The larger the <code class="docutils literal notranslate"><span class="pre">nstart</span></code> value the better from an analysis perspective,
-but there is a trade-off that doing many clusterings
-could take a long time.
-So this is something that needs to be balanced.</p>
+by removing the <code class="docutils literal notranslate"><span class="pre">init='random'</span></code> as the argument in <code class="docutils literal notranslate"><span class="pre">KMeans</span></code>.
+The default value for <code class="docutils literal notranslate"><span class="pre">init</span></code> argument is <code class="docutils literal notranslate"><span class="pre">k-means++</span></code>, which selects
+initial cluster centers for k-mean clustering in a smart way to speed up convergence</p>
+<p>The more times we perform K-means clustering,
+the more likely we are to find a good clustering (if one exists).</p>
+<p>Below, we try <code class="docutils literal notranslate"><span class="pre">KMeans</span></code> without the <code class="docutils literal notranslate"><span class="pre">init</span></code> argument and notice that the clustering doesn’t get stuck.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">penguin_clusts</span><span class="o">=</span><span class="n">penguin_clust_ks</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
-        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">standardized_data</span><span class="p">)</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">standardized_data</span><span class="p">)</span>
     <span class="p">)</span>
 <span class="p">)</span>
 
@@ -1963,13 +1858,13 @@ So this is something that needs to be balanced.</p>
 <div class="figure align-default" id="elbow-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-de4b6bead8b64ebba5b4d4fa415da317"></div>
+<div id="altair-viz-89acd92cc4414d6cae2e0feb26843d25"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-de4b6bead8b64ebba5b4d4fa415da317") {
-      outputDiv = document.getElementById("altair-viz-de4b6bead8b64ebba5b4d4fa415da317");
+    if (outputDiv.id !== "altair-viz-89acd92cc4414d6cae2e0feb26843d25") {
+      outputDiv = document.getElementById("altair-viz-89acd92cc4414d6cae2e0feb26843d25");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
