@@ -740,7 +740,7 @@ K-means clustering objects, and 2 for the clustering statistics:
 ```{code-cell} ipython3
 penguin_clust_ks = penguin_clust_ks.assign(
     inertia=penguin_clust_ks["penguin_clusts"].apply(lambda x: x.inertia_),
-    n_iter =penguin_clust_ks["penguin_clusts"].apply(lambda x: x.n_iter_)
+    n_iter=penguin_clust_ks["penguin_clusts"].apply(lambda x: x.n_iter_)
 
 )
     
@@ -759,7 +759,7 @@ penguin_clust_ks = penguin_clust_ks.drop(columns = 'penguin_clusts')
 ```
 
 ```{code-cell} ipython3
-elbow_plot=(
+plot=(
     alt.Chart(penguin_clust_ks)
     .mark_line(point=True)
     .encode(
@@ -776,12 +776,12 @@ elbow_plot=(
 
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
-glue('elbow_plot', elbow_plot, display=True)
+glue('plot', plot, display=True)
 ```
 
-:::{glue:figure} elbow_plot 
+:::{glue:figure} plot 
 :figwidth: 700px 
-:name: elbow_plot
+:name: plot
 
 A plot showing the total WSSD versus the number of clusters.
 :::

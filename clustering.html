@@ -1431,13 +1431,13 @@ of the cluster assignments for each point, as shown in Figure &#64;ref(fig:10-pl
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-eed0dffc5fea423e8359e9db788abc3a"></div>
+<div id="altair-viz-e5005a57b07141bb8f309ee963a5ca46"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-eed0dffc5fea423e8359e9db788abc3a") {
-      outputDiv = document.getElementById("altair-viz-eed0dffc5fea423e8359e9db788abc3a");
+    if (outputDiv.id !== "altair-viz-e5005a57b07141bb8f309ee963a5ca46") {
+      outputDiv = document.getElementById("altair-viz-e5005a57b07141bb8f309ee963a5ca46");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1640,7 +1640,7 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">inertia</span><span class="o">=</span><span class="n">penguin_clust_ks</span><span class="p">[</span><span class="s2">&quot;penguin_clusts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">inertia_</span><span class="p">),</span>
-    <span class="n">n_iter</span> <span class="o">=</span><span class="n">penguin_clust_ks</span><span class="p">[</span><span class="s2">&quot;penguin_clusts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">n_iter_</span><span class="p">)</span>
+    <span class="n">n_iter</span><span class="o">=</span><span class="n">penguin_clust_ks</span><span class="p">[</span><span class="s2">&quot;penguin_clusts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">n_iter_</span><span class="p">)</span>
 
 <span class="p">)</span>
     
@@ -1754,7 +1754,7 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elbow_plot</span><span class="o">=</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="o">=</span><span class="p">(</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">penguin_clust_ks</span><span class="p">)</span>
     <span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
@@ -1768,16 +1768,16 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 </div>
 </div>
 </div>
-<div class="figure align-default" id="elbow-plot" style="width: 700px">
+<div class="figure align-default" id="plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-d5cb6eb758cc407796dfe111bc9676a9"></div>
+<div id="altair-viz-1a7a6933255d4affa6d47fa522bf8339"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d5cb6eb758cc407796dfe111bc9676a9") {
-      outputDiv = document.getElementById("altair-viz-d5cb6eb758cc407796dfe111bc9676a9");
+    if (outputDiv.id !== "altair-viz-1a7a6933255d4affa6d47fa522bf8339") {
+      outputDiv = document.getElementById("altair-viz-1a7a6933255d4affa6d47fa522bf8339");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1823,9 +1823,9 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-772b44915409097b31df568cff60d910"}, "mark": {"type": "line", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-772b44915409097b31df568cff60d910": [{"k": 1, "inertia": 35.99999999999999, "n_iter": 2}, {"k": 2, "inertia": 11.576264153631982, "n_iter": 3}, {"k": 3, "inertia": 4.730719092276117, "n_iter": 3}, {"k": 4, "inertia": 3.3436127899809343, "n_iter": 2}, {"k": 5, "inertia": 2.3621308411553095, "n_iter": 4}, {"k": 6, "inertia": 1.6783833850432375, "n_iter": 4}, {"k": 7, "inertia": 1.3087316666611315, "n_iter": 3}, {"k": 8, "inertia": 1.0659421816324675, "n_iter": 4}, {"k": 9, "inertia": 0.8002969878568551, "n_iter": 2}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-75c103bebf85d08a1a8f7d306c57c62d"}, "mark": {"type": "line", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-75c103bebf85d08a1a8f7d306c57c62d": [{"k": 1, "inertia": 35.99999999999999, "n_iter": 2}, {"k": 2, "inertia": 11.576264153631982, "n_iter": 3}, {"k": 3, "inertia": 4.730719092276117, "n_iter": 3}, {"k": 4, "inertia": 4.046971636164045, "n_iter": 2}, {"k": 5, "inertia": 2.3621308411553095, "n_iter": 4}, {"k": 6, "inertia": 1.8490674361826995, "n_iter": 4}, {"k": 7, "inertia": 2.4152411605291895, "n_iter": 3}, {"k": 8, "inertia": 1.0359735206766723, "n_iter": 4}, {"k": 9, "inertia": 0.9713796058938011, "n_iter": 2}]}}, {"mode": "vega-lite"});
 </script></div></div>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters.</span><a class="headerlink" href="#elbow-plot" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters.</span><a class="headerlink" href="#plot" title="Permalink to this image">¶</a></p>
 </div>
 <p>It looks like 3 clusters is the right choice for this data.
 But why is there a “bump” in the total WSSD plot here?
@@ -1877,16 +1877,16 @@ So this is something that needs to be balanced.</p>
 </div>
 </div>
 </div>
-<div class="figure align-default" id="id1" style="width: 700px">
+<div class="figure align-default" id="elbow-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-d5cb6eb758cc407796dfe111bc9676a9"></div>
+<div id="altair-viz-2709d4dcc178496c83b723319771cad4"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d5cb6eb758cc407796dfe111bc9676a9") {
-      outputDiv = document.getElementById("altair-viz-d5cb6eb758cc407796dfe111bc9676a9");
+    if (outputDiv.id !== "altair-viz-2709d4dcc178496c83b723319771cad4") {
+      outputDiv = document.getElementById("altair-viz-2709d4dcc178496c83b723319771cad4");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1934,7 +1934,7 @@ So this is something that needs to be balanced.</p>
     }
   })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-772b44915409097b31df568cff60d910"}, "mark": {"type": "line", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-772b44915409097b31df568cff60d910": [{"k": 1, "inertia": 35.99999999999999, "n_iter": 2}, {"k": 2, "inertia": 11.576264153631982, "n_iter": 3}, {"k": 3, "inertia": 4.730719092276117, "n_iter": 3}, {"k": 4, "inertia": 3.3436127899809343, "n_iter": 2}, {"k": 5, "inertia": 2.3621308411553095, "n_iter": 4}, {"k": 6, "inertia": 1.6783833850432375, "n_iter": 4}, {"k": 7, "inertia": 1.3087316666611315, "n_iter": 3}, {"k": 8, "inertia": 1.0659421816324675, "n_iter": 4}, {"k": 9, "inertia": 0.8002969878568551, "n_iter": 2}]}}, {"mode": "vega-lite"});
 </script></div></div>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters when K-means is run with 10 restarts.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters when K-means is run with 10 restarts.</span><a class="headerlink" href="#elbow-plot" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="exercises">
