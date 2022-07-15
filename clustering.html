@@ -1431,13 +1431,13 @@ of the cluster assignments for each point, as shown in Figure &#64;ref(fig:10-pl
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-a30ca24e7886463c892af7a438554c2e"></div>
+<div id="altair-viz-ebfd0787adec44e9aa9eb705b43c3ea1"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a30ca24e7886463c892af7a438554c2e") {
-      outputDiv = document.getElementById("altair-viz-a30ca24e7886463c892af7a438554c2e");
+    if (outputDiv.id !== "altair-viz-ebfd0787adec44e9aa9eb705b43c3ea1") {
+      outputDiv = document.getElementById("altair-viz-ebfd0787adec44e9aa9eb705b43c3ea1");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1640,24 +1640,108 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
     <span class="n">inertia</span><span class="o">=</span><span class="n">penguin_clust_ks</span><span class="p">[</span><span class="s2">&quot;penguin_clusts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">inertia_</span><span class="p">),</span>
-    <span class="n">n_iter</span> <span class="o">=</span><span class="n">penguin_clust_ks</span><span class="p">[</span><span class="s2">&quot;penguin_clusts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">n_iter_</span><span class="p">),</span>
+    <span class="n">n_iter</span> <span class="o">=</span><span class="n">penguin_clust_ks</span><span class="p">[</span><span class="s2">&quot;penguin_clusts&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">n_iter_</span><span class="p">)</span>
 
 <span class="p">)</span>
     
-<span class="p">)</span>
+
 
 <span class="n">penguin_clust_ks</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">27</span><span class="p">]</span>
-    <span class="p">)</span>
-    <span class="o">^</span>
-<span class="ne">SyntaxError</span>: unmatched &#39;)&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>k</th>
+      <th>penguin_clusts</th>
+      <th>inertia</th>
+      <th>n_iter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>KMeans(init='random', n_clusters=1, n_init=3)</td>
+      <td>36.000000</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>KMeans(init='random', n_clusters=2, n_init=3)</td>
+      <td>11.576264</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>KMeans(init='random', n_clusters=3, n_init=3)</td>
+      <td>4.730719</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>KMeans(init='random', n_clusters=4, n_init=3)</td>
+      <td>4.046972</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>KMeans(init='random', n_clusters=5, n_init=3)</td>
+      <td>2.362131</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>KMeans(init='random', n_clusters=6, n_init=3)</td>
+      <td>1.849067</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>KMeans(init='random', n_clusters=7, n_init=3)</td>
+      <td>2.415241</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>KMeans(init='random', n_init=3)</td>
+      <td>1.035974</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>KMeans(init='random', n_clusters=9, n_init=3)</td>
+      <td>0.971380</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Now that we have <code class="docutils literal notranslate"><span class="pre">inertia</span></code> and <code class="docutils literal notranslate"><span class="pre">k</span></code> as columns in a data frame, we can make a line plot
 (Figure &#64;ref(fig:10-plot-choose-k)) and search for the “elbow” to find which value of K to use.</p>
