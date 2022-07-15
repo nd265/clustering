@@ -769,9 +769,9 @@ elbow_plot=(
 
 ```
 
-++
+
 ```{code-cell} ipython3
-:tags: ["remove-cell"]
+:tags: ["hide-cell"]
 glue('elbow_plot', elbow_plot, display=True)
 ```
 
@@ -835,9 +835,9 @@ elbow_plot=(
 
 ```
 
-++
+
 ```{code-cell} ipython3
-:tags: ["remove-cell"]
+:tags: ["hide-cell"]
 glue('elbow_plot', elbow_plot, display=True)
 ```
 
