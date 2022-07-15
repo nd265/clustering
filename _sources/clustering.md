@@ -256,7 +256,6 @@ colored_scatter_plot = alt.Chart(data, title="Scatter plot of standardized bill 
     titleFontSize=12
 ).configure_title(fontSize=12)
  
- 
 ```
 
 
