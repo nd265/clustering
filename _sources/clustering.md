@@ -738,26 +738,29 @@ This results in a data frame with 4 columns, one for K, one for the
 K-means clustering objects, and 2 for the clustering statistics:
 
 ```{code-cell} ipython3
-penguin_clust_df = penguin_clust_ks.assign(
+penguin_clust_ks = penguin_clust_ks.assign(
     inertia=penguin_clust_ks["penguin_clusts"].apply(lambda x: x.inertia_),
     n_iter =penguin_clust_ks["penguin_clusts"].apply(lambda x: x.n_iter_)
 
-).drop(columns=['penguin_clusts'])
+)
     
 
 
-penguin_clust_df
+penguin_clust_ks
 ```
 
 
 Now that we have `inertia` and `k` as columns in a data frame, we can make a line plot 
-(Figure \@ref(fig:10-plot-choose-k)) and search for the "elbow" to find which value of K to use. 
+(Figure \@ref(fig:10-plot-choose-k)) and search for the "elbow" to find which value of K to use. We will drop the column `penguin_clusts` to make the plotting in altair feasible
 
+```{code-cell} ipython3
 
+penguin_clust_ks = penguin_clust_ks.drop(columns = 'penguin_clusts')
+```
 
 ```{code-cell} ipython3
 elbow_plot=(
-    alt.Chart(penguin_clust_df)
+    alt.Chart(penguin_clust_ks)
     .mark_line(point=True)
     .encode(
         x=alt.X("k", title="K"),
@@ -812,18 +815,20 @@ So this is something that needs to be balanced.
 
 
 ```{code-cell} ipython3
-penguin_clust_df = penguin_clust_ks.assign(
+penguin_clust_ks = penguin_clust_ks.assign(
     penguin_clusts=penguin_clust_ks['k'].apply(
         lambda x: KMeans(n_clusters=x, n_init=3, init='k-means++').fit(standardized_data)
     )
 )
 
-penguin_clust_df = penguin_clust_ks.assign(
+penguin_clust_ks = penguin_clust_ks.assign(
     inertia=penguin_clust_ks["penguin_clusts"].apply(lambda x: x.inertia_)
-).drop(columns=['penguin_clusts'])
+).drop(columns = 'penguin_clusts')
+
+
 
 elbow_plot=(
-    alt.Chart(penguin_clust_df)
+    alt.Chart(penguin_clust_ks)
     .mark_line(point=True)
     .encode(
         x=alt.X("k", title="K"),
