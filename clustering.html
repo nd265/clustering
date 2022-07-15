@@ -707,13 +707,13 @@ to see if we can detect subtypes or groups in our data set.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-827e1f6cc6094f39bd2c035a147d6418"></div>
+<div id="altair-viz-c5cc11aaa947497aa11b81c1e199ba7d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-827e1f6cc6094f39bd2c035a147d6418") {
-      outputDiv = document.getElementById("altair-viz-827e1f6cc6094f39bd2c035a147d6418");
+    if (outputDiv.id !== "altair-viz-c5cc11aaa947497aa11b81c1e199ba7d") {
+      outputDiv = document.getElementById("altair-viz-c5cc11aaa947497aa11b81c1e199ba7d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1467,77 +1467,20 @@ of the cluster assignments for each point, as shown in Figure &#64;ref(fig:10-pl
     <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
     <span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="p">)</span>
-<span class="n">cluster_plot</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<div id="altair-viz-d1e97347260b41eebeba9387ac33b57a"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d1e97347260b41eebeba9387ac33b57a") {
-      outputDiv = document.getElementById("altair-viz-d1e97347260b41eebeba9387ac33b57a");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 20, "titleFontSize": 20}}, "data": {"name": "data-f9ba5372ad17f212b1b1827985326fef"}, "mark": "circle", "encoding": {"color": {"field": "clusters", "scale": {"scheme": "dark2"}, "title": "Cluster", "type": "ordinal"}, "x": {"field": "flipper_length_mm", "title": "Flipper Length (standardized)", "type": "quantitative"}, "y": {"field": "bill_length_mm", "title": "Bill Length (standardized)", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-f9ba5372ad17f212b1b1827985326fef": [{"bill_length_mm": -0.6599548427421356, "flipper_length_mm": -0.19527492342808553, "clusters": 1}, {"bill_length_mm": -1.1781100181422628, "flipper_length_mm": -1.366924463996594, "clusters": 1}, {"bill_length_mm": -1.561928666586801, "flipper_length_mm": -0.948478199507841, "clusters": 1}, {"bill_length_mm": -1.1397281532978085, "flipper_length_mm": -0.948478199507841, "clusters": 1}, {"bill_length_mm": -0.871055099386632, "flipper_length_mm": -1.4506137168943447, "clusters": 1}, {"bill_length_mm": -0.6599548427421356, "flipper_length_mm": -0.6974104408145891, "clusters": 1}, {"bill_length_mm": -1.2740646802533975, "flipper_length_mm": -0.27896417632583614, "clusters": 1}, {"bill_length_mm": -0.9286278966533135, "flipper_length_mm": -0.4463426821213374, "clusters": 1}, {"bill_length_mm": 0.7409832240804287, "flipper_length_mm": 1.2274423758336748, "clusters": 2}, {"bill_length_mm": 0.6642194943915214, "flipper_length_mm": 1.394820881629176, "clusters": 2}, {"bill_length_mm": 0.990465345569378, "flipper_length_mm": 1.394820881629176, "clusters": 2}, {"bill_length_mm": 0.453119237747025, "flipper_length_mm": 1.813267146117929, "clusters": 2}, {"bill_length_mm": 1.2399474670583288, "flipper_length_mm": 1.1437531229359241, "clusters": 2}, {"bill_length_mm": 0.12687338656916688, "flipper_length_mm": 0.8089961113449218, "clusters": 2}, {"bill_length_mm": 0.6450285619692941, "flipper_length_mm": -0.27896417632583614, "clusters": 0}, {"bill_length_mm": 0.7793650889248831, "flipper_length_mm": -0.27896417632583614, "clusters": 0}, {"bill_length_mm": 1.8348663721473635, "flipper_length_mm": -0.11158567053033494, "clusters": 0}, {"bill_length_mm": 0.7985560213471089, "flipper_length_mm": -0.7810996937123398, "clusters": 0}]}}, {"mode": "vega-lite"});
-</script></div></div>
 </div>
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-ac5e38685c0042e79e057379855c7f9c"></div>
+<div id="altair-viz-5b6b7af74fd44faea099f04a2580342d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-ac5e38685c0042e79e057379855c7f9c") {
-      outputDiv = document.getElementById("altair-viz-ac5e38685c0042e79e057379855c7f9c");
+    if (outputDiv.id !== "altair-viz-5b6b7af74fd44faea099f04a2580342d") {
+      outputDiv = document.getElementById("altair-viz-5b6b7af74fd44faea099f04a2580342d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1871,13 +1814,13 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="figure align-default" id="plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-de04491e768d474cab590c4b8fe80da2"></div>
+<div id="altair-viz-bc89b4e98fd646eb9bb43b1d2bb97c87"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-de04491e768d474cab590c4b8fe80da2") {
-      outputDiv = document.getElementById("altair-viz-de04491e768d474cab590c4b8fe80da2");
+    if (outputDiv.id !== "altair-viz-bc89b4e98fd646eb9bb43b1d2bb97c87") {
+      outputDiv = document.getElementById("altair-viz-bc89b4e98fd646eb9bb43b1d2bb97c87");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1971,13 +1914,13 @@ the more likely we are to find a good clustering (if one exists).</p>
 <div class="figure align-default" id="elbow-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-596e8b1f7ab4436e8bda243fa900fad7"></div>
+<div id="altair-viz-c75081df6f864eec867a6c19bf9770f1"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-596e8b1f7ab4436e8bda243fa900fad7") {
-      outputDiv = document.getElementById("altair-viz-596e8b1f7ab4436e8bda243fa900fad7");
+    if (outputDiv.id !== "altair-viz-c75081df6f864eec867a6c19bf9770f1") {
+      outputDiv = document.getElementById("altair-viz-c75081df6f864eec867a6c19bf9770f1");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
