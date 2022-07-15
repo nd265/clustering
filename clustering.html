@@ -701,10 +701,66 @@ to see if we can detect subtypes or groups in our data set.</p>
     <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
     <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">12</span>
 <span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span><span class="n">fontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
- 
+<span class="n">scatter_plot</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-827e1f6cc6094f39bd2c035a147d6418"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-827e1f6cc6094f39bd2c035a147d6418") {
+      outputDiv = document.getElementById("altair-viz-827e1f6cc6094f39bd2c035a147d6418");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 12}, "title": {"fontSize": 12}}, "data": {"name": "data-ebb59f3fa086785a5682bd5f8fba47af"}, "mark": {"type": "circle", "color": "black"}, "encoding": {"x": {"field": "flipper_length_standardized", "title": "Flipper Length (standardized)", "type": "quantitative"}, "y": {"field": "bill_length_standardized", "title": "Bill Length (standardized)", "type": "quantitative"}}, "title": "Scatter plot of standardized bill length versus standardized flipper length.", "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-ebb59f3fa086785a5682bd5f8fba47af": [{"flipper_length_standardized": -0.189773114129794, "bill_length_standardized": -0.641360823466598}, {"flipper_length_standardized": -1.32841179890856, "bill_length_standardized": -1.14491714043714}, {"flipper_length_standardized": -0.921755125773284, "bill_length_standardized": -1.51792181967458}, {"flipper_length_standardized": -0.921755125773284, "bill_length_standardized": -1.1076166725134}, {"flipper_length_standardized": -1.40974313353561, "bill_length_standardized": -0.846513397047191}, {"flipper_length_standardized": -0.677761121892121, "bill_length_standardized": -0.641360823466598}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": -1.2381683102465}, {"flipper_length_standardized": -0.433767118010958, "bill_length_standardized": -0.902464098932808}, {"flipper_length_standardized": 1.19285957453013, "bill_length_standardized": 0.720106255750059}, {"flipper_length_standardized": 1.35552224378424, "bill_length_standardized": 0.645505319902572}, {"flipper_length_standardized": 1.35552224378424, "bill_length_standardized": 0.962559297254395}, {"flipper_length_standardized": 1.76217891691951, "bill_length_standardized": 0.440352746321979}, {"flipper_length_standardized": 1.11152823990308, "bill_length_standardized": 1.20501233875873}, {"flipper_length_standardized": 0.786202901394858, "bill_length_standardized": 0.123298768970154}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": 0.626855085940699}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": 0.757406723673804}, {"flipper_length_standardized": -0.10844177950274, "bill_length_standardized": 1.78316959157677}, {"flipper_length_standardized": -0.759092456519175, "bill_length_standardized": 0.776056957635675}]}}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 <div class="figure align-default" id="scatter-plot" style="width: 700px">
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length.</span><a class="headerlink" href="#scatter-plot" title="Permalink to this image">¶</a></p>
@@ -1411,20 +1467,77 @@ of the cluster assignments for each point, as shown in Figure &#64;ref(fig:10-pl
     <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
     <span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span><span class="n">labelFontSize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="p">)</span>
+<span class="n">cluster_plot</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-2b409f2a56cf48a58127e6285cb58dd4"></div>
+<div id="altair-viz-d1e97347260b41eebeba9387ac33b57a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2b409f2a56cf48a58127e6285cb58dd4") {
-      outputDiv = document.getElementById("altair-viz-2b409f2a56cf48a58127e6285cb58dd4");
+    if (outputDiv.id !== "altair-viz-d1e97347260b41eebeba9387ac33b57a") {
+      outputDiv = document.getElementById("altair-viz-d1e97347260b41eebeba9387ac33b57a");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 20, "titleFontSize": 20}}, "data": {"name": "data-f9ba5372ad17f212b1b1827985326fef"}, "mark": "circle", "encoding": {"color": {"field": "clusters", "scale": {"scheme": "dark2"}, "title": "Cluster", "type": "ordinal"}, "x": {"field": "flipper_length_mm", "title": "Flipper Length (standardized)", "type": "quantitative"}, "y": {"field": "bill_length_mm", "title": "Bill Length (standardized)", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-f9ba5372ad17f212b1b1827985326fef": [{"bill_length_mm": -0.6599548427421356, "flipper_length_mm": -0.19527492342808553, "clusters": 1}, {"bill_length_mm": -1.1781100181422628, "flipper_length_mm": -1.366924463996594, "clusters": 1}, {"bill_length_mm": -1.561928666586801, "flipper_length_mm": -0.948478199507841, "clusters": 1}, {"bill_length_mm": -1.1397281532978085, "flipper_length_mm": -0.948478199507841, "clusters": 1}, {"bill_length_mm": -0.871055099386632, "flipper_length_mm": -1.4506137168943447, "clusters": 1}, {"bill_length_mm": -0.6599548427421356, "flipper_length_mm": -0.6974104408145891, "clusters": 1}, {"bill_length_mm": -1.2740646802533975, "flipper_length_mm": -0.27896417632583614, "clusters": 1}, {"bill_length_mm": -0.9286278966533135, "flipper_length_mm": -0.4463426821213374, "clusters": 1}, {"bill_length_mm": 0.7409832240804287, "flipper_length_mm": 1.2274423758336748, "clusters": 2}, {"bill_length_mm": 0.6642194943915214, "flipper_length_mm": 1.394820881629176, "clusters": 2}, {"bill_length_mm": 0.990465345569378, "flipper_length_mm": 1.394820881629176, "clusters": 2}, {"bill_length_mm": 0.453119237747025, "flipper_length_mm": 1.813267146117929, "clusters": 2}, {"bill_length_mm": 1.2399474670583288, "flipper_length_mm": 1.1437531229359241, "clusters": 2}, {"bill_length_mm": 0.12687338656916688, "flipper_length_mm": 0.8089961113449218, "clusters": 2}, {"bill_length_mm": 0.6450285619692941, "flipper_length_mm": -0.27896417632583614, "clusters": 0}, {"bill_length_mm": 0.7793650889248831, "flipper_length_mm": -0.27896417632583614, "clusters": 0}, {"bill_length_mm": 1.8348663721473635, "flipper_length_mm": -0.11158567053033494, "clusters": 0}, {"bill_length_mm": 0.7985560213471089, "flipper_length_mm": -0.7810996937123398, "clusters": 0}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
+<div class="figure align-default" id="cluster-plot" style="width: 700px">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-ac5e38685c0042e79e057379855c7f9c"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-ac5e38685c0042e79e057379855c7f9c") {
+      outputDiv = document.getElementById("altair-viz-ac5e38685c0042e79e057379855c7f9c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1758,13 +1871,13 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="figure align-default" id="plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-88f166fdd59145a186bfedeacf87ba50"></div>
+<div id="altair-viz-de04491e768d474cab590c4b8fe80da2"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-88f166fdd59145a186bfedeacf87ba50") {
-      outputDiv = document.getElementById("altair-viz-88f166fdd59145a186bfedeacf87ba50");
+    if (outputDiv.id !== "altair-viz-de04491e768d474cab590c4b8fe80da2") {
+      outputDiv = document.getElementById("altair-viz-de04491e768d474cab590c4b8fe80da2");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1858,13 +1971,13 @@ the more likely we are to find a good clustering (if one exists).</p>
 <div class="figure align-default" id="elbow-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-89acd92cc4414d6cae2e0feb26843d25"></div>
+<div id="altair-viz-596e8b1f7ab4436e8bda243fa900fad7"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-89acd92cc4414d6cae2e0feb26843d25") {
-      outputDiv = document.getElementById("altair-viz-89acd92cc4414d6cae2e0feb26843d25");
+    if (outputDiv.id !== "altair-viz-596e8b1f7ab4436e8bda243fa900fad7") {
+      outputDiv = document.getElementById("altair-viz-596e8b1f7ab4436e8bda243fa900fad7");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
