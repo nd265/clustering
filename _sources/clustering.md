@@ -832,7 +832,7 @@ elbow_plot=(
     .properties(width=400, height=400)
     .configure_axis(labelFontSize=15, titleFontSize=20)
 )
-
+elbow_plot
 
 ```
 
