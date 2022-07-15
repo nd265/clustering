@@ -1431,13 +1431,13 @@ of the cluster assignments for each point, as shown in Figure &#64;ref(fig:10-pl
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-e5005a57b07141bb8f309ee963a5ca46"></div>
+<div id="altair-viz-43cf15d08ba842fbba8c587eda76b616"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e5005a57b07141bb8f309ee963a5ca46") {
-      outputDiv = document.getElementById("altair-viz-e5005a57b07141bb8f309ee963a5ca46");
+    if (outputDiv.id !== "altair-viz-43cf15d08ba842fbba8c587eda76b616") {
+      outputDiv = document.getElementById("altair-viz-43cf15d08ba842fbba8c587eda76b616");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1748,9 +1748,92 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;penguin_clusts&#39;</span><span class="p">)</span>
+<span class="n">penguin_clust_ks</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>k</th>
+      <th>inertia</th>
+      <th>n_iter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>36.000000</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>11.576264</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>4.730719</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>4.046972</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>2.362131</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>1.849067</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>2.415241</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>1.035974</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>0.971380</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1771,13 +1854,13 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="figure align-default" id="plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-1a7a6933255d4affa6d47fa522bf8339"></div>
+<div id="altair-viz-46a63d68127042f7a1a31facf1000e25"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1a7a6933255d4affa6d47fa522bf8339") {
-      outputDiv = document.getElementById("altair-viz-1a7a6933255d4affa6d47fa522bf8339");
+    if (outputDiv.id !== "altair-viz-46a63d68127042f7a1a31facf1000e25") {
+      outputDiv = document.getElementById("altair-viz-46a63d68127042f7a1a31facf1000e25");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1880,13 +1963,13 @@ So this is something that needs to be balanced.</p>
 <div class="figure align-default" id="elbow-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-2709d4dcc178496c83b723319771cad4"></div>
+<div id="altair-viz-de4b6bead8b64ebba5b4d4fa415da317"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2709d4dcc178496c83b723319771cad4") {
-      outputDiv = document.getElementById("altair-viz-2709d4dcc178496c83b723319771cad4");
+    if (outputDiv.id !== "altair-viz-de4b6bead8b64ebba5b4d4fa415da317") {
+      outputDiv = document.getElementById("altair-viz-de4b6bead8b64ebba5b4d4fa415da317");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",

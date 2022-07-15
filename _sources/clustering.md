@@ -756,6 +756,7 @@ Now that we have `inertia` and `k` as columns in a data frame, we can make a lin
 ```{code-cell} ipython3
 
 penguin_clust_ks = penguin_clust_ks.drop(columns = 'penguin_clusts')
+penguin_clust_ks
 ```
 
 ```{code-cell} ipython3
