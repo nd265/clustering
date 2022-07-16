@@ -199,13 +199,13 @@ scatter_plot = alt.Chart(penguin_data, title="Scatter plot of standardized bill 
     labelFontSize=12,
     titleFontSize=12
 ).configure_title(fontSize=12)
-scatter_plot
+
 ```
 
 
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
-glue('scatter_plot', scatter_plot, display=False)
+glue('scatter_plot', scatter_plot, display=True)
 ```
 
 
