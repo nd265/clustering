@@ -766,9 +766,9 @@ to see if we can detect subtypes or groups in our data set.</p>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length.</span><a class="headerlink" href="#scatter-plot" title="Permalink to this image">¶</a></p>
 </div>
 <p>Based \index{ggplot}\index{ggplot!geom_point} on the visualization
-in Figure &#64;ref(fig:10-toy-example-plot),
+in <a class="reference internal" href="#scatter-plot"><span class="std std-numref">Fig. 2</span></a>,
 we might suspect there are a few subtypes of penguins within our data set.
-We can see roughly 3 groups of observations in Figure &#64;ref(fig:10-toy-example-plot),
+We can see roughly 3 groups of observations in <a class="reference internal" href="#scatter-plot"><span class="std std-numref">Fig. 2</span></a>,
 including:</p>
 <ol class="simple">
 <li><p>a small flipper and bill length group,</p></li>
@@ -788,7 +788,7 @@ In this chapter, we will focus on the <em>K-means</em> algorithm,
 combined with the <em>elbow method</em> \index{elbow method}
 for selecting the number of clusters.
 This procedure will separate the data into groups;
-Figure &#64;ref(fig:10-toy-example-clustering) shows these groups
+<a class="reference internal" href="#colored-scatter-plot"><span class="std std-numref">Fig. 3</span></a> shows these groups
 denoted by colored scatter points.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -845,8 +845,8 @@ Then we would compute the coordinates, <span class="math notranslate nohighlight
 <p><span class="math notranslate nohighlight">\(\mu_x = \frac{1}{4}(x_1+x_2+x_3+x_4) \quad \mu_y = \frac{1}{4}(y_1+y_2+y_3+y_4)\)</span></p>
 <p>In the first cluster from the example, there are <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">4</span></code></span> data points. These are shown with their cluster center
 (flipper_length_standardized = <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">-0.35</span></code></span> and bill_length_standardized = <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">0.99</span></code></span>) highlighted
-in Figure &#64;ref(fig:10-toy-example-clus1-center).</p>
-<p>(ref:10-toy-example-clus1-center) Cluster 1 from the <code class="docutils literal notranslate"><span class="pre">penguin_data</span></code> data set example. Observations are in blue, with the cluster center highlighted in red.</p>
+in <a class="reference internal" href="#toy-example-clus1-center-1"><span class="std std-numref">Fig. 4</span></a></p>
+<p><a class="reference internal" href="#toy-example-clus1-center-1"><span class="std std-numref">Fig. 4</span></a> Cluster 1 from the <code class="docutils literal notranslate"><span class="pre">penguin_data</span></code> data set example. Observations are in blue, with the cluster center highlighted in red.</p>
 <div class="figure align-default" id="toy-example-clus1-center-1">
 <a class="reference internal image-reference" href="_images/toy-example-clus1-center-1.png"><img alt="_images/toy-example-clus1-center-1.png" src="_images/toy-example-clus1-center-1.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Cluster 1 from the penguin_data data set example. Observations are in blue, with the cluster center highlighted in red.</span><a class="headerlink" href="#toy-example-clus1-center-1" title="Permalink to this image">¶</a></p>
@@ -859,7 +859,7 @@ that we learned about in Chapter &#64;ref(classification).
 In the <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">4</span></code></span>-observation cluster example above,
 we would compute the WSSD <span class="math notranslate nohighlight">\(S^2\)</span> via</p>
 <p><span class="math notranslate nohighlight">\(S^2 = \left((x_1 - \mu_x)^2 + (y_1 - \mu_y)^2\right) + \left((x_2 - \mu_x)^2 + (y_2 - \mu_y)^2\right) + \left((x_3 - \mu_x)^2 + (y_3 - \mu_y)^2\right)  +  \left((x_4 - \mu_x)^2 + (y_4 - \mu_y)^2\right)\)</span></p>
-<p>These distances are denoted by lines in Figure &#64;ref(fig:10-toy-example-clus1-dists) for the first cluster of the penguin data example.</p>
+<p>These distances are denoted by lines in <a class="reference internal" href="#toy-example-clus1-dists-1"><span class="std std-numref">Fig. 5</span></a> for the first cluster of the penguin data example.</p>
 <p>(ref:10-toy-example-clus1-dists) Cluster 1 from the <code class="docutils literal notranslate"><span class="pre">penguin_data</span></code> data set example. Observations are in blue, with the cluster center highlighted in red. The distances from the observations to the cluster center are represented as black lines.</p>
 <div class="figure align-default" id="toy-example-clus1-dists-1">
 <a class="reference internal image-reference" href="_images/toy-example-clus1-dists-1.png"><img alt="_images/toy-example-clus1-dists-1.png" src="_images/toy-example-clus1-dists-1.png" style="height: 400px;" /></a>

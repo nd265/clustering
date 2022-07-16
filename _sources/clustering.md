@@ -217,9 +217,9 @@ Scatter plot of standardized bill length versus standardized flipper length.
 
 
 Based \index{ggplot}\index{ggplot!geom\_point} on the visualization 
-in Figure \@ref(fig:10-toy-example-plot), 
+in {numref}`scatter_plot`, 
 we might suspect there are a few subtypes of penguins within our data set.
-We can see roughly 3 groups of observations in Figure \@ref(fig:10-toy-example-plot),
+We can see roughly 3 groups of observations in {numref}`scatter_plot`,
 including:
 
 1. a small flipper and bill length group,
@@ -239,7 +239,7 @@ In this chapter, we will focus on the *K-means* algorithm,
 combined with the *elbow method* \index{elbow method} 
 for selecting the number of clusters. 
 This procedure will separate the data into groups;
-Figure \@ref(fig:10-toy-example-clustering) shows these groups
+{numref}`colored_scatter_plot` shows these groups
 denoted by colored scatter points.
 
 
@@ -335,9 +335,9 @@ glue("mean_bill_len_std_glue", mean_bill_len_std)
 
 In the first cluster from the example, there are {glue:}`clus_rows_glue` data points. These are shown with their cluster center 
 (flipper_length_standardized = {glue:}`mean_flipper_len_std_glue` and bill_length_standardized = {glue:}`mean_bill_len_std_glue`) highlighted 
-in Figure \@ref(fig:10-toy-example-clus1-center).
+in {numref}`toy-example-clus1-center-1`
 
-(ref:10-toy-example-clus1-center) Cluster 1 from the `penguin_data` data set example. Observations are in blue, with the cluster center highlighted in red.
+{numref}`toy-example-clus1-center-1` Cluster 1 from the `penguin_data` data set example. Observations are in blue, with the cluster center highlighted in red.
 
 ```{figure} img/toy-example-clus1-center-1.png
 ---
@@ -359,7 +359,7 @@ we would compute the WSSD $S^2$ via
 
 $S^2 = \left((x_1 - \mu_x)^2 + (y_1 - \mu_y)^2\right) + \left((x_2 - \mu_x)^2 + (y_2 - \mu_y)^2\right) + \left((x_3 - \mu_x)^2 + (y_3 - \mu_y)^2\right)  +  \left((x_4 - \mu_x)^2 + (y_4 - \mu_y)^2\right)$
 
-These distances are denoted by lines in Figure \@ref(fig:10-toy-example-clus1-dists) for the first cluster of the penguin data example. 
+These distances are denoted by lines in {numref}`toy-example-clus1-dists-1` for the first cluster of the penguin data example. 
 
 (ref:10-toy-example-clus1-dists) Cluster 1 from the `penguin_data` data set example. Observations are in blue, with the cluster center highlighted in red. The distances from the observations to the cluster center are represented as black lines.
 
