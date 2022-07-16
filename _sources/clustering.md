@@ -101,7 +101,7 @@ principal component analysis, multidimensional scaling, and more;
 see the additional resources section at the end of this chapter 
 for where to begin learning more about these other methods.
 
-\newpage
+
 
 > **Note:** There are also so-called *semisupervised* tasks, \index{semisupervised} 
 > where only some of the data come with response variable labels/values, 
