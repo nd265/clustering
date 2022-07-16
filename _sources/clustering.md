@@ -210,12 +210,9 @@ glue('scatter_plot', scatter_plot, display=True)
 
 
 
-:::{glue:figure} scatter_plot 
-    :figwidth: 700px 
-    :name: scatter_plot
-Scatter plot of standardized bill length versus standardized flipper length.
-:::
+:::{glue:figure} scatter_plot :figwidth: 700px :name: scatter_plot
 
+Scatter plot of standardized bill length versus standardized flipper length. :::
 
 
 

@@ -705,13 +705,13 @@ to see if we can detect subtypes or groups in our data set.</p>
 </div>
 </div>
 </div>
-<div class="figure align-default" id="scatter-plot" style="width: 700px">
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length.</span><a class="headerlink" href="#scatter-plot" title="Permalink to this image">¶</a></p>
-</div>
+<div class="figure align-default" id="id1">
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length. :::</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<div class="legend">
 <p>Based \index{ggplot}\index{ggplot!geom_point} on the visualization
-in <a class="reference internal" href="#scatter-plot"><span class="std std-numref">Fig. 2</span></a>,
+in <code class="xref std std-numref docutils literal notranslate"><span class="pre">scatter_plot</span></code>,
 we might suspect there are a few subtypes of penguins within our data set.
-We can see roughly 3 groups of observations in <a class="reference internal" href="#scatter-plot"><span class="std std-numref">Fig. 2</span></a>,
+We can see roughly 3 groups of observations in <code class="xref std std-numref docutils literal notranslate"><span class="pre">scatter_plot</span></code>,
 including:</p>
 <ol class="simple">
 <li><p>a small flipper and bill length group,</p></li>
@@ -733,24 +733,10 @@ for selecting the number of clusters.
 This procedure will separate the data into groups;
 <a class="reference internal" href="#colored-scatter-plot"><span class="std std-numref">Fig. 3</span></a> shows these groups
 denoted by colored scatter points.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;brown&quot;</span><span class="p">]</span>
-
-<span class="n">colored_scatter_plot</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scatter plot of standardized bill length versus standardized flipper length with colored groups.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;flipper_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Flipper Length (standardized)&quot;</span><span class="p">),</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;bill_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bill Length (standardized)&quot;</span><span class="p">),</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;cluster:N&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">range</span><span class="o">=</span><span class="n">colors</span><span class="p">)))</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
-    <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
-    <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">12</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span><span class="n">fontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
- 
-</pre></div>
-</div>
-</div>
-</div>
 <div class="figure align-default" id="colored-scatter-plot" style="width: 700px">
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length with colored groups.</span><a class="headerlink" href="#colored-scatter-plot" title="Permalink to this image">¶</a></p>
+</div>
+</div>
 </div>
 <p>What are the labels for these groups? Unfortunately, we don’t have any. K-means,
 like almost all clustering algorithms, just outputs meaningless “cluster labels”
@@ -1411,13 +1397,13 @@ of the cluster assignments for each point, as shown in <code class="xref std std
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-a697a04e5cbf45a193e696012c509586"></div>
+<div id="altair-viz-81102a83835a4f51bd24f556cb755432"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a697a04e5cbf45a193e696012c509586") {
-      outputDiv = document.getElementById("altair-viz-a697a04e5cbf45a193e696012c509586");
+    if (outputDiv.id !== "altair-viz-81102a83835a4f51bd24f556cb755432") {
+      outputDiv = document.getElementById("altair-viz-81102a83835a4f51bd24f556cb755432");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1751,13 +1737,13 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="figure align-default" id="plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-258fa39f1e564845aae776640b29bc5e"></div>
+<div id="altair-viz-f5a0b46b374640a685c504fc7fd5ea9b"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-258fa39f1e564845aae776640b29bc5e") {
-      outputDiv = document.getElementById("altair-viz-258fa39f1e564845aae776640b29bc5e");
+    if (outputDiv.id !== "altair-viz-f5a0b46b374640a685c504fc7fd5ea9b") {
+      outputDiv = document.getElementById("altair-viz-f5a0b46b374640a685c504fc7fd5ea9b");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1851,13 +1837,13 @@ the more likely we are to find a good clustering (if one exists).</p>
 <div class="figure align-default" id="elbow-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-4c63a1ca136d4062b80f7eddcfae6a41"></div>
+<div id="altair-viz-c22d0f72fbfe452ba166f613134a185d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4c63a1ca136d4062b80f7eddcfae6a41") {
-      outputDiv = document.getElementById("altair-viz-4c63a1ca136d4062b80f7eddcfae6a41");
+    if (outputDiv.id !== "altair-viz-c22d0f72fbfe452ba166f613134a185d") {
+      outputDiv = document.getElementById("altair-viz-c22d0f72fbfe452ba166f613134a185d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
