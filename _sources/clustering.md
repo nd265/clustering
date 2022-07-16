@@ -195,8 +195,8 @@ to see if we can detect subtypes or groups in our data set.
 
 
 ```{code-cell} ipython3
-scatter = (
-        alt.Chart(penguin_data, title="Scatter plot of standardized bill length versus standardized flipper length.")
+scatter_plot = (
+    alt.Chart(penguin_data)
         .mark_circle(color='black').encode(
         x = alt.X("flipper_length_standardized", title="Flipper Length (standardized)"),
         y = alt.Y("bill_length_standardized", title="Bill Length (standardized)"))
@@ -205,19 +205,20 @@ scatter = (
         titleFontSize=12
     ).configure_title(fontSize=12)
 )
-scatter
-```
 
+
+```
 
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
-glue('scatter', scatter, display=True)
+glue('scatter_plot', scatter_plot, display=True)
 ```
 
-:::{glue:figure} scatter
+:::{glue:figure} scatter_plot 
 :figwidth: 700px 
-:name: scatter
-Scatter plot of standardized bill length versus standardized flipper length. 
+:name: scatter_plot
+
+Scatter plot of standardized bill length versus standardized flipper length.
 :::
 
 
@@ -649,7 +650,7 @@ clustered_data
 ```
 
 Now that we have this information in a data frame, we can make a visualization
-of the cluster assignments for each point, as shown in {numref}`cluster_plot `.
+of the cluster assignments for each point, as shown in {numref}`cluster_plot`.
 
 
 ```{code-cell} ipython3
