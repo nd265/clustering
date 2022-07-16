@@ -190,9 +190,6 @@ penguin_data
 Next, we can create a scatter plot using this data set 
 to see if we can detect subtypes or groups in our data set.
 
-\newpage
-
-
 
 ```{code-cell} ipython3
 scatter_plot = (
