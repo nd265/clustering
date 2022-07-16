@@ -701,20 +701,74 @@ to see if we can detect subtypes or groups in our data set.</p>
     <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
     <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">12</span>
 <span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span><span class="n">fontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">scatter_plot</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-323ddaace24245899599854b3dd803a0"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-323ddaace24245899599854b3dd803a0") {
+      outputDiv = document.getElementById("altair-viz-323ddaace24245899599854b3dd803a0");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 12}, "title": {"fontSize": 12}}, "data": {"name": "data-ebb59f3fa086785a5682bd5f8fba47af"}, "mark": {"type": "circle", "color": "black"}, "encoding": {"x": {"field": "flipper_length_standardized", "title": "Flipper Length (standardized)", "type": "quantitative"}, "y": {"field": "bill_length_standardized", "title": "Bill Length (standardized)", "type": "quantitative"}}, "title": "Scatter plot of standardized bill length versus standardized flipper length.", "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-ebb59f3fa086785a5682bd5f8fba47af": [{"flipper_length_standardized": -0.189773114129794, "bill_length_standardized": -0.641360823466598}, {"flipper_length_standardized": -1.32841179890856, "bill_length_standardized": -1.14491714043714}, {"flipper_length_standardized": -0.921755125773284, "bill_length_standardized": -1.51792181967458}, {"flipper_length_standardized": -0.921755125773284, "bill_length_standardized": -1.1076166725134}, {"flipper_length_standardized": -1.40974313353561, "bill_length_standardized": -0.846513397047191}, {"flipper_length_standardized": -0.677761121892121, "bill_length_standardized": -0.641360823466598}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": -1.2381683102465}, {"flipper_length_standardized": -0.433767118010958, "bill_length_standardized": -0.902464098932808}, {"flipper_length_standardized": 1.19285957453013, "bill_length_standardized": 0.720106255750059}, {"flipper_length_standardized": 1.35552224378424, "bill_length_standardized": 0.645505319902572}, {"flipper_length_standardized": 1.35552224378424, "bill_length_standardized": 0.962559297254395}, {"flipper_length_standardized": 1.76217891691951, "bill_length_standardized": 0.440352746321979}, {"flipper_length_standardized": 1.11152823990308, "bill_length_standardized": 1.20501233875873}, {"flipper_length_standardized": 0.786202901394858, "bill_length_standardized": 0.123298768970154}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": 0.626855085940699}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": 0.757406723673804}, {"flipper_length_standardized": -0.10844177950274, "bill_length_standardized": 1.78316959157677}, {"flipper_length_standardized": -0.759092456519175, "bill_length_standardized": 0.776056957635675}]}}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
-<div class="figure align-default" id="scatter-plot" style="width: 300px">
+<div class="figure align-default" id="scatter-plot" style="width: 700px">
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length.</span><a class="headerlink" href="#scatter-plot" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure align-default" id="id1" style="width: 700px">
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
 <p>Based \index{ggplot}\index{ggplot!geom_point} on the visualization
-in <code class="xref std std-numref docutils literal notranslate"><span class="pre">scatter_plot</span></code>,
+in <a class="reference internal" href="#scatter-plot"><span class="std std-numref">Fig. 2</span></a>,
 we might suspect there are a few subtypes of penguins within our data set.
-We can see roughly 3 groups of observations in <code class="xref std std-numref docutils literal notranslate"><span class="pre">scatter_plot</span></code>,
+We can see roughly 3 groups of observations in <a class="reference internal" href="#scatter-plot"><span class="std std-numref">Fig. 2</span></a>,
 including:</p>
 <ol class="simple">
 <li><p>a small flipper and bill length group,</p></li>
@@ -734,7 +788,7 @@ In this chapter, we will focus on the <em>K-means</em> algorithm,
 combined with the <em>elbow method</em> \index{elbow method}
 for selecting the number of clusters.
 This procedure will separate the data into groups;
-<a class="reference internal" href="#colored-scatter-plot"><span class="std std-numref">Fig. 4</span></a> shows these groups
+<a class="reference internal" href="#colored-scatter-plot"><span class="std std-numref">Fig. 3</span></a> shows these groups
 denoted by colored scatter points.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -753,7 +807,7 @@ denoted by colored scatter points.</p>
 </div>
 </div>
 <div class="figure align-default" id="colored-scatter-plot" style="width: 700px">
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length with colored groups.</span><a class="headerlink" href="#colored-scatter-plot" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length with colored groups.</span><a class="headerlink" href="#colored-scatter-plot" title="Permalink to this image">¶</a></p>
 </div>
 <p>What are the labels for these groups? Unfortunately, we don’t have any. K-means,
 like almost all clustering algorithms, just outputs meaningless “cluster labels”
@@ -791,10 +845,10 @@ Then we would compute the coordinates, <span class="math notranslate nohighlight
 <p><span class="math notranslate nohighlight">\(\mu_x = \frac{1}{4}(x_1+x_2+x_3+x_4) \quad \mu_y = \frac{1}{4}(y_1+y_2+y_3+y_4)\)</span></p>
 <p>In the first cluster from the example, there are <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">4</span></code></span> data points. These are shown with their cluster center
 (flipper_length_standardized = <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">-0.35</span></code></span> and bill_length_standardized = <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">0.99</span></code></span>) highlighted
-in <a class="reference internal" href="#toy-example-clus1-center-1"><span class="std std-numref">Fig. 5</span></a></p>
+in <a class="reference internal" href="#toy-example-clus1-center-1"><span class="std std-numref">Fig. 4</span></a></p>
 <div class="figure align-default" id="toy-example-clus1-center-1">
 <a class="reference internal image-reference" href="_images/toy-example-clus1-center-1.png"><img alt="_images/toy-example-clus1-center-1.png" src="_images/toy-example-clus1-center-1.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Cluster 1 from the penguin_data data set example. Observations are in blue, with the cluster center highlighted in red.</span><a class="headerlink" href="#toy-example-clus1-center-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Cluster 1 from the penguin_data data set example. Observations are in blue, with the cluster center highlighted in red.</span><a class="headerlink" href="#toy-example-clus1-center-1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The second step in computing the WSSD is to add up the squared distance
 \index{distance!K-means} between each point in the cluster
@@ -804,10 +858,10 @@ that we learned about in Chapter &#64;ref(classification).
 In the <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">4</span></code></span>-observation cluster example above,
 we would compute the WSSD <span class="math notranslate nohighlight">\(S^2\)</span> via</p>
 <p><span class="math notranslate nohighlight">\(S^2 = \left((x_1 - \mu_x)^2 + (y_1 - \mu_y)^2\right) + \left((x_2 - \mu_x)^2 + (y_2 - \mu_y)^2\right) + \left((x_3 - \mu_x)^2 + (y_3 - \mu_y)^2\right)  +  \left((x_4 - \mu_x)^2 + (y_4 - \mu_y)^2\right)\)</span></p>
-<p>These distances are denoted by lines in <a class="reference internal" href="#toy-example-clus1-dists-1"><span class="std std-numref">Fig. 6</span></a> for the first cluster of the penguin data example.</p>
+<p>These distances are denoted by lines in <a class="reference internal" href="#toy-example-clus1-dists-1"><span class="std std-numref">Fig. 5</span></a> for the first cluster of the penguin data example.</p>
 <div class="figure align-default" id="toy-example-clus1-dists-1">
 <a class="reference internal image-reference" href="_images/toy-example-clus1-dists-1.png"><img alt="_images/toy-example-clus1-dists-1.png" src="_images/toy-example-clus1-dists-1.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Cluster 1 from the penguin_data data set example. Observations are in blue, with the cluster center highlighted in red. The distances from the observations to the cluster center are represented as black lines.</span><a class="headerlink" href="#toy-example-clus1-dists-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Cluster 1 from the penguin_data data set example. Observations are in blue, with the cluster center highlighted in red. The distances from the observations to the cluster center are represented as black lines.</span><a class="headerlink" href="#toy-example-clus1-dists-1" title="Permalink to this image">¶</a></p>
 </div>
 <p>The larger the value of <span class="math notranslate nohighlight">\(S^2\)</span>, the more spread out the cluster is, since large <span class="math notranslate nohighlight">\(S^2\)</span> means that points are far from the cluster center.
 Note, however, that “large” is relative to <em>both</em> the scale of the variables for clustering <em>and</em> the number of points in the cluster. A cluster where points are very close to the center might still have a large <span class="math notranslate nohighlight">\(S^2\)</span> if there are many data points in the cluster.</p>
@@ -816,10 +870,10 @@ we sum them together to get the <em>total WSSD</em>.
 For our example,
 this means adding up all the squared distances for the 18 observations.
 These distances are denoted by black lines in
-<a class="reference internal" href="#toy-example-all-clus-dists-1"><span class="std std-numref">Fig. 7</span></a></p>
+<a class="reference internal" href="#toy-example-all-clus-dists-1"><span class="std std-numref">Fig. 6</span></a></p>
 <div class="figure align-default" id="toy-example-all-clus-dists-1">
 <a class="reference internal image-reference" href="_images/toy-example-all-clus-dists-1.png"><img alt="_images/toy-example-all-clus-dists-1.png" src="_images/toy-example-all-clus-dists-1.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">All clusters from the penguin_data data set example. Observations are in orange, blue, and yellow with the cluster center highlighted in red. The distances from the observations to each of the respective cluster centers are represented as black lines.</span><a class="headerlink" href="#toy-example-all-clus-dists-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">All clusters from the penguin_data data set example. Observations are in orange, blue, and yellow with the cluster center highlighted in red. The distances from the observations to each of the respective cluster centers are represented as black lines.</span><a class="headerlink" href="#toy-example-all-clus-dists-1" title="Permalink to this image">¶</a></p>
 </div>
 <p>\newpage</p>
 </div>
@@ -828,10 +882,10 @@ These distances are denoted by black lines in
 <p>We begin the K-means \index{K-means!algorithm} algorithm by picking K,
 and randomly assigning a roughly equal number of observations
 to each of the K clusters.
-An example random initialization is shown in <a class="reference internal" href="#toy-kmeans-init-1"><span class="std std-numref">Fig. 8</span></a></p>
+An example random initialization is shown in <a class="reference internal" href="#toy-kmeans-init-1"><span class="std std-numref">Fig. 7</span></a></p>
 <div class="figure align-default" id="toy-kmeans-init-1">
 <a class="reference internal image-reference" href="_images/toy-kmeans-init-1.png"><img alt="_images/toy-kmeans-init-1.png" src="_images/toy-kmeans-init-1.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Random initialization of labels.</span><a class="headerlink" href="#toy-kmeans-init-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Random initialization of labels.</span><a class="headerlink" href="#toy-kmeans-init-1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Then K-means consists of two major steps that attempt to minimize the
 sum of WSSDs over all the clusters, i.e., the \index{WSSD!total} <em>total WSSD</em>:</p>
@@ -841,13 +895,13 @@ sum of WSSDs over all the clusters, i.e., the \index{WSSD!total} <em>total WSSD<
 </ol>
 <p>These two steps are repeated until the cluster assignments no longer change.
 We show what the first four iterations of K-means would look like in<br />
-<a class="reference internal" href="#toy-kmeans-iter-1"><span class="std std-numref">Fig. 9</span></a>
+<a class="reference internal" href="#toy-kmeans-iter-1"><span class="std std-numref">Fig. 8</span></a>
 There each row corresponds to an iteration,
 where the left column depicts the center update,
 and the right column depicts the reassignment of data to clusters.</p>
 <div class="figure align-default" id="toy-kmeans-iter-1">
 <a class="reference internal image-reference" href="_images/toy-kmeans-iter-1.png"><img alt="_images/toy-kmeans-iter-1.png" src="_images/toy-kmeans-iter-1.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">First four iterations of K-means clustering on the penguin_data example data set. Each pair of plots corresponds to an iteration. Within the pair, the first plot depicts the center update, and the second plot depicts the reassignment of data to clusters. Cluster centers are indicated by larger points that are outlined in black.</span><a class="headerlink" href="#toy-kmeans-iter-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">First four iterations of K-means clustering on the penguin_data example data set. Each pair of plots corresponds to an iteration. Within the pair, the first plot depicts the center update, and the second plot depicts the reassignment of data to clusters. Cluster centers are indicated by larger points that are outlined in black.</span><a class="headerlink" href="#toy-kmeans-iter-1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Note that at this point, we can terminate the algorithm since none of the assignments changed
 in the fourth iteration; both the centers and labels will remain the same from this point onward.</p>
@@ -873,15 +927,15 @@ These, however, are beyond the scope of this book.</p>
 <div class="section" id="random-restarts">
 <h3>Random restarts<a class="headerlink" href="#random-restarts" title="Permalink to this headline">¶</a></h3>
 <p>Unlike the classification and regression models we studied in previous chapters, K-means \index{K-means!restart, nstart} can get “stuck” in a bad solution.
-For example, <a class="reference internal" href="#toy-kmeans-bad-init-1"><span class="std std-numref">Fig. 10</span></a> illustrates an unlucky random initialization by K-means.</p>
+For example, <a class="reference internal" href="#toy-kmeans-bad-init-1"><span class="std std-numref">Fig. 9</span></a> illustrates an unlucky random initialization by K-means.</p>
 <div class="figure align-default" id="toy-kmeans-bad-init-1">
 <a class="reference internal image-reference" href="_images/toy-kmeans-bad-init-1.png"><img alt="_images/toy-kmeans-bad-init-1.png" src="_images/toy-kmeans-bad-init-1.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Random initialization of labels.</span><a class="headerlink" href="#toy-kmeans-bad-init-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Random initialization of labels.</span><a class="headerlink" href="#toy-kmeans-bad-init-1" title="Permalink to this image">¶</a></p>
 </div>
-<p><a class="reference internal" href="#toy-kmeans-bad-iter-1"><span class="std std-numref">Fig. 11</span></a> shows what the iterations of K-means would look like with the unlucky random initialization shown in <a class="reference internal" href="#toy-kmeans-bad-init-1"><span class="std std-numref">Fig. 10</span></a></p>
+<p><a class="reference internal" href="#toy-kmeans-bad-iter-1"><span class="std std-numref">Fig. 10</span></a> shows what the iterations of K-means would look like with the unlucky random initialization shown in <a class="reference internal" href="#toy-kmeans-bad-init-1"><span class="std std-numref">Fig. 9</span></a></p>
 <div class="figure align-default" id="toy-kmeans-bad-iter-1">
 <a class="reference internal image-reference" href="_images/toy-kmeans-bad-iter-1.png"><img alt="_images/toy-kmeans-bad-iter-1.png" src="_images/toy-kmeans-bad-iter-1.png" style="height: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">First five iterations of K-means clustering on the penguin_data example data set with a poor random initialization. Each pair of plots corresponds to an iteration. Within the pair, the first plot depicts the center update, and the second plot depicts the reassignment of data to clusters. Cluster centers are indicated by larger points that are outlined in black.</span><a class="headerlink" href="#toy-kmeans-bad-iter-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">First five iterations of K-means clustering on the penguin_data example data set with a poor random initialization. Each pair of plots corresponds to an iteration. Within the pair, the first plot depicts the center update, and the second plot depicts the reassignment of data to clusters. Cluster centers are indicated by larger points that are outlined in black.</span><a class="headerlink" href="#toy-kmeans-bad-iter-1" title="Permalink to this image">¶</a></p>
 </div>
 <p>This looks like a relatively bad clustering of the data, but K-means cannot improve it.
 To solve this problem when clustering data using K-means, we should randomly re-initialize the labels a few times, run K-means for each initialization,
@@ -896,22 +950,22 @@ and cannot perform cross-validation with some measure of model prediction error.
 Further, if K is chosen too small, then multiple clusters get grouped together;
 if K is too large, then clusters get subdivided.
 In both cases, we will potentially miss interesting structure in the data.
-<a class="reference internal" href="#toy-kmeans-vary-k-1"><span class="std std-numref">Fig. 12</span></a> illustrates the impact of K
+<a class="reference internal" href="#toy-kmeans-vary-k-1"><span class="std std-numref">Fig. 11</span></a> illustrates the impact of K
 on K-means clustering of our penguin flipper and bill length data
 by showing the different clusterings for K’s ranging from 1 to 9.</p>
 <div class="figure align-default" id="toy-kmeans-vary-k-1">
 <a class="reference internal image-reference" href="_images/toy-kmeans-vary-k-1.png"><img alt="_images/toy-kmeans-vary-k-1.png" src="_images/toy-kmeans-vary-k-1.png" style="height: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Clustering of the penguin data for K clusters ranging from 1 to 9. Cluster centers are indicated by larger points that are outlined in black.</span><a class="headerlink" href="#toy-kmeans-vary-k-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Clustering of the penguin data for K clusters ranging from 1 to 9. Cluster centers are indicated by larger points that are outlined in black.</span><a class="headerlink" href="#toy-kmeans-vary-k-1" title="Permalink to this image">¶</a></p>
 </div>
 <p>If we set K less than 3, then the clustering merges separate groups of data; this causes a large
 total WSSD, since the cluster center (denoted by an “x”) is not close to any of the data in the cluster. On
 the other hand, if we set K greater than 3, the clustering subdivides subgroups of data; this does indeed still
 decrease the total WSSD, but by only a <em>diminishing amount</em>. If we plot the total WSSD versus the number of
 clusters, we see that the decrease in total WSSD levels off (or forms an “elbow shape”) \index{elbow method} when we reach roughly
-the right number of clusters (<a class="reference internal" href="#toy-kmeans-elbow-1"><span class="std std-numref">Fig. 13</span></a>)).</p>
+the right number of clusters (<a class="reference internal" href="#toy-kmeans-elbow-1"><span class="std std-numref">Fig. 12</span></a>)).</p>
 <div class="figure align-default" id="toy-kmeans-elbow-1">
 <a class="reference internal image-reference" href="_images/toy-kmeans-elbow-1.png"><img alt="_images/toy-kmeans-elbow-1.png" src="_images/toy-kmeans-elbow-1.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Total WSSD for K clusters ranging from 1 to 9.</span><a class="headerlink" href="#toy-kmeans-elbow-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Total WSSD for K clusters ranging from 1 to 9.</span><a class="headerlink" href="#toy-kmeans-elbow-1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -1414,13 +1468,13 @@ of the cluster assignments for each point, as shown in <code class="xref std std
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-a697a04e5cbf45a193e696012c509586"></div>
+<div id="altair-viz-536d6922004a4af2a6438b39d3bea2b3"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a697a04e5cbf45a193e696012c509586") {
-      outputDiv = document.getElementById("altair-viz-a697a04e5cbf45a193e696012c509586");
+    if (outputDiv.id !== "altair-viz-536d6922004a4af2a6438b39d3bea2b3") {
+      outputDiv = document.getElementById("altair-viz-536d6922004a4af2a6438b39d3bea2b3");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1468,7 +1522,7 @@ of the cluster assignments for each point, as shown in <code class="xref std std
     }
   })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 20, "titleFontSize": 20}}, "data": {"name": "data-f9ba5372ad17f212b1b1827985326fef"}, "mark": "circle", "encoding": {"color": {"field": "clusters", "scale": {"scheme": "dark2"}, "title": "Cluster", "type": "ordinal"}, "x": {"field": "flipper_length_mm", "title": "Flipper Length (standardized)", "type": "quantitative"}, "y": {"field": "bill_length_mm", "title": "Bill Length (standardized)", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-f9ba5372ad17f212b1b1827985326fef": [{"bill_length_mm": -0.6599548427421356, "flipper_length_mm": -0.19527492342808553, "clusters": 1}, {"bill_length_mm": -1.1781100181422628, "flipper_length_mm": -1.366924463996594, "clusters": 1}, {"bill_length_mm": -1.561928666586801, "flipper_length_mm": -0.948478199507841, "clusters": 1}, {"bill_length_mm": -1.1397281532978085, "flipper_length_mm": -0.948478199507841, "clusters": 1}, {"bill_length_mm": -0.871055099386632, "flipper_length_mm": -1.4506137168943447, "clusters": 1}, {"bill_length_mm": -0.6599548427421356, "flipper_length_mm": -0.6974104408145891, "clusters": 1}, {"bill_length_mm": -1.2740646802533975, "flipper_length_mm": -0.27896417632583614, "clusters": 1}, {"bill_length_mm": -0.9286278966533135, "flipper_length_mm": -0.4463426821213374, "clusters": 1}, {"bill_length_mm": 0.7409832240804287, "flipper_length_mm": 1.2274423758336748, "clusters": 2}, {"bill_length_mm": 0.6642194943915214, "flipper_length_mm": 1.394820881629176, "clusters": 2}, {"bill_length_mm": 0.990465345569378, "flipper_length_mm": 1.394820881629176, "clusters": 2}, {"bill_length_mm": 0.453119237747025, "flipper_length_mm": 1.813267146117929, "clusters": 2}, {"bill_length_mm": 1.2399474670583288, "flipper_length_mm": 1.1437531229359241, "clusters": 2}, {"bill_length_mm": 0.12687338656916688, "flipper_length_mm": 0.8089961113449218, "clusters": 2}, {"bill_length_mm": 0.6450285619692941, "flipper_length_mm": -0.27896417632583614, "clusters": 0}, {"bill_length_mm": 0.7793650889248831, "flipper_length_mm": -0.27896417632583614, "clusters": 0}, {"bill_length_mm": 1.8348663721473635, "flipper_length_mm": -0.11158567053033494, "clusters": 0}, {"bill_length_mm": 0.7985560213471089, "flipper_length_mm": -0.7810996937123398, "clusters": 0}]}}, {"mode": "vega-lite"});
 </script></div></div>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">The data colored by the cluster assignments returned by K-means.</span><a class="headerlink" href="#cluster-plot" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">The data colored by the cluster assignments returned by K-means.</span><a class="headerlink" href="#cluster-plot" title="Permalink to this image">¶</a></p>
 </div>
 <p>As mentioned above, we also need to select K by finding
 where the “elbow” occurs in the plot of total WSSD versus the number of clusters.
@@ -1727,7 +1781,7 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 </div></div></div>
 </div>
 <p>Now that we have <code class="docutils literal notranslate"><span class="pre">inertia</span></code> and <code class="docutils literal notranslate"><span class="pre">k</span></code> as columns in a data frame, we can make a line plot
-(<a class="reference internal" href="#plot"><span class="std std-numref">Fig. 15</span></a>) and search for the “elbow” to find which value of K to use. We will drop the column <code class="docutils literal notranslate"><span class="pre">penguin_clusts</span></code> to make the plotting in altair feasible</p>
+(<a class="reference internal" href="#plot"><span class="std std-numref">Fig. 14</span></a>) and search for the “elbow” to find which value of K to use. We will drop the column <code class="docutils literal notranslate"><span class="pre">penguin_clusts</span></code> to make the plotting in altair feasible</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;penguin_clusts&#39;</span><span class="p">)</span>
@@ -1754,13 +1808,13 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="figure align-default" id="plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-258fa39f1e564845aae776640b29bc5e"></div>
+<div id="altair-viz-24127028430644b6b5595cc30bcc69bd"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-258fa39f1e564845aae776640b29bc5e") {
-      outputDiv = document.getElementById("altair-viz-258fa39f1e564845aae776640b29bc5e");
+    if (outputDiv.id !== "altair-viz-24127028430644b6b5595cc30bcc69bd") {
+      outputDiv = document.getElementById("altair-viz-24127028430644b6b5595cc30bcc69bd");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1808,7 +1862,7 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
     }
   })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-75c103bebf85d08a1a8f7d306c57c62d"}, "mark": {"type": "line", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-75c103bebf85d08a1a8f7d306c57c62d": [{"k": 1, "inertia": 35.99999999999999, "n_iter": 2}, {"k": 2, "inertia": 11.576264153631982, "n_iter": 3}, {"k": 3, "inertia": 4.730719092276117, "n_iter": 3}, {"k": 4, "inertia": 4.046971636164045, "n_iter": 2}, {"k": 5, "inertia": 2.3621308411553095, "n_iter": 4}, {"k": 6, "inertia": 1.8490674361826995, "n_iter": 4}, {"k": 7, "inertia": 2.4152411605291895, "n_iter": 3}, {"k": 8, "inertia": 1.0359735206766723, "n_iter": 4}, {"k": 9, "inertia": 0.9713796058938011, "n_iter": 2}]}}, {"mode": "vega-lite"});
 </script></div></div>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters.</span><a class="headerlink" href="#plot" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters.</span><a class="headerlink" href="#plot" title="Permalink to this image">¶</a></p>
 </div>
 <p>It looks like 3 clusters is the right choice for this data.
 But why is there a “bump” in the total WSSD plot here?
@@ -1854,13 +1908,13 @@ the more likely we are to find a good clustering (if one exists).</p>
 <div class="figure align-default" id="elbow-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-4c63a1ca136d4062b80f7eddcfae6a41"></div>
+<div id="altair-viz-fc870688b8e94777817b67645dfca7a9"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4c63a1ca136d4062b80f7eddcfae6a41") {
-      outputDiv = document.getElementById("altair-viz-4c63a1ca136d4062b80f7eddcfae6a41");
+    if (outputDiv.id !== "altair-viz-fc870688b8e94777817b67645dfca7a9") {
+      outputDiv = document.getElementById("altair-viz-fc870688b8e94777817b67645dfca7a9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1908,7 +1962,7 @@ the more likely we are to find a good clustering (if one exists).</p>
     }
   })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-772b44915409097b31df568cff60d910"}, "mark": {"type": "line", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-772b44915409097b31df568cff60d910": [{"k": 1, "inertia": 35.99999999999999, "n_iter": 2}, {"k": 2, "inertia": 11.576264153631982, "n_iter": 3}, {"k": 3, "inertia": 4.730719092276117, "n_iter": 3}, {"k": 4, "inertia": 3.3436127899809343, "n_iter": 2}, {"k": 5, "inertia": 2.3621308411553095, "n_iter": 4}, {"k": 6, "inertia": 1.6783833850432375, "n_iter": 4}, {"k": 7, "inertia": 1.3087316666611315, "n_iter": 3}, {"k": 8, "inertia": 1.0659421816324675, "n_iter": 4}, {"k": 9, "inertia": 0.8002969878568551, "n_iter": 2}]}}, {"mode": "vega-lite"});
 </script></div></div>
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters when K-means is run with 10 restarts.</span><a class="headerlink" href="#elbow-plot" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters when K-means is run with 10 restarts.</span><a class="headerlink" href="#elbow-plot" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="exercises">

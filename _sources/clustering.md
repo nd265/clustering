@@ -5,13 +5,15 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 0.13
+    format_version: 1.3
     jupytext_version: 1.13.8
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
+
+
 
 # Clustering {#clustering}
 
@@ -197,20 +199,13 @@ scatter_plot = alt.Chart(penguin_data, title="Scatter plot of standardized bill 
     labelFontSize=12,
     titleFontSize=12
 ).configure_title(fontSize=12)
-
+scatter_plot
 ```
 
 
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
-glue('scatter_plot', scatter_plot, display=True)
-```
-
-```{glue:figure} scatter_plot
-:figwidth: 300px
-:name: "scatter_plot"
-
-Scatter plot of standardized bill length versus standardized flipper length.
+glue('scatter_plot', scatter_plot, display=False)
 ```
 
 
