@@ -846,7 +846,6 @@ Then we would compute the coordinates, <span class="math notranslate nohighlight
 <p>In the first cluster from the example, there are <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">4</span></code></span> data points. These are shown with their cluster center
 (flipper_length_standardized = <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">-0.35</span></code></span> and bill_length_standardized = <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">0.99</span></code></span>) highlighted
 in <a class="reference internal" href="#toy-example-clus1-center-1"><span class="std std-numref">Fig. 4</span></a></p>
-<p><a class="reference internal" href="#toy-example-clus1-center-1"><span class="std std-numref">Fig. 4</span></a> Cluster 1 from the <code class="docutils literal notranslate"><span class="pre">penguin_data</span></code> data set example. Observations are in blue, with the cluster center highlighted in red.</p>
 <div class="figure align-default" id="toy-example-clus1-center-1">
 <a class="reference internal image-reference" href="_images/toy-example-clus1-center-1.png"><img alt="_images/toy-example-clus1-center-1.png" src="_images/toy-example-clus1-center-1.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Cluster 1 from the penguin_data data set example. Observations are in blue, with the cluster center highlighted in red.</span><a class="headerlink" href="#toy-example-clus1-center-1" title="Permalink to this image">¶</a></p>
@@ -860,7 +859,6 @@ In the <span class="pasted-inline"><code class="output text_plain docutils liter
 we would compute the WSSD <span class="math notranslate nohighlight">\(S^2\)</span> via</p>
 <p><span class="math notranslate nohighlight">\(S^2 = \left((x_1 - \mu_x)^2 + (y_1 - \mu_y)^2\right) + \left((x_2 - \mu_x)^2 + (y_2 - \mu_y)^2\right) + \left((x_3 - \mu_x)^2 + (y_3 - \mu_y)^2\right)  +  \left((x_4 - \mu_x)^2 + (y_4 - \mu_y)^2\right)\)</span></p>
 <p>These distances are denoted by lines in <a class="reference internal" href="#toy-example-clus1-dists-1"><span class="std std-numref">Fig. 5</span></a> for the first cluster of the penguin data example.</p>
-<p>(ref:10-toy-example-clus1-dists) Cluster 1 from the <code class="docutils literal notranslate"><span class="pre">penguin_data</span></code> data set example. Observations are in blue, with the cluster center highlighted in red. The distances from the observations to the cluster center are represented as black lines.</p>
 <div class="figure align-default" id="toy-example-clus1-dists-1">
 <a class="reference internal image-reference" href="_images/toy-example-clus1-dists-1.png"><img alt="_images/toy-example-clus1-dists-1.png" src="_images/toy-example-clus1-dists-1.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Cluster 1 from the penguin_data data set example. Observations are in blue, with the cluster center highlighted in red. The distances from the observations to the cluster center are represented as black lines.</span><a class="headerlink" href="#toy-example-clus1-dists-1" title="Permalink to this image">¶</a></p>
@@ -872,8 +870,7 @@ we sum them together to get the <em>total WSSD</em>.
 For our example,
 this means adding up all the squared distances for the 18 observations.
 These distances are denoted by black lines in
-Figure &#64;ref(fig:10-toy-example-all-clus-dists).</p>
-<p>(ref:10-toy-example-all-clus-dists) All clusters from the <code class="docutils literal notranslate"><span class="pre">penguin_data</span></code> data set example. Observations are in orange, blue, and yellow with the cluster center highlighted in red. The distances from the observations to each of the respective cluster centers are represented as black lines.</p>
+<a class="reference internal" href="#toy-example-all-clus-dists-1"><span class="std std-numref">Fig. 6</span></a></p>
 <div class="figure align-default" id="toy-example-all-clus-dists-1">
 <a class="reference internal image-reference" href="_images/toy-example-all-clus-dists-1.png"><img alt="_images/toy-example-all-clus-dists-1.png" src="_images/toy-example-all-clus-dists-1.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">All clusters from the penguin_data data set example. Observations are in orange, blue, and yellow with the cluster center highlighted in red. The distances from the observations to each of the respective cluster centers are represented as black lines.</span><a class="headerlink" href="#toy-example-all-clus-dists-1" title="Permalink to this image">¶</a></p>
@@ -885,7 +882,7 @@ Figure &#64;ref(fig:10-toy-example-all-clus-dists).</p>
 <p>We begin the K-means \index{K-means!algorithm} algorithm by picking K,
 and randomly assigning a roughly equal number of observations
 to each of the K clusters.
-An example random initialization is shown in Figure &#64;ref(fig:10-toy-kmeans-init).</p>
+An example random initialization is shown in <a class="reference internal" href="#toy-kmeans-init-1"><span class="std std-numref">Fig. 7</span></a></p>
 <div class="figure align-default" id="toy-kmeans-init-1">
 <a class="reference internal image-reference" href="_images/toy-kmeans-init-1.png"><img alt="_images/toy-kmeans-init-1.png" src="_images/toy-kmeans-init-1.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Random initialization of labels.</span><a class="headerlink" href="#toy-kmeans-init-1" title="Permalink to this image">¶</a></p>
@@ -898,11 +895,10 @@ sum of WSSDs over all the clusters, i.e., the \index{WSSD!total} <em>total WSSD<
 </ol>
 <p>These two steps are repeated until the cluster assignments no longer change.
 We show what the first four iterations of K-means would look like in<br />
-Figure &#64;ref(fig:10-toy-kmeans-iter).
+<a class="reference internal" href="#toy-kmeans-iter-1"><span class="std std-numref">Fig. 8</span></a>
 There each row corresponds to an iteration,
 where the left column depicts the center update,
 and the right column depicts the reassignment of data to clusters.</p>
-<p>(ref:10-toy-kmeans-iter) First four iterations of K-means clustering on the <code class="docutils literal notranslate"><span class="pre">penguin_data</span></code> example data set. Each pair of plots corresponds to an iteration. Within the pair, the first plot depicts the center update, and the second plot depicts the reassignment of data to clusters. Cluster centers are indicated by larger points that are outlined in black.</p>
 <div class="figure align-default" id="toy-kmeans-iter-1">
 <a class="reference internal image-reference" href="_images/toy-kmeans-iter-1.png"><img alt="_images/toy-kmeans-iter-1.png" src="_images/toy-kmeans-iter-1.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">First four iterations of K-means clustering on the penguin_data example data set. Each pair of plots corresponds to an iteration. Within the pair, the first plot depicts the center update, and the second plot depicts the reassignment of data to clusters. Cluster centers are indicated by larger points that are outlined in black.</span><a class="headerlink" href="#toy-kmeans-iter-1" title="Permalink to this image">¶</a></p>
@@ -931,13 +927,12 @@ These, however, are beyond the scope of this book.</p>
 <div class="section" id="random-restarts">
 <h3>Random restarts<a class="headerlink" href="#random-restarts" title="Permalink to this headline">¶</a></h3>
 <p>Unlike the classification and regression models we studied in previous chapters, K-means \index{K-means!restart, nstart} can get “stuck” in a bad solution.
-For example, Figure &#64;ref(fig:10-toy-kmeans-bad-init) illustrates an unlucky random initialization by K-means.</p>
+For example, <a class="reference internal" href="#toy-kmeans-bad-init-1"><span class="std std-numref">Fig. 9</span></a> illustrates an unlucky random initialization by K-means.</p>
 <div class="figure align-default" id="toy-kmeans-bad-init-1">
 <a class="reference internal image-reference" href="_images/toy-kmeans-bad-init-1.png"><img alt="_images/toy-kmeans-bad-init-1.png" src="_images/toy-kmeans-bad-init-1.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Random initialization of labels.</span><a class="headerlink" href="#toy-kmeans-bad-init-1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Figure &#64;ref(fig:10-toy-kmeans-bad-iter) shows what the iterations of K-means would look like with the unlucky random initialization shown in Figure &#64;ref(fig:10-toy-kmeans-bad-init).</p>
-<p>(ref:10-toy-kmeans-bad-iter) First five iterations of K-means clustering on the <code class="docutils literal notranslate"><span class="pre">penguin_data</span></code> example data set with a poor random initialization. Each pair of plots corresponds to an iteration. Within the pair, the first plot depicts the center update, and the second plot depicts the reassignment of data to clusters. Cluster centers are indicated by larger points that are outlined in black.</p>
+<p><a class="reference internal" href="#toy-kmeans-bad-iter-1"><span class="std std-numref">Fig. 10</span></a> shows what the iterations of K-means would look like with the unlucky random initialization shown in <a class="reference internal" href="#toy-kmeans-bad-init-1"><span class="std std-numref">Fig. 9</span></a></p>
 <div class="figure align-default" id="toy-kmeans-bad-iter-1">
 <a class="reference internal image-reference" href="_images/toy-kmeans-bad-iter-1.png"><img alt="_images/toy-kmeans-bad-iter-1.png" src="_images/toy-kmeans-bad-iter-1.png" style="height: 700px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">First five iterations of K-means clustering on the penguin_data example data set with a poor random initialization. Each pair of plots corresponds to an iteration. Within the pair, the first plot depicts the center update, and the second plot depicts the reassignment of data to clusters. Cluster centers are indicated by larger points that are outlined in black.</span><a class="headerlink" href="#toy-kmeans-bad-iter-1" title="Permalink to this image">¶</a></p>
@@ -955,7 +950,7 @@ and cannot perform cross-validation with some measure of model prediction error.
 Further, if K is chosen too small, then multiple clusters get grouped together;
 if K is too large, then clusters get subdivided.
 In both cases, we will potentially miss interesting structure in the data.
-Figure &#64;ref(fig:10-toy-kmeans-vary-k) illustrates the impact of K
+<a class="reference internal" href="#toy-kmeans-vary-k-1"><span class="std std-numref">Fig. 11</span></a> illustrates the impact of K
 on K-means clustering of our penguin flipper and bill length data
 by showing the different clusterings for K’s ranging from 1 to 9.</p>
 <div class="figure align-default" id="toy-kmeans-vary-k-1">
@@ -967,7 +962,7 @@ total WSSD, since the cluster center (denoted by an “x”) is not close to any
 the other hand, if we set K greater than 3, the clustering subdivides subgroups of data; this does indeed still
 decrease the total WSSD, but by only a <em>diminishing amount</em>. If we plot the total WSSD versus the number of
 clusters, we see that the decrease in total WSSD levels off (or forms an “elbow shape”) \index{elbow method} when we reach roughly
-the right number of clusters (Figure &#64;ref(fig:10-toy-kmeans-elbow)).</p>
+the right number of clusters (<a class="reference internal" href="#toy-kmeans-elbow-1"><span class="std std-numref">Fig. 12</span></a>)).</p>
 <div class="figure align-default" id="toy-kmeans-elbow-1">
 <a class="reference internal image-reference" href="_images/toy-kmeans-elbow-1.png"><img alt="_images/toy-kmeans-elbow-1.png" src="_images/toy-kmeans-elbow-1.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Total WSSD for K clusters ranging from 1 to 9.</span><a class="headerlink" href="#toy-kmeans-elbow-1" title="Permalink to this image">¶</a></p>
@@ -1453,7 +1448,7 @@ each point:</p>
 </div></div></div>
 </div>
 <p>Now that we have this information in a data frame, we can make a visualization
-of the cluster assignments for each point, as shown in Figure &#64;ref(fig:10-plot-clusters-2).</p>
+of the cluster assignments for each point, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">cluster_plot</span> </code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_plot</span> <span class="o">=</span> <span class="p">(</span>
@@ -1786,7 +1781,7 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 </div></div></div>
 </div>
 <p>Now that we have <code class="docutils literal notranslate"><span class="pre">inertia</span></code> and <code class="docutils literal notranslate"><span class="pre">k</span></code> as columns in a data frame, we can make a line plot
-(Figure &#64;ref(fig:10-plot-choose-k)) and search for the “elbow” to find which value of K to use. We will drop the column <code class="docutils literal notranslate"><span class="pre">penguin_clusts</span></code> to make the plotting in altair feasible</p>
+(<a class="reference internal" href="#plot"><span class="std std-numref">Fig. 14</span></a>) and search for the “elbow” to find which value of K to use. We will drop the column <code class="docutils literal notranslate"><span class="pre">penguin_clusts</span></code> to make the plotting in altair feasible</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;penguin_clusts&#39;</span><span class="p">)</span>

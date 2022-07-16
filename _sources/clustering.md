@@ -337,7 +337,6 @@ In the first cluster from the example, there are {glue:}`clus_rows_glue` data po
 (flipper_length_standardized = {glue:}`mean_flipper_len_std_glue` and bill_length_standardized = {glue:}`mean_bill_len_std_glue`) highlighted 
 in {numref}`toy-example-clus1-center-1`
 
-{numref}`toy-example-clus1-center-1` Cluster 1 from the `penguin_data` data set example. Observations are in blue, with the cluster center highlighted in red.
 
 ```{figure} img/toy-example-clus1-center-1.png
 ---
@@ -361,7 +360,7 @@ $S^2 = \left((x_1 - \mu_x)^2 + (y_1 - \mu_y)^2\right) + \left((x_2 - \mu_x)^2 + 
 
 These distances are denoted by lines in {numref}`toy-example-clus1-dists-1` for the first cluster of the penguin data example. 
 
-(ref:10-toy-example-clus1-dists) Cluster 1 from the `penguin_data` data set example. Observations are in blue, with the cluster center highlighted in red. The distances from the observations to the cluster center are represented as black lines.
+
 
 ```{figure} img/toy-example-clus1-dists-1.png
 ---
@@ -379,9 +378,9 @@ we sum them together to get the *total WSSD*.
 For our example, 
 this means adding up all the squared distances for the 18 observations.
 These distances are denoted by black lines in
-Figure \@ref(fig:10-toy-example-all-clus-dists).
+{numref}`toy-example-all-clus-dists-1`
 
-(ref:10-toy-example-all-clus-dists) All clusters from the `penguin_data` data set example. Observations are in orange, blue, and yellow with the cluster center highlighted in red. The distances from the observations to each of the respective cluster centers are represented as black lines.
+
 
 
 ```{figure} img/toy-example-all-clus-dists-1.png
@@ -402,7 +401,7 @@ All clusters from the penguin_data data set example. Observations are in orange,
 We begin the K-means \index{K-means!algorithm} algorithm by picking K, 
 and randomly assigning a roughly equal number of observations 
 to each of the K clusters.
-An example random initialization is shown in Figure \@ref(fig:10-toy-kmeans-init).
+An example random initialization is shown in {numref}`toy-kmeans-init-1`
 
 
 
@@ -424,12 +423,12 @@ sum of WSSDs over all the clusters, i.e., the \index{WSSD!total} *total WSSD*:
 
 These two steps are repeated until the cluster assignments no longer change.
 We show what the first four iterations of K-means would look like in  
-Figure \@ref(fig:10-toy-kmeans-iter). 
+{numref}`toy-kmeans-iter-1` 
 There each row corresponds to an iteration,
 where the left column depicts the center update, 
 and the right column depicts the reassignment of data to clusters.
 
-(ref:10-toy-kmeans-iter) First four iterations of K-means clustering on the `penguin_data` example data set. Each pair of plots corresponds to an iteration. Within the pair, the first plot depicts the center update, and the second plot depicts the reassignment of data to clusters. Cluster centers are indicated by larger points that are outlined in black.
+
 
 
 ```{figure} img/toy-kmeans-iter-1.png
@@ -468,7 +467,7 @@ These, however, are beyond the scope of this book.
 ### Random restarts
 
 Unlike the classification and regression models we studied in previous chapters, K-means \index{K-means!restart, nstart} can get "stuck" in a bad solution.
-For example, Figure \@ref(fig:10-toy-kmeans-bad-init) illustrates an unlucky random initialization by K-means.
+For example, {numref}`toy-kmeans-bad-init-1` illustrates an unlucky random initialization by K-means.
 
 
 
@@ -484,9 +483,9 @@ Random initialization of labels.
 
 
 
-Figure \@ref(fig:10-toy-kmeans-bad-iter) shows what the iterations of K-means would look like with the unlucky random initialization shown in Figure \@ref(fig:10-toy-kmeans-bad-init).
+{numref}`toy-kmeans-bad-iter-1` shows what the iterations of K-means would look like with the unlucky random initialization shown in {numref}`toy-kmeans-bad-init-1`
 
-(ref:10-toy-kmeans-bad-iter) First five iterations of K-means clustering on the `penguin_data` example data set with a poor random initialization. Each pair of plots corresponds to an iteration. Within the pair, the first plot depicts the center update, and the second plot depicts the reassignment of data to clusters. Cluster centers are indicated by larger points that are outlined in black.
+
 
 ```{figure} img/toy-kmeans-bad-iter-1.png
 ---
@@ -511,7 +510,7 @@ and cannot perform cross-validation with some measure of model prediction error.
 Further, if K is chosen too small, then multiple clusters get grouped together;
 if K is too large, then clusters get subdivided. 
 In both cases, we will potentially miss interesting structure in the data. 
-Figure \@ref(fig:10-toy-kmeans-vary-k) illustrates the impact of K 
+{numref}`toy-kmeans-vary-k-1` illustrates the impact of K 
 on K-means clustering of our penguin flipper and bill length data 
 by showing the different clusterings for K's ranging from 1 to 9.
 
@@ -531,7 +530,7 @@ total WSSD, since the cluster center (denoted by an "x") is not close to any of 
 the other hand, if we set K greater than 3, the clustering subdivides subgroups of data; this does indeed still 
 decrease the total WSSD, but by only a *diminishing amount*. If we plot the total WSSD versus the number of 
 clusters, we see that the decrease in total WSSD levels off (or forms an "elbow shape") \index{elbow method} when we reach roughly 
-the right number of clusters (Figure \@ref(fig:10-toy-kmeans-elbow)).
+the right number of clusters ({numref}`toy-kmeans-elbow-1`)).
 
 
 ```{figure} img/toy-kmeans-elbow-1.png
@@ -647,7 +646,7 @@ clustered_data
 ```
 
 Now that we have this information in a data frame, we can make a visualization
-of the cluster assignments for each point, as shown in Figure \@ref(fig:10-plot-clusters-2).
+of the cluster assignments for each point, as shown in {numref}`cluster_plot `.
 
 
 ```{code-cell} ipython3
@@ -754,7 +753,7 @@ penguin_clust_ks
 
 
 Now that we have `inertia` and `k` as columns in a data frame, we can make a line plot 
-(Figure \@ref(fig:10-plot-choose-k)) and search for the "elbow" to find which value of K to use. We will drop the column `penguin_clusts` to make the plotting in altair feasible
+({numref}`plot`) and search for the "elbow" to find which value of K to use. We will drop the column `penguin_clusts` to make the plotting in altair feasible
 
 ```{code-cell} ipython3
 
