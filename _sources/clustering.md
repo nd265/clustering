@@ -202,8 +202,6 @@ scatter_plot = (
         titleFontSize=12
     ).configure_title(fontSize=12)
 )
-
-
 ```
 
 ```{code-cell} ipython3
@@ -212,7 +210,7 @@ glue('scatter_plot', scatter_plot, display=True)
 ```
 
 :::{glue:figure} scatter_plot 
-:figwidth: 700px 
+:figwidth: 300px 
 :name: scatter_plot
 
 Scatter plot of standardized bill length versus standardized flipper length.
