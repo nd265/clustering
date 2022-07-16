@@ -711,13 +711,13 @@ to see if we can detect subtypes or groups in our data set.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-47a18f14a33845088ccb3fe1a3c3bb14"></div>
+<div id="altair-viz-a62d3af374184208a73be4049041e39a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-47a18f14a33845088ccb3fe1a3c3bb14") {
-      outputDiv = document.getElementById("altair-viz-47a18f14a33845088ccb3fe1a3c3bb14");
+    if (outputDiv.id !== "altair-viz-a62d3af374184208a73be4049041e39a") {
+      outputDiv = document.getElementById("altair-viz-a62d3af374184208a73be4049041e39a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -794,22 +794,6 @@ for selecting the number of clusters.
 This procedure will separate the data into groups;
 <a class="reference internal" href="#colored-scatter-plot"><span class="std std-numref">Fig. 3</span></a> shows these groups
 denoted by colored scatter points.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;brown&quot;</span><span class="p">]</span>
-
-<span class="n">colored_scatter_plot</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scatter plot of standardized bill length versus standardized flipper length with colored groups.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;flipper_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Flipper Length (standardized)&quot;</span><span class="p">),</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;bill_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bill Length (standardized)&quot;</span><span class="p">),</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;cluster:N&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">range</span><span class="o">=</span><span class="n">colors</span><span class="p">)))</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
-    <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
-    <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">12</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span><span class="n">fontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
- 
-</pre></div>
-</div>
-</div>
-</div>
 <div class="figure align-default" id="colored-scatter-plot" style="width: 700px">
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length with colored groups.</span><a class="headerlink" href="#colored-scatter-plot" title="Permalink to this image">¶</a></p>
 </div>
@@ -1472,13 +1456,13 @@ of the cluster assignments for each point, as shown in <code class="xref std std
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-357b1de3d56c412da1af7acac2c13002"></div>
+<div id="altair-viz-3397e893db254c6eb4b7d308e881ace5"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-357b1de3d56c412da1af7acac2c13002") {
-      outputDiv = document.getElementById("altair-viz-357b1de3d56c412da1af7acac2c13002");
+    if (outputDiv.id !== "altair-viz-3397e893db254c6eb4b7d308e881ace5") {
+      outputDiv = document.getElementById("altair-viz-3397e893db254c6eb4b7d308e881ace5");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1812,13 +1796,13 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="figure align-default" id="plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-98a3218b7c1846bc8af583c1e4701532"></div>
+<div id="altair-viz-7db922be1e1146a08bc8a8c8a4080f2a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-98a3218b7c1846bc8af583c1e4701532") {
-      outputDiv = document.getElementById("altair-viz-98a3218b7c1846bc8af583c1e4701532");
+    if (outputDiv.id !== "altair-viz-7db922be1e1146a08bc8a8c8a4080f2a") {
+      outputDiv = document.getElementById("altair-viz-7db922be1e1146a08bc8a8c8a4080f2a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1912,13 +1896,13 @@ the more likely we are to find a good clustering (if one exists).</p>
 <div class="figure align-default" id="elbow-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-86f468b151bc40958743334064f75411"></div>
+<div id="altair-viz-402faef1c1a54e47a350996253a84444"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-86f468b151bc40958743334064f75411") {
-      outputDiv = document.getElementById("altair-viz-86f468b151bc40958743334064f75411");
+    if (outputDiv.id !== "altair-viz-402faef1c1a54e47a350996253a84444") {
+      outputDiv = document.getElementById("altair-viz-402faef1c1a54e47a350996253a84444");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",

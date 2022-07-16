@@ -252,6 +252,8 @@ denoted by colored scatter points.
 
 
 ```{code-cell} ipython3
+:tags: ["remove-cell"]
+
 colors = ["orange", "blue", "brown"]
 
 colored_scatter_plot = alt.Chart(data, title="Scatter plot of standardized bill length versus standardized flipper length with colored groups.").mark_circle().encode(
@@ -262,11 +264,6 @@ colored_scatter_plot = alt.Chart(data, title="Scatter plot of standardized bill 
     titleFontSize=12
 ).configure_title(fontSize=12)
  
-```
-
-
-```{code-cell} ipython3
-:tags: ["remove-cell"]
 glue('colored_scatter_plot', colored_scatter_plot, display=True)
 ```
 
