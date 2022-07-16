@@ -192,12 +192,13 @@ to see if we can detect subtypes or groups in our data set.
 
 
 ```{code-cell} ipython3
-scatter_plot = alt.Chart(penguin_data, title="Scatter plot of standardized bill length versus standardized flipper length.").mark_circle(color='black').encode(
+scatter_plot = (alt.Chart(penguin_data, title="Scatter plot of standardized bill length versus standardized flipper length.").mark_circle(color='black').encode(
     x = alt.X("flipper_length_standardized", title="Flipper Length (standardized)"),
     y = alt.Y("bill_length_standardized", title="Bill Length (standardized)")).configure_axis(
     labelFontSize=12,
     titleFontSize=12
 ).configure_title(fontSize=12)
+)
 
 ```
 
@@ -209,8 +210,9 @@ glue('scatter_plot', scatter_plot, display=True)
 
 
 
-:::{glue:figure} scatter_plot :figwidth: 700px :name: scatter_plot
-
+:::{glue:figure} scatter_plot 
+:figwidth: 700px 
+:name: scatter_plot
 Scatter plot of standardized bill length versus standardized flipper length. 
 :::
 
