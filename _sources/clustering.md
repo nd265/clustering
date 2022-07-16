@@ -205,7 +205,7 @@ scatter_plot = alt.Chart(penguin_data, title="Scatter plot of standardized bill 
 :tags: ["remove-cell"]
 glue('scatter_plot', scatter_plot, display=True)
 ```
-+++
+
 
 :::{glue:figure} scatter_plot 
 :figwidth: 700px 
@@ -213,7 +213,7 @@ glue('scatter_plot', scatter_plot, display=True)
 
 Scatter plot of standardized bill length versus standardized flipper length.
 :::
-
++++
 
 
 
