@@ -4,13 +4,16 @@ jupytext:
   text_representation:
     extension: .md
     format_name: myst
-    format_version: 1.3
+    format_version: 0.13
     jupytext_version: 1.13.5
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
+
+
+
 
 
 
@@ -192,27 +195,28 @@ to see if we can detect subtypes or groups in our data set.
 
 
 ```{code-cell} ipython3
-scatter_plot = (alt.Chart(penguin_data, title="Scatter plot of standardized bill length versus standardized flipper length.").mark_circle(color='black').encode(
-    x = alt.X("flipper_length_standardized", title="Flipper Length (standardized)"),
-    y = alt.Y("bill_length_standardized", title="Bill Length (standardized)")).configure_axis(
-    labelFontSize=12,
-    titleFontSize=12
-).configure_title(fontSize=12)
+scatter = (
+        alt.Chart(penguin_data, title="Scatter plot of standardized bill length versus standardized flipper length.")
+        .mark_circle(color='black').encode(
+        x = alt.X("flipper_length_standardized", title="Flipper Length (standardized)"),
+        y = alt.Y("bill_length_standardized", title="Bill Length (standardized)"))
+        .configure_axis(
+        labelFontSize=12,
+        titleFontSize=12
+    ).configure_title(fontSize=12)
 )
-
+scatter
 ```
 
 
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
-glue('scatter_plot', scatter_plot, display=True)
+glue('scatter', scatter, display=True)
 ```
 
-
-
-:::{glue:figure} scatter_plot 
+:::{glue:figure} scatter
 :figwidth: 700px 
-:name: scatter_plot
+:name: scatter
 Scatter plot of standardized bill length versus standardized flipper length. 
 :::
 
