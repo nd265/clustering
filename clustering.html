@@ -693,7 +693,7 @@ because the K-means clustering algorithm uses random numbers.</p>
 to see if we can detect subtypes or groups in our data set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scatter</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scatter_plot</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">penguin_data</span><span class="p">)</span>
         <span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
             <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;flipper_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Flipper Length (standardized)&quot;</span><span class="p">),</span>
@@ -702,19 +702,19 @@ to see if we can detect subtypes or groups in our data set.</p>
         <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
         <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="p">)</span>
-<span class="n">scatter</span>
+<span class="n">scatter_plot</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-b5da4908c18641bfb2f361aadf2db5b9"></div>
+<div id="altair-viz-7bcb925e0a8a4846acc444093bacf305"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b5da4908c18641bfb2f361aadf2db5b9") {
-      outputDiv = document.getElementById("altair-viz-b5da4908c18641bfb2f361aadf2db5b9");
+    if (outputDiv.id !== "altair-viz-7bcb925e0a8a4846acc444093bacf305") {
+      outputDiv = document.getElementById("altair-viz-7bcb925e0a8a4846acc444093bacf305");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -763,16 +763,16 @@ to see if we can detect subtypes or groups in our data set.</p>
   })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 12}}, "data": {"name": "data-ebb59f3fa086785a5682bd5f8fba47af"}, "mark": {"type": "circle", "color": "black"}, "encoding": {"x": {"field": "flipper_length_standardized", "title": "Flipper Length (standardized)", "type": "quantitative"}, "y": {"field": "bill_length_standardized", "title": "Bill Length (standardized)", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-ebb59f3fa086785a5682bd5f8fba47af": [{"flipper_length_standardized": -0.189773114129794, "bill_length_standardized": -0.641360823466598}, {"flipper_length_standardized": -1.32841179890856, "bill_length_standardized": -1.14491714043714}, {"flipper_length_standardized": -0.921755125773284, "bill_length_standardized": -1.51792181967458}, {"flipper_length_standardized": -0.921755125773284, "bill_length_standardized": -1.1076166725134}, {"flipper_length_standardized": -1.40974313353561, "bill_length_standardized": -0.846513397047191}, {"flipper_length_standardized": -0.677761121892121, "bill_length_standardized": -0.641360823466598}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": -1.2381683102465}, {"flipper_length_standardized": -0.433767118010958, "bill_length_standardized": -0.902464098932808}, {"flipper_length_standardized": 1.19285957453013, "bill_length_standardized": 0.720106255750059}, {"flipper_length_standardized": 1.35552224378424, "bill_length_standardized": 0.645505319902572}, {"flipper_length_standardized": 1.35552224378424, "bill_length_standardized": 0.962559297254395}, {"flipper_length_standardized": 1.76217891691951, "bill_length_standardized": 0.440352746321979}, {"flipper_length_standardized": 1.11152823990308, "bill_length_standardized": 1.20501233875873}, {"flipper_length_standardized": 0.786202901394858, "bill_length_standardized": 0.123298768970154}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": 0.626855085940699}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": 0.757406723673804}, {"flipper_length_standardized": -0.10844177950274, "bill_length_standardized": 1.78316959157677}, {"flipper_length_standardized": -0.759092456519175, "bill_length_standardized": 0.776056957635675}]}}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
-<div class="figure align-default" id="scatter" style="width: 700px">
+<div class="figure align-default" id="scatter-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-94d2cc462e5743759db335f95b1b2623"></div>
+<div id="altair-viz-339bdf4a1be74d268bb98f4d9bf03b6d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-94d2cc462e5743759db335f95b1b2623") {
-      outputDiv = document.getElementById("altair-viz-94d2cc462e5743759db335f95b1b2623");
+    if (outputDiv.id !== "altair-viz-339bdf4a1be74d268bb98f4d9bf03b6d") {
+      outputDiv = document.getElementById("altair-viz-339bdf4a1be74d268bb98f4d9bf03b6d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -820,12 +820,12 @@ to see if we can detect subtypes or groups in our data set.</p>
     }
   })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 12}}, "data": {"name": "data-ebb59f3fa086785a5682bd5f8fba47af"}, "mark": {"type": "circle", "color": "black"}, "encoding": {"x": {"field": "flipper_length_standardized", "title": "Flipper Length (standardized)", "type": "quantitative"}, "y": {"field": "bill_length_standardized", "title": "Bill Length (standardized)", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-ebb59f3fa086785a5682bd5f8fba47af": [{"flipper_length_standardized": -0.189773114129794, "bill_length_standardized": -0.641360823466598}, {"flipper_length_standardized": -1.32841179890856, "bill_length_standardized": -1.14491714043714}, {"flipper_length_standardized": -0.921755125773284, "bill_length_standardized": -1.51792181967458}, {"flipper_length_standardized": -0.921755125773284, "bill_length_standardized": -1.1076166725134}, {"flipper_length_standardized": -1.40974313353561, "bill_length_standardized": -0.846513397047191}, {"flipper_length_standardized": -0.677761121892121, "bill_length_standardized": -0.641360823466598}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": -1.2381683102465}, {"flipper_length_standardized": -0.433767118010958, "bill_length_standardized": -0.902464098932808}, {"flipper_length_standardized": 1.19285957453013, "bill_length_standardized": 0.720106255750059}, {"flipper_length_standardized": 1.35552224378424, "bill_length_standardized": 0.645505319902572}, {"flipper_length_standardized": 1.35552224378424, "bill_length_standardized": 0.962559297254395}, {"flipper_length_standardized": 1.76217891691951, "bill_length_standardized": 0.440352746321979}, {"flipper_length_standardized": 1.11152823990308, "bill_length_standardized": 1.20501233875873}, {"flipper_length_standardized": 0.786202901394858, "bill_length_standardized": 0.123298768970154}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": 0.626855085940699}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": 0.757406723673804}, {"flipper_length_standardized": -0.10844177950274, "bill_length_standardized": 1.78316959157677}, {"flipper_length_standardized": -0.759092456519175, "bill_length_standardized": 0.776056957635675}]}}, {"mode": "vega-lite"});
 </script></div></div>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length.</span><a class="headerlink" href="#scatter" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length.</span><a class="headerlink" href="#scatter-plot" title="Permalink to this image">¶</a></p>
 </div>
 <p>Based \index{ggplot}\index{ggplot!geom_point} on the visualization
-in <a class="reference internal" href="#scatter"><span class="std std-numref">Fig. 2</span></a>,
+in <a class="reference internal" href="#scatter-plot"><span class="std std-numref">Fig. 2</span></a>,
 we might suspect there are a few subtypes of penguins within our data set.
-We can see roughly 3 groups of observations in <a class="reference internal" href="#scatter"><span class="std std-numref">Fig. 2</span></a>,
+We can see roughly 3 groups of observations in <code class="xref std std-numref docutils literal notranslate"><span class="pre">scatter</span></code>,
 including:</p>
 <ol class="simple">
 <li><p>a small flipper and bill length group,</p></li>
@@ -845,94 +845,18 @@ In this chapter, we will focus on the <em>K-means</em> algorithm,
 combined with the <em>elbow method</em> \index{elbow method}
 for selecting the number of clusters.
 This procedure will separate the data into groups;
-<a class="reference internal" href="#colored-scatter"><span class="std std-numref">Fig. 3</span></a> shows these groups
+<a class="reference internal" href="#colored-scatter-plot"><span class="std std-numref">Fig. 3</span></a> shows these groups
 denoted by colored scatter points.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#:tags: [&quot;remove-cell&quot;]</span>
-
-<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;brown&quot;</span><span class="p">]</span>
-
-<span class="n">colored_scatter</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scatter plot of standardized bill length versus standardized flipper length with colored groups.&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;flipper_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Flipper Length (standardized)&quot;</span><span class="p">),</span>
-        <span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;bill_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bill Length (standardized)&quot;</span><span class="p">),</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;cluster:N&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">range</span><span class="o">=</span><span class="n">colors</span><span class="p">)))</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
-    <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
-    <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">12</span>
-<span class="p">)</span>
-<span class="p">)</span>
-
-
-<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;colored_scatter&#39;</span><span class="p">,</span> <span class="n">colored_scatter</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">colored_scatter</span>
-</pre></div>
-</div>
-</div>
+<div class="figure align-default" id="colored-scatter-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-42fd0883718a4452862f75818b4fcac5"></div>
+<div id="altair-viz-60ad0a6a9ada4b53aa4a229b9618b9dc"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-42fd0883718a4452862f75818b4fcac5") {
-      outputDiv = document.getElementById("altair-viz-42fd0883718a4452862f75818b4fcac5");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 12}}, "data": {"name": "data-3c9eea8c1410ca5343e5f80a37a0a937"}, "mark": "circle", "encoding": {"color": {"field": "cluster", "scale": {"range": ["orange", "blue", "brown"]}, "type": "nominal"}, "x": {"field": "flipper_length_standardized", "title": "Flipper Length (standardized)", "type": "quantitative"}, "y": {"field": "bill_length_standardized", "title": "Bill Length (standardized)", "type": "quantitative"}}, "title": "Scatter plot of standardized bill length versus standardized flipper length with colored groups.", "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-3c9eea8c1410ca5343e5f80a37a0a937": [{"island": "Dream", "bill_length_mm": 39.2, "bill_depth_mm": 21.1, "flipper_length_mm": 196, "body_mass_g": 4150, "sex": "male", "year": 2007, "cluster": 1, "bill_length_standardized": -0.641360823466598, "flipper_length_standardized": -0.189773114129794}, {"island": "Dream", "bill_length_mm": 36.5, "bill_depth_mm": 18.0, "flipper_length_mm": 182, "body_mass_g": 3150, "sex": "female", "year": 2007, "cluster": 1, "bill_length_standardized": -1.14491714043714, "flipper_length_standardized": -1.32841179890856}, {"island": "Biscoe", "bill_length_mm": 34.5, "bill_depth_mm": 18.1, "flipper_length_mm": 187, "body_mass_g": 2900, "sex": "female", "year": 2008, "cluster": 1, "bill_length_standardized": -1.51792181967458, "flipper_length_standardized": -0.921755125773284}, {"island": "Torgersen", "bill_length_mm": 36.7, "bill_depth_mm": 18.8, "flipper_length_mm": 187, "body_mass_g": 3800, "sex": "female", "year": 2008, "cluster": 1, "bill_length_standardized": -1.1076166725134, "flipper_length_standardized": -0.921755125773284}, {"island": "Biscoe", "bill_length_mm": 38.1, "bill_depth_mm": 17.0, "flipper_length_mm": 181, "body_mass_g": 3175, "sex": "female", "year": 2009, "cluster": 1, "bill_length_standardized": -0.846513397047191, "flipper_length_standardized": -1.40974313353561}, {"island": "Dream", "bill_length_mm": 39.2, "bill_depth_mm": 18.6, "flipper_length_mm": 190, "body_mass_g": 4250, "sex": "male", "year": 2009, "cluster": 1, "bill_length_standardized": -0.641360823466598, "flipper_length_standardized": -0.677761121892121}, {"island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 17.8, "flipper_length_mm": 195, "body_mass_g": 3450, "sex": "female", "year": 2009, "cluster": 1, "bill_length_standardized": -1.2381683102465, "flipper_length_standardized": -0.271104448756849}, {"island": "Dream", "bill_length_mm": 37.8, "bill_depth_mm": 18.1, "flipper_length_mm": 193, "body_mass_g": 3750, "sex": "male", "year": 2009, "cluster": 1, "bill_length_standardized": -0.902464098932808, "flipper_length_standardized": -0.433767118010958}, {"island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 14.5, "flipper_length_mm": 213, "body_mass_g": 4400, "sex": "female", "year": 2007, "cluster": 3, "bill_length_standardized": 0.720106255750059, "flipper_length_standardized": 1.19285957453013}, {"island": "Biscoe", "bill_length_mm": 46.1, "bill_depth_mm": 15.1, "flipper_length_mm": 215, "body_mass_g": 5100, "sex": "male", "year": 2007, "cluster": 3, "bill_length_standardized": 0.645505319902572, "flipper_length_standardized": 1.35552224378424}, {"island": "Biscoe", "bill_length_mm": 47.8, "bill_depth_mm": 15.0, "flipper_length_mm": 215, "body_mass_g": 5650, "sex": "male", "year": 2007, "cluster": 3, "bill_length_standardized": 0.962559297254395, "flipper_length_standardized": 1.35552224378424}, {"island": "Biscoe", "bill_length_mm": 45.0, "bill_depth_mm": 15.4, "flipper_length_mm": 220, "body_mass_g": 5050, "sex": "male", "year": 2008, "cluster": 3, "bill_length_standardized": 0.440352746321979, "flipper_length_standardized": 1.76217891691951}, {"island": "Biscoe", "bill_length_mm": 49.1, "bill_depth_mm": 14.5, "flipper_length_mm": 212, "body_mass_g": 4625, "sex": "female", "year": 2009, "cluster": 3, "bill_length_standardized": 1.20501233875873, "flipper_length_standardized": 1.11152823990308}, {"island": "Biscoe", "bill_length_mm": 43.3, "bill_depth_mm": 14.0, "flipper_length_mm": 208, "body_mass_g": 4575, "sex": "female", "year": 2009, "cluster": 3, "bill_length_standardized": 0.123298768970154, "flipper_length_standardized": 0.786202901394858}, {"island": "Dream", "bill_length_mm": 46.0, "bill_depth_mm": 18.9, "flipper_length_mm": 195, "body_mass_g": 4150, "sex": "female", "year": 2007, "cluster": 2, "bill_length_standardized": 0.626855085940699, "flipper_length_standardized": -0.271104448756849}, {"island": "Dream", "bill_length_mm": 46.7, "bill_depth_mm": 17.9, "flipper_length_mm": 195, "body_mass_g": 3300, "sex": "female", "year": 2007, "cluster": 2, "bill_length_standardized": 0.757406723673804, "flipper_length_standardized": -0.271104448756849}, {"island": "Dream", "bill_length_mm": 52.2, "bill_depth_mm": 18.8, "flipper_length_mm": 197, "body_mass_g": 3450, "sex": "male", "year": 2009, "cluster": 2, "bill_length_standardized": 1.78316959157677, "flipper_length_standardized": -0.10844177950274}, {"island": "Dream", "bill_length_mm": 46.8, "bill_depth_mm": 16.5, "flipper_length_mm": 189, "body_mass_g": 3650, "sex": "female", "year": 2009, "cluster": 2, "bill_length_standardized": 0.776056957635675, "flipper_length_standardized": -0.759092456519175}]}}, {"mode": "vega-lite"});
-</script></div><div class="output text_html">
-<div id="altair-viz-0b0345fb02e145ffa52e91dc98f3cf14"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0b0345fb02e145ffa52e91dc98f3cf14") {
-      outputDiv = document.getElementById("altair-viz-0b0345fb02e145ffa52e91dc98f3cf14");
+    if (outputDiv.id !== "altair-viz-60ad0a6a9ada4b53aa4a229b9618b9dc") {
+      outputDiv = document.getElementById("altair-viz-60ad0a6a9ada4b53aa4a229b9618b9dc");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -980,65 +904,7 @@ denoted by colored scatter points.</p>
     }
   })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 12}}, "data": {"name": "data-3c9eea8c1410ca5343e5f80a37a0a937"}, "mark": "circle", "encoding": {"color": {"field": "cluster", "scale": {"range": ["orange", "blue", "brown"]}, "type": "nominal"}, "x": {"field": "flipper_length_standardized", "title": "Flipper Length (standardized)", "type": "quantitative"}, "y": {"field": "bill_length_standardized", "title": "Bill Length (standardized)", "type": "quantitative"}}, "title": "Scatter plot of standardized bill length versus standardized flipper length with colored groups.", "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-3c9eea8c1410ca5343e5f80a37a0a937": [{"island": "Dream", "bill_length_mm": 39.2, "bill_depth_mm": 21.1, "flipper_length_mm": 196, "body_mass_g": 4150, "sex": "male", "year": 2007, "cluster": 1, "bill_length_standardized": -0.641360823466598, "flipper_length_standardized": -0.189773114129794}, {"island": "Dream", "bill_length_mm": 36.5, "bill_depth_mm": 18.0, "flipper_length_mm": 182, "body_mass_g": 3150, "sex": "female", "year": 2007, "cluster": 1, "bill_length_standardized": -1.14491714043714, "flipper_length_standardized": -1.32841179890856}, {"island": "Biscoe", "bill_length_mm": 34.5, "bill_depth_mm": 18.1, "flipper_length_mm": 187, "body_mass_g": 2900, "sex": "female", "year": 2008, "cluster": 1, "bill_length_standardized": -1.51792181967458, "flipper_length_standardized": -0.921755125773284}, {"island": "Torgersen", "bill_length_mm": 36.7, "bill_depth_mm": 18.8, "flipper_length_mm": 187, "body_mass_g": 3800, "sex": "female", "year": 2008, "cluster": 1, "bill_length_standardized": -1.1076166725134, "flipper_length_standardized": -0.921755125773284}, {"island": "Biscoe", "bill_length_mm": 38.1, "bill_depth_mm": 17.0, "flipper_length_mm": 181, "body_mass_g": 3175, "sex": "female", "year": 2009, "cluster": 1, "bill_length_standardized": -0.846513397047191, "flipper_length_standardized": -1.40974313353561}, {"island": "Dream", "bill_length_mm": 39.2, "bill_depth_mm": 18.6, "flipper_length_mm": 190, "body_mass_g": 4250, "sex": "male", "year": 2009, "cluster": 1, "bill_length_standardized": -0.641360823466598, "flipper_length_standardized": -0.677761121892121}, {"island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 17.8, "flipper_length_mm": 195, "body_mass_g": 3450, "sex": "female", "year": 2009, "cluster": 1, "bill_length_standardized": -1.2381683102465, "flipper_length_standardized": -0.271104448756849}, {"island": "Dream", "bill_length_mm": 37.8, "bill_depth_mm": 18.1, "flipper_length_mm": 193, "body_mass_g": 3750, "sex": "male", "year": 2009, "cluster": 1, "bill_length_standardized": -0.902464098932808, "flipper_length_standardized": -0.433767118010958}, {"island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 14.5, "flipper_length_mm": 213, "body_mass_g": 4400, "sex": "female", "year": 2007, "cluster": 3, "bill_length_standardized": 0.720106255750059, "flipper_length_standardized": 1.19285957453013}, {"island": "Biscoe", "bill_length_mm": 46.1, "bill_depth_mm": 15.1, "flipper_length_mm": 215, "body_mass_g": 5100, "sex": "male", "year": 2007, "cluster": 3, "bill_length_standardized": 0.645505319902572, "flipper_length_standardized": 1.35552224378424}, {"island": "Biscoe", "bill_length_mm": 47.8, "bill_depth_mm": 15.0, "flipper_length_mm": 215, "body_mass_g": 5650, "sex": "male", "year": 2007, "cluster": 3, "bill_length_standardized": 0.962559297254395, "flipper_length_standardized": 1.35552224378424}, {"island": "Biscoe", "bill_length_mm": 45.0, "bill_depth_mm": 15.4, "flipper_length_mm": 220, "body_mass_g": 5050, "sex": "male", "year": 2008, "cluster": 3, "bill_length_standardized": 0.440352746321979, "flipper_length_standardized": 1.76217891691951}, {"island": "Biscoe", "bill_length_mm": 49.1, "bill_depth_mm": 14.5, "flipper_length_mm": 212, "body_mass_g": 4625, "sex": "female", "year": 2009, "cluster": 3, "bill_length_standardized": 1.20501233875873, "flipper_length_standardized": 1.11152823990308}, {"island": "Biscoe", "bill_length_mm": 43.3, "bill_depth_mm": 14.0, "flipper_length_mm": 208, "body_mass_g": 4575, "sex": "female", "year": 2009, "cluster": 3, "bill_length_standardized": 0.123298768970154, "flipper_length_standardized": 0.786202901394858}, {"island": "Dream", "bill_length_mm": 46.0, "bill_depth_mm": 18.9, "flipper_length_mm": 195, "body_mass_g": 4150, "sex": "female", "year": 2007, "cluster": 2, "bill_length_standardized": 0.626855085940699, "flipper_length_standardized": -0.271104448756849}, {"island": "Dream", "bill_length_mm": 46.7, "bill_depth_mm": 17.9, "flipper_length_mm": 195, "body_mass_g": 3300, "sex": "female", "year": 2007, "cluster": 2, "bill_length_standardized": 0.757406723673804, "flipper_length_standardized": -0.271104448756849}, {"island": "Dream", "bill_length_mm": 52.2, "bill_depth_mm": 18.8, "flipper_length_mm": 197, "body_mass_g": 3450, "sex": "male", "year": 2009, "cluster": 2, "bill_length_standardized": 1.78316959157677, "flipper_length_standardized": -0.10844177950274}, {"island": "Dream", "bill_length_mm": 46.8, "bill_depth_mm": 16.5, "flipper_length_mm": 189, "body_mass_g": 3650, "sex": "female", "year": 2009, "cluster": 2, "bill_length_standardized": 0.776056957635675, "flipper_length_standardized": -0.759092456519175}]}}, {"mode": "vega-lite"});
 </script></div></div>
-</div>
-<div class="figure align-default" id="colored-scatter" style="width: 700px">
-<div class="cell_output docutils container">
-<div class="output text_html">
-<div id="altair-viz-42fd0883718a4452862f75818b4fcac5"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-42fd0883718a4452862f75818b4fcac5") {
-      outputDiv = document.getElementById("altair-viz-42fd0883718a4452862f75818b4fcac5");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 12}}, "data": {"name": "data-3c9eea8c1410ca5343e5f80a37a0a937"}, "mark": "circle", "encoding": {"color": {"field": "cluster", "scale": {"range": ["orange", "blue", "brown"]}, "type": "nominal"}, "x": {"field": "flipper_length_standardized", "title": "Flipper Length (standardized)", "type": "quantitative"}, "y": {"field": "bill_length_standardized", "title": "Bill Length (standardized)", "type": "quantitative"}}, "title": "Scatter plot of standardized bill length versus standardized flipper length with colored groups.", "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-3c9eea8c1410ca5343e5f80a37a0a937": [{"island": "Dream", "bill_length_mm": 39.2, "bill_depth_mm": 21.1, "flipper_length_mm": 196, "body_mass_g": 4150, "sex": "male", "year": 2007, "cluster": 1, "bill_length_standardized": -0.641360823466598, "flipper_length_standardized": -0.189773114129794}, {"island": "Dream", "bill_length_mm": 36.5, "bill_depth_mm": 18.0, "flipper_length_mm": 182, "body_mass_g": 3150, "sex": "female", "year": 2007, "cluster": 1, "bill_length_standardized": -1.14491714043714, "flipper_length_standardized": -1.32841179890856}, {"island": "Biscoe", "bill_length_mm": 34.5, "bill_depth_mm": 18.1, "flipper_length_mm": 187, "body_mass_g": 2900, "sex": "female", "year": 2008, "cluster": 1, "bill_length_standardized": -1.51792181967458, "flipper_length_standardized": -0.921755125773284}, {"island": "Torgersen", "bill_length_mm": 36.7, "bill_depth_mm": 18.8, "flipper_length_mm": 187, "body_mass_g": 3800, "sex": "female", "year": 2008, "cluster": 1, "bill_length_standardized": -1.1076166725134, "flipper_length_standardized": -0.921755125773284}, {"island": "Biscoe", "bill_length_mm": 38.1, "bill_depth_mm": 17.0, "flipper_length_mm": 181, "body_mass_g": 3175, "sex": "female", "year": 2009, "cluster": 1, "bill_length_standardized": -0.846513397047191, "flipper_length_standardized": -1.40974313353561}, {"island": "Dream", "bill_length_mm": 39.2, "bill_depth_mm": 18.6, "flipper_length_mm": 190, "body_mass_g": 4250, "sex": "male", "year": 2009, "cluster": 1, "bill_length_standardized": -0.641360823466598, "flipper_length_standardized": -0.677761121892121}, {"island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 17.8, "flipper_length_mm": 195, "body_mass_g": 3450, "sex": "female", "year": 2009, "cluster": 1, "bill_length_standardized": -1.2381683102465, "flipper_length_standardized": -0.271104448756849}, {"island": "Dream", "bill_length_mm": 37.8, "bill_depth_mm": 18.1, "flipper_length_mm": 193, "body_mass_g": 3750, "sex": "male", "year": 2009, "cluster": 1, "bill_length_standardized": -0.902464098932808, "flipper_length_standardized": -0.433767118010958}, {"island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 14.5, "flipper_length_mm": 213, "body_mass_g": 4400, "sex": "female", "year": 2007, "cluster": 3, "bill_length_standardized": 0.720106255750059, "flipper_length_standardized": 1.19285957453013}, {"island": "Biscoe", "bill_length_mm": 46.1, "bill_depth_mm": 15.1, "flipper_length_mm": 215, "body_mass_g": 5100, "sex": "male", "year": 2007, "cluster": 3, "bill_length_standardized": 0.645505319902572, "flipper_length_standardized": 1.35552224378424}, {"island": "Biscoe", "bill_length_mm": 47.8, "bill_depth_mm": 15.0, "flipper_length_mm": 215, "body_mass_g": 5650, "sex": "male", "year": 2007, "cluster": 3, "bill_length_standardized": 0.962559297254395, "flipper_length_standardized": 1.35552224378424}, {"island": "Biscoe", "bill_length_mm": 45.0, "bill_depth_mm": 15.4, "flipper_length_mm": 220, "body_mass_g": 5050, "sex": "male", "year": 2008, "cluster": 3, "bill_length_standardized": 0.440352746321979, "flipper_length_standardized": 1.76217891691951}, {"island": "Biscoe", "bill_length_mm": 49.1, "bill_depth_mm": 14.5, "flipper_length_mm": 212, "body_mass_g": 4625, "sex": "female", "year": 2009, "cluster": 3, "bill_length_standardized": 1.20501233875873, "flipper_length_standardized": 1.11152823990308}, {"island": "Biscoe", "bill_length_mm": 43.3, "bill_depth_mm": 14.0, "flipper_length_mm": 208, "body_mass_g": 4575, "sex": "female", "year": 2009, "cluster": 3, "bill_length_standardized": 0.123298768970154, "flipper_length_standardized": 0.786202901394858}, {"island": "Dream", "bill_length_mm": 46.0, "bill_depth_mm": 18.9, "flipper_length_mm": 195, "body_mass_g": 4150, "sex": "female", "year": 2007, "cluster": 2, "bill_length_standardized": 0.626855085940699, "flipper_length_standardized": -0.271104448756849}, {"island": "Dream", "bill_length_mm": 46.7, "bill_depth_mm": 17.9, "flipper_length_mm": 195, "body_mass_g": 3300, "sex": "female", "year": 2007, "cluster": 2, "bill_length_standardized": 0.757406723673804, "flipper_length_standardized": -0.271104448756849}, {"island": "Dream", "bill_length_mm": 52.2, "bill_depth_mm": 18.8, "flipper_length_mm": 197, "body_mass_g": 3450, "sex": "male", "year": 2009, "cluster": 2, "bill_length_standardized": 1.78316959157677, "flipper_length_standardized": -0.10844177950274}, {"island": "Dream", "bill_length_mm": 46.8, "bill_depth_mm": 16.5, "flipper_length_mm": 189, "body_mass_g": 3650, "sex": "female", "year": 2009, "cluster": 2, "bill_length_standardized": 0.776056957635675, "flipper_length_standardized": -0.759092456519175}]}}, {"mode": "vega-lite"});
-</script></div></div>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length with colored groups.</span><a class="headerlink" href="#colored-scatter" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length with colored groups.</span><a class="headerlink" href="#colored-scatter-plot" title="Permalink to this image">¶</a></p>
 </div>
 <p>What are the labels for these groups? Unfortunately, we don’t have any. K-means,
 like almost all clustering algorithms, just outputs meaningless “cluster labels”
@@ -1698,13 +1564,13 @@ of the cluster assignments for each point, as shown in <a class="reference inter
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-3d062dfd3c9b4937b662079a0d378792"></div>
+<div id="altair-viz-6fa06163b9fb4a28b714c959312b8eed"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3d062dfd3c9b4937b662079a0d378792") {
-      outputDiv = document.getElementById("altair-viz-3d062dfd3c9b4937b662079a0d378792");
+    if (outputDiv.id !== "altair-viz-6fa06163b9fb4a28b714c959312b8eed") {
+      outputDiv = document.getElementById("altair-viz-6fa06163b9fb4a28b714c959312b8eed");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2036,13 +1902,13 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="figure align-default" id="elbow-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-58dd70b8d7014ccfa4fb886500fe681e"></div>
+<div id="altair-viz-c4f50bfd61d942e7afa9d04eb90bd243"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-58dd70b8d7014ccfa4fb886500fe681e") {
-      outputDiv = document.getElementById("altair-viz-58dd70b8d7014ccfa4fb886500fe681e");
+    if (outputDiv.id !== "altair-viz-c4f50bfd61d942e7afa9d04eb90bd243") {
+      outputDiv = document.getElementById("altair-viz-c4f50bfd61d942e7afa9d04eb90bd243");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2136,13 +2002,13 @@ the more likely we are to find a good clustering (if one exists).</p>
 <div class="figure align-default" id="elbow-plot2" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-ee3b7fa3bb4e44f28b49194a76ef9fe4"></div>
+<div id="altair-viz-27d4d9c48cff460b965f57a12cd68696"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-ee3b7fa3bb4e44f28b49194a76ef9fe4") {
-      outputDiv = document.getElementById("altair-viz-ee3b7fa3bb4e44f28b49194a76ef9fe4");
+    if (outputDiv.id !== "altair-viz-27d4d9c48cff460b965f57a12cd68696") {
+      outputDiv = document.getElementById("altair-viz-27d4d9c48cff460b965f57a12cd68696");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
