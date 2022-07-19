@@ -199,7 +199,7 @@ scatter_plot = (
 glue('scatter_plot', scatter_plot, display=True)
 ```
 
-:::{glue:figure} scatter_plot 
+:::{glue:figure} scatter_plot
 :figwidth: 700px 
 :name: scatter_plot
 
