@@ -168,6 +168,7 @@ Now we can load and preview the data.
 
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
+from myst_nb import glue
 data = pd.read_csv('data/toy_penguins.csv')
 data
 ```
@@ -314,7 +315,7 @@ $\mu_x = \frac{1}{4}(x_1+x_2+x_3+x_4) \quad \mu_y = \frac{1}{4}(y_1+y_2+y_3+y_4)
 
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
-from myst_nb import glue
+
 clus_rows = clus.shape[0]
 
 mean_flipper_len_std = round(np.mean(clus['flipper_length_standardized']),2)
