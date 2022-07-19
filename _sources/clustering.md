@@ -192,6 +192,7 @@ scatter = (
         labelFontSize=12,
         titleFontSize=12)
 )
+scatter
 ```
 
 ```{code-cell} ipython3
@@ -238,7 +239,7 @@ denoted by colored scatter points.
 
 
 ```{code-cell} ipython3
-:tags: ["remove-cell"]
+#:tags: ["remove-cell"]
 
 colors = ["orange", "blue", "brown"]
 
@@ -253,7 +254,9 @@ colored_scatter = (
 )
 )
 
+
 glue('colored_scatter', colored_scatter, display=True)
+colored_scatter
 ```
 
 :::{glue:figure} colored_scatter

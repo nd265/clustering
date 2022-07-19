@@ -702,9 +702,66 @@ to see if we can detect subtypes or groups in our data set.</p>
         <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
         <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="p">)</span>
+<span class="n">scatter</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-81a35aa7546d45ce8b7a2e90c489a5c2"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-81a35aa7546d45ce8b7a2e90c489a5c2") {
+      outputDiv = document.getElementById("altair-viz-81a35aa7546d45ce8b7a2e90c489a5c2");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 12}}, "data": {"name": "data-ebb59f3fa086785a5682bd5f8fba47af"}, "mark": {"type": "circle", "color": "black"}, "encoding": {"x": {"field": "flipper_length_standardized", "title": "Flipper Length (standardized)", "type": "quantitative"}, "y": {"field": "bill_length_standardized", "title": "Bill Length (standardized)", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-ebb59f3fa086785a5682bd5f8fba47af": [{"flipper_length_standardized": -0.189773114129794, "bill_length_standardized": -0.641360823466598}, {"flipper_length_standardized": -1.32841179890856, "bill_length_standardized": -1.14491714043714}, {"flipper_length_standardized": -0.921755125773284, "bill_length_standardized": -1.51792181967458}, {"flipper_length_standardized": -0.921755125773284, "bill_length_standardized": -1.1076166725134}, {"flipper_length_standardized": -1.40974313353561, "bill_length_standardized": -0.846513397047191}, {"flipper_length_standardized": -0.677761121892121, "bill_length_standardized": -0.641360823466598}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": -1.2381683102465}, {"flipper_length_standardized": -0.433767118010958, "bill_length_standardized": -0.902464098932808}, {"flipper_length_standardized": 1.19285957453013, "bill_length_standardized": 0.720106255750059}, {"flipper_length_standardized": 1.35552224378424, "bill_length_standardized": 0.645505319902572}, {"flipper_length_standardized": 1.35552224378424, "bill_length_standardized": 0.962559297254395}, {"flipper_length_standardized": 1.76217891691951, "bill_length_standardized": 0.440352746321979}, {"flipper_length_standardized": 1.11152823990308, "bill_length_standardized": 1.20501233875873}, {"flipper_length_standardized": 0.786202901394858, "bill_length_standardized": 0.123298768970154}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": 0.626855085940699}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": 0.757406723673804}, {"flipper_length_standardized": -0.10844177950274, "bill_length_standardized": 1.78316959157677}, {"flipper_length_standardized": -0.759092456519175, "bill_length_standardized": 0.776056957635675}]}}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 <div class="figure align-default" id="scatter" style="width: 700px">
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length.</span><a class="headerlink" href="#scatter" title="Permalink to this image">¶</a></p>
@@ -734,6 +791,48 @@ for selecting the number of clusters.
 This procedure will separate the data into groups;
 <a class="reference internal" href="#colored-scatter"><span class="std std-numref">Fig. 3</span></a> shows these groups
 denoted by colored scatter points.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#:tags: [&quot;remove-cell&quot;]</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;brown&quot;</span><span class="p">]</span>
+
+<span class="n">colored_scatter</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scatter plot of standardized bill length versus standardized flipper length with colored groups.&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;flipper_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Flipper Length (standardized)&quot;</span><span class="p">),</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;bill_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bill Length (standardized)&quot;</span><span class="p">),</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;cluster:N&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="nb">range</span><span class="o">=</span><span class="n">colors</span><span class="p">)))</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
+    <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+    <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">12</span>
+<span class="p">)</span>
+<span class="p">)</span>
+
+
+<span class="n">glue</span><span class="p">(</span><span class="s1">&#39;colored_scatter&#39;</span><span class="p">,</span> <span class="n">colored_scatter</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">colored_scatter</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 17&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;brown&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">colored_scatter</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scatter plot of standardized bill length versus standardized flipper length with colored groups.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="n">glue</span><span class="p">(</span><span class="s1">&#39;colored_scatter&#39;</span><span class="p">,</span> <span class="n">colored_scatter</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="n">colored_scatter</span>
+
+<span class="ne">NameError</span>: name &#39;glue&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
 <div class="figure align-default" id="colored-scatter" style="width: 700px">
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length with colored groups.</span><a class="headerlink" href="#colored-scatter" title="Permalink to this image">¶</a></p>
 </div>
@@ -1395,13 +1494,13 @@ of the cluster assignments for each point, as shown in <a class="reference inter
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-fca61afac44b40e6a816348592ff6c26"></div>
+<div id="altair-viz-95c4eb69758849f3ada46b8895a63d3e"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-fca61afac44b40e6a816348592ff6c26") {
-      outputDiv = document.getElementById("altair-viz-fca61afac44b40e6a816348592ff6c26");
+    if (outputDiv.id !== "altair-viz-95c4eb69758849f3ada46b8895a63d3e") {
+      outputDiv = document.getElementById("altair-viz-95c4eb69758849f3ada46b8895a63d3e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1733,13 +1832,13 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="figure align-default" id="elbow-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-70f7673d59b4446ea71faa418df75280"></div>
+<div id="altair-viz-fa12c348dcca4b22804e469ab44b3dae"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-70f7673d59b4446ea71faa418df75280") {
-      outputDiv = document.getElementById("altair-viz-70f7673d59b4446ea71faa418df75280");
+    if (outputDiv.id !== "altair-viz-fa12c348dcca4b22804e469ab44b3dae") {
+      outputDiv = document.getElementById("altair-viz-fa12c348dcca4b22804e469ab44b3dae");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1833,13 +1932,13 @@ the more likely we are to find a good clustering (if one exists).</p>
 <div class="figure align-default" id="elbow-plot2" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-9d57c7bca7984d36a79c2b04e0dd120a"></div>
+<div id="altair-viz-7b79c847ac5b44d99ac03eb64321d7b1"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9d57c7bca7984d36a79c2b04e0dd120a") {
-      outputDiv = document.getElementById("altair-viz-9d57c7bca7984d36a79c2b04e0dd120a");
+    if (outputDiv.id !== "altair-viz-7b79c847ac5b44d99ac03eb64321d7b1") {
+      outputDiv = document.getElementById("altair-viz-7b79c847ac5b44d99ac03eb64321d7b1");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
