@@ -434,6 +434,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="clustering-clustering">
 <h1>Clustering {#clustering}<a class="headerlink" href="#clustering-clustering" title="Permalink to this headline">¶</a></h1>
+<p>hgj</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -516,6 +517,7 @@ In your future studies, you might encounter hierarchical clustering,
 principal component analysis, multidimensional scaling, and more;
 see the additional resources section at the end of this chapter
 for where to begin learning more about these other methods.</p>
+<p>\newpage</p>
 <blockquote>
 <div><p><strong>Note:</strong> There are also so-called <em>semisupervised</em> tasks, \index{semisupervised}
 where only some of the data come with response variable labels/values,
@@ -696,79 +698,24 @@ to see if we can detect subtypes or groups in our data set.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scatter_plot</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">penguin_data</span><span class="p">)</span>
         <span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-            <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;flipper_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Flipper Length (standardized)&quot;</span><span class="p">),</span>
-            <span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;bill_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bill Length (standardized)&quot;</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;flipper_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Flipper Length (standardized)&quot;</span><span class="p">),</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;bill_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bill Length (standardized)&quot;</span><span class="p">))</span>
         <span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
         <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
-        <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+        <span class="n">titleFontSize</span><span class="o">=</span><span class="mi">12</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span><span class="n">fontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="figure align-default" id="scatter-plot" style="width: 700px">
-<div class="cell_output docutils container">
-<div class="output text_html">
-<div id="altair-viz-2b4c81c4d1984827b5998b8bda81fba6"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2b4c81c4d1984827b5998b8bda81fba6") {
-      outputDiv = document.getElementById("altair-viz-2b4c81c4d1984827b5998b8bda81fba6");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 12}}, "data": {"name": "data-ebb59f3fa086785a5682bd5f8fba47af"}, "mark": {"type": "circle", "color": "black"}, "encoding": {"x": {"field": "flipper_length_standardized", "title": "Flipper Length (standardized)", "type": "quantitative"}, "y": {"field": "bill_length_standardized", "title": "Bill Length (standardized)", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-ebb59f3fa086785a5682bd5f8fba47af": [{"flipper_length_standardized": -0.189773114129794, "bill_length_standardized": -0.641360823466598}, {"flipper_length_standardized": -1.32841179890856, "bill_length_standardized": -1.14491714043714}, {"flipper_length_standardized": -0.921755125773284, "bill_length_standardized": -1.51792181967458}, {"flipper_length_standardized": -0.921755125773284, "bill_length_standardized": -1.1076166725134}, {"flipper_length_standardized": -1.40974313353561, "bill_length_standardized": -0.846513397047191}, {"flipper_length_standardized": -0.677761121892121, "bill_length_standardized": -0.641360823466598}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": -1.2381683102465}, {"flipper_length_standardized": -0.433767118010958, "bill_length_standardized": -0.902464098932808}, {"flipper_length_standardized": 1.19285957453013, "bill_length_standardized": 0.720106255750059}, {"flipper_length_standardized": 1.35552224378424, "bill_length_standardized": 0.645505319902572}, {"flipper_length_standardized": 1.35552224378424, "bill_length_standardized": 0.962559297254395}, {"flipper_length_standardized": 1.76217891691951, "bill_length_standardized": 0.440352746321979}, {"flipper_length_standardized": 1.11152823990308, "bill_length_standardized": 1.20501233875873}, {"flipper_length_standardized": 0.786202901394858, "bill_length_standardized": 0.123298768970154}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": 0.626855085940699}, {"flipper_length_standardized": -0.271104448756849, "bill_length_standardized": 0.757406723673804}, {"flipper_length_standardized": -0.10844177950274, "bill_length_standardized": 1.78316959157677}, {"flipper_length_standardized": -0.759092456519175, "bill_length_standardized": 0.776056957635675}]}}, {"mode": "vega-lite"});
-</script></div></div>
 <p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length.</span><a class="headerlink" href="#scatter-plot" title="Permalink to this image">¶</a></p>
 </div>
 <p>Based \index{ggplot}\index{ggplot!geom_point} on the visualization
 in <a class="reference internal" href="#scatter-plot"><span class="std std-numref">Fig. 2</span></a>,
 we might suspect there are a few subtypes of penguins within our data set.
-We can see roughly 3 groups of observations in <code class="xref std std-numref docutils literal notranslate"><span class="pre">scatter</span></code>,
+We can see roughly 3 groups of observations in <a class="reference internal" href="#scatter-plot"><span class="std std-numref">Fig. 2</span></a>,
 including:</p>
 <ol class="simple">
 <li><p>a small flipper and bill length group,</p></li>
@@ -791,62 +738,6 @@ This procedure will separate the data into groups;
 <a class="reference internal" href="#colored-scatter-plot"><span class="std std-numref">Fig. 3</span></a> shows these groups
 denoted by colored scatter points.</p>
 <div class="figure align-default" id="colored-scatter-plot" style="width: 700px">
-<div class="cell_output docutils container">
-<div class="output text_html">
-<div id="altair-viz-a8a0233146df4f0d9b135ff27f10a23b"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a8a0233146df4f0d9b135ff27f10a23b") {
-      outputDiv = document.getElementById("altair-viz-a8a0233146df4f0d9b135ff27f10a23b");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 12, "titleFontSize": 12}}, "data": {"name": "data-3c9eea8c1410ca5343e5f80a37a0a937"}, "mark": "circle", "encoding": {"color": {"field": "cluster", "scale": {"range": ["orange", "blue", "brown"]}, "type": "nominal"}, "x": {"field": "flipper_length_standardized", "title": "Flipper Length (standardized)", "type": "quantitative"}, "y": {"field": "bill_length_standardized", "title": "Bill Length (standardized)", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-3c9eea8c1410ca5343e5f80a37a0a937": [{"island": "Dream", "bill_length_mm": 39.2, "bill_depth_mm": 21.1, "flipper_length_mm": 196, "body_mass_g": 4150, "sex": "male", "year": 2007, "cluster": 1, "bill_length_standardized": -0.641360823466598, "flipper_length_standardized": -0.189773114129794}, {"island": "Dream", "bill_length_mm": 36.5, "bill_depth_mm": 18.0, "flipper_length_mm": 182, "body_mass_g": 3150, "sex": "female", "year": 2007, "cluster": 1, "bill_length_standardized": -1.14491714043714, "flipper_length_standardized": -1.32841179890856}, {"island": "Biscoe", "bill_length_mm": 34.5, "bill_depth_mm": 18.1, "flipper_length_mm": 187, "body_mass_g": 2900, "sex": "female", "year": 2008, "cluster": 1, "bill_length_standardized": -1.51792181967458, "flipper_length_standardized": -0.921755125773284}, {"island": "Torgersen", "bill_length_mm": 36.7, "bill_depth_mm": 18.8, "flipper_length_mm": 187, "body_mass_g": 3800, "sex": "female", "year": 2008, "cluster": 1, "bill_length_standardized": -1.1076166725134, "flipper_length_standardized": -0.921755125773284}, {"island": "Biscoe", "bill_length_mm": 38.1, "bill_depth_mm": 17.0, "flipper_length_mm": 181, "body_mass_g": 3175, "sex": "female", "year": 2009, "cluster": 1, "bill_length_standardized": -0.846513397047191, "flipper_length_standardized": -1.40974313353561}, {"island": "Dream", "bill_length_mm": 39.2, "bill_depth_mm": 18.6, "flipper_length_mm": 190, "body_mass_g": 4250, "sex": "male", "year": 2009, "cluster": 1, "bill_length_standardized": -0.641360823466598, "flipper_length_standardized": -0.677761121892121}, {"island": "Dream", "bill_length_mm": 36.0, "bill_depth_mm": 17.8, "flipper_length_mm": 195, "body_mass_g": 3450, "sex": "female", "year": 2009, "cluster": 1, "bill_length_standardized": -1.2381683102465, "flipper_length_standardized": -0.271104448756849}, {"island": "Dream", "bill_length_mm": 37.8, "bill_depth_mm": 18.1, "flipper_length_mm": 193, "body_mass_g": 3750, "sex": "male", "year": 2009, "cluster": 1, "bill_length_standardized": -0.902464098932808, "flipper_length_standardized": -0.433767118010958}, {"island": "Biscoe", "bill_length_mm": 46.5, "bill_depth_mm": 14.5, "flipper_length_mm": 213, "body_mass_g": 4400, "sex": "female", "year": 2007, "cluster": 3, "bill_length_standardized": 0.720106255750059, "flipper_length_standardized": 1.19285957453013}, {"island": "Biscoe", "bill_length_mm": 46.1, "bill_depth_mm": 15.1, "flipper_length_mm": 215, "body_mass_g": 5100, "sex": "male", "year": 2007, "cluster": 3, "bill_length_standardized": 0.645505319902572, "flipper_length_standardized": 1.35552224378424}, {"island": "Biscoe", "bill_length_mm": 47.8, "bill_depth_mm": 15.0, "flipper_length_mm": 215, "body_mass_g": 5650, "sex": "male", "year": 2007, "cluster": 3, "bill_length_standardized": 0.962559297254395, "flipper_length_standardized": 1.35552224378424}, {"island": "Biscoe", "bill_length_mm": 45.0, "bill_depth_mm": 15.4, "flipper_length_mm": 220, "body_mass_g": 5050, "sex": "male", "year": 2008, "cluster": 3, "bill_length_standardized": 0.440352746321979, "flipper_length_standardized": 1.76217891691951}, {"island": "Biscoe", "bill_length_mm": 49.1, "bill_depth_mm": 14.5, "flipper_length_mm": 212, "body_mass_g": 4625, "sex": "female", "year": 2009, "cluster": 3, "bill_length_standardized": 1.20501233875873, "flipper_length_standardized": 1.11152823990308}, {"island": "Biscoe", "bill_length_mm": 43.3, "bill_depth_mm": 14.0, "flipper_length_mm": 208, "body_mass_g": 4575, "sex": "female", "year": 2009, "cluster": 3, "bill_length_standardized": 0.123298768970154, "flipper_length_standardized": 0.786202901394858}, {"island": "Dream", "bill_length_mm": 46.0, "bill_depth_mm": 18.9, "flipper_length_mm": 195, "body_mass_g": 4150, "sex": "female", "year": 2007, "cluster": 2, "bill_length_standardized": 0.626855085940699, "flipper_length_standardized": -0.271104448756849}, {"island": "Dream", "bill_length_mm": 46.7, "bill_depth_mm": 17.9, "flipper_length_mm": 195, "body_mass_g": 3300, "sex": "female", "year": 2007, "cluster": 2, "bill_length_standardized": 0.757406723673804, "flipper_length_standardized": -0.271104448756849}, {"island": "Dream", "bill_length_mm": 52.2, "bill_depth_mm": 18.8, "flipper_length_mm": 197, "body_mass_g": 3450, "sex": "male", "year": 2009, "cluster": 2, "bill_length_standardized": 1.78316959157677, "flipper_length_standardized": -0.10844177950274}, {"island": "Dream", "bill_length_mm": 46.8, "bill_depth_mm": 16.5, "flipper_length_mm": 189, "body_mass_g": 3650, "sex": "female", "year": 2009, "cluster": 2, "bill_length_standardized": 0.776056957635675, "flipper_length_standardized": -0.759092456519175}]}}, {"mode": "vega-lite"});
-</script></div></div>
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length with colored groups.</span><a class="headerlink" href="#colored-scatter-plot" title="Permalink to this image">¶</a></p>
 </div>
 <p>What are the labels for these groups? Unfortunately, we don’t have any. K-means,
@@ -915,6 +806,7 @@ These distances are denoted by black lines in
 <a class="reference internal image-reference" href="_images/toy-example-all-clus-dists-1.png"><img alt="_images/toy-example-all-clus-dists-1.png" src="_images/toy-example-all-clus-dists-1.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">All clusters from the penguin_data data set example. Observations are in orange, blue, and yellow with the cluster center highlighted in red. The distances from the observations to each of the respective cluster centers are represented as black lines.</span><a class="headerlink" href="#toy-example-all-clus-dists-1" title="Permalink to this image">¶</a></p>
 </div>
+<p>\newpage</p>
 </div>
 <div class="section" id="the-clustering-algorithm">
 <h3>The clustering algorithm<a class="headerlink" href="#the-clustering-algorithm" title="Permalink to this headline">¶</a></h3>
@@ -1507,13 +1399,13 @@ of the cluster assignments for each point, as shown in <a class="reference inter
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-c21288cda41b4e41a9ef4009601941a0"></div>
+<div id="altair-viz-96728584686f459eb5ff0162d364fd58"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c21288cda41b4e41a9ef4009601941a0") {
-      outputDiv = document.getElementById("altair-viz-c21288cda41b4e41a9ef4009601941a0");
+    if (outputDiv.id !== "altair-viz-96728584686f459eb5ff0162d364fd58") {
+      outputDiv = document.getElementById("altair-viz-96728584686f459eb5ff0162d364fd58");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1720,6 +1612,8 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 
 <span class="p">)</span>
     
+
+
 <span class="n">penguin_clust_ks</span>
 </pre></div>
 </div>
@@ -1818,7 +1712,7 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 </div></div></div>
 </div>
 <p>Now that we have <code class="docutils literal notranslate"><span class="pre">inertia</span></code> and <code class="docutils literal notranslate"><span class="pre">k</span></code> as columns in a data frame, we can make a line plot
-(<a class="reference internal" href="#elbow-plot"><span class="std std-numref">Fig. 14</span></a>) and search for the “elbow” to find which value of K to use. We will drop the column <code class="docutils literal notranslate"><span class="pre">penguin_clusts</span></code> to make the plotting in altair feasible</p>
+(<a class="reference internal" href="#plot"><span class="std std-numref">Fig. 14</span></a>) and search for the “elbow” to find which value of K to use. We will drop the column <code class="docutils literal notranslate"><span class="pre">penguin_clusts</span></code> to make the plotting in altair feasible</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">penguin_clust_ks</span> <span class="o">=</span> <span class="n">penguin_clust_ks</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;penguin_clusts&#39;</span><span class="p">)</span>
@@ -1828,7 +1722,7 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elbow_plot</span><span class="o">=</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="o">=</span><span class="p">(</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">penguin_clust_ks</span><span class="p">)</span>
     <span class="o">.</span><span class="n">mark_line</span><span class="p">(</span><span class="n">point</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
@@ -1842,16 +1736,16 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 </div>
 </div>
 </div>
-<div class="figure align-default" id="elbow-plot" style="width: 700px">
+<div class="figure align-default" id="plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-68650785455f447e805da8d4f149542f"></div>
+<div id="altair-viz-31d44ad4750645f89fe2ab709fcbb08d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-68650785455f447e805da8d4f149542f") {
-      outputDiv = document.getElementById("altair-viz-68650785455f447e805da8d4f149542f");
+    if (outputDiv.id !== "altair-viz-31d44ad4750645f89fe2ab709fcbb08d") {
+      outputDiv = document.getElementById("altair-viz-31d44ad4750645f89fe2ab709fcbb08d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1899,7 +1793,7 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
     }
   })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-75c103bebf85d08a1a8f7d306c57c62d"}, "mark": {"type": "line", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-75c103bebf85d08a1a8f7d306c57c62d": [{"k": 1, "inertia": 35.99999999999999, "n_iter": 2}, {"k": 2, "inertia": 11.576264153631982, "n_iter": 3}, {"k": 3, "inertia": 4.730719092276117, "n_iter": 3}, {"k": 4, "inertia": 4.046971636164045, "n_iter": 2}, {"k": 5, "inertia": 2.3621308411553095, "n_iter": 4}, {"k": 6, "inertia": 1.8490674361826995, "n_iter": 4}, {"k": 7, "inertia": 2.4152411605291895, "n_iter": 3}, {"k": 8, "inertia": 1.0359735206766723, "n_iter": 4}, {"k": 9, "inertia": 0.9713796058938011, "n_iter": 2}]}}, {"mode": "vega-lite"});
 </script></div></div>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters.</span><a class="headerlink" href="#elbow-plot" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters.</span><a class="headerlink" href="#plot" title="Permalink to this image">¶</a></p>
 </div>
 <p>It looks like 3 clusters is the right choice for this data.
 But why is there a “bump” in the total WSSD plot here?
@@ -1942,16 +1836,16 @@ the more likely we are to find a good clustering (if one exists).</p>
 </div>
 </div>
 </div>
-<div class="figure align-default" id="elbow-plot2" style="width: 700px">
+<div class="figure align-default" id="elbow-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-f1c2f568e7814f12a5006540cd44fac6"></div>
+<div id="altair-viz-e3f9b87af6e44696bf685ed56a5846b4"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f1c2f568e7814f12a5006540cd44fac6") {
-      outputDiv = document.getElementById("altair-viz-f1c2f568e7814f12a5006540cd44fac6");
+    if (outputDiv.id !== "altair-viz-e3f9b87af6e44696bf685ed56a5846b4") {
+      outputDiv = document.getElementById("altair-viz-e3f9b87af6e44696bf685ed56a5846b4");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1999,7 +1893,7 @@ the more likely we are to find a good clustering (if one exists).</p>
     }
   })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelFontSize": 15, "titleFontSize": 20}}, "data": {"name": "data-772b44915409097b31df568cff60d910"}, "mark": {"type": "line", "point": true}, "encoding": {"x": {"field": "k", "title": "K", "type": "quantitative"}, "y": {"field": "inertia", "title": "Total within-cluster sum of squares", "type": "quantitative"}}, "height": 400, "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-772b44915409097b31df568cff60d910": [{"k": 1, "inertia": 35.99999999999999, "n_iter": 2}, {"k": 2, "inertia": 11.576264153631982, "n_iter": 3}, {"k": 3, "inertia": 4.730719092276117, "n_iter": 3}, {"k": 4, "inertia": 3.3436127899809343, "n_iter": 2}, {"k": 5, "inertia": 2.3621308411553095, "n_iter": 4}, {"k": 6, "inertia": 1.6783833850432375, "n_iter": 4}, {"k": 7, "inertia": 1.3087316666611315, "n_iter": 3}, {"k": 8, "inertia": 1.0659421816324675, "n_iter": 4}, {"k": 9, "inertia": 0.8002969878568551, "n_iter": 2}]}}, {"mode": "vega-lite"});
 </script></div></div>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters when K-means is run without <code class="docutils literal notranslate"><span class="pre">init</span></code> argument</span><a class="headerlink" href="#elbow-plot2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">A plot showing the total WSSD versus the number of clusters when K-means is run with 10 restarts.</span><a class="headerlink" href="#elbow-plot" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="exercises">
