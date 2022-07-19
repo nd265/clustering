@@ -183,7 +183,7 @@ to see if we can detect subtypes or groups in our data set.
 
 
 ```{code-cell} ipython3
-scatter_plot = (
+scatter = (
     alt.Chart(penguin_data)
         .mark_circle(color='black').encode(
             x = alt.X("flipper_length_standardized", title="Flipper Length (standardized)"),
@@ -196,12 +196,12 @@ scatter_plot = (
 
 ```{code-cell} ipython3
 :tags: ["remove-cell"]
-glue('scatter_plot', scatter_plot, display=True)
+glue('scatter', scatter, display=True)
 ```
 
-:::{glue:figure} scatter_plot
+:::{glue:figure} scatter
 :figwidth: 700px 
-:name: scatter_plot
+:name: scatter
 
 Scatter plot of standardized bill length versus standardized flipper length.
 :::
@@ -209,9 +209,9 @@ Scatter plot of standardized bill length versus standardized flipper length.
 
 
 Based \index{ggplot}\index{ggplot!geom\_point} on the visualization 
-in {numref}`scatter_plot`, 
+in {numref}`scatter`, 
 we might suspect there are a few subtypes of penguins within our data set.
-We can see roughly 3 groups of observations in {numref}`scatter_plot`,
+We can see roughly 3 groups of observations in {numref}`scatter`,
 including:
 
 1. a small flipper and bill length group,
@@ -231,7 +231,7 @@ In this chapter, we will focus on the *K-means* algorithm,
 combined with the *elbow method* \index{elbow method} 
 for selecting the number of clusters. 
 This procedure will separate the data into groups;
-{numref}`colored_scatter_plot` shows these groups
+{numref}`colored_scatter` shows these groups
 denoted by colored scatter points.
 
 
@@ -242,7 +242,7 @@ denoted by colored scatter points.
 
 colors = ["orange", "blue", "brown"]
 
-colored_scatter_plot = (
+colored_scatter = (
     alt.Chart(data, title="Scatter plot of standardized bill length versus standardized flipper length with colored groups.")
     .mark_circle().encode(
         x = alt.X("flipper_length_standardized", title="Flipper Length (standardized)"),
@@ -253,12 +253,12 @@ colored_scatter_plot = (
 )
 )
 
-glue('colored_scatter_plot', colored_scatter_plot, display=True)
+glue('colored_scatter', colored_scatter, display=True)
 ```
 
-:::{glue:figure} colored_scatter_plot
+:::{glue:figure} colored_scatter
 :figwidth: 700px 
-:name: colored_scatter_plot
+:name: colored_scatter
 
 Scatter plot of standardized bill length versus standardized flipper length with colored groups.
 :::

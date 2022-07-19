@@ -693,7 +693,7 @@ because the K-means clustering algorithm uses random numbers.</p>
 to see if we can detect subtypes or groups in our data set.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scatter_plot</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scatter</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">penguin_data</span><span class="p">)</span>
         <span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
             <span class="n">x</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;flipper_length_standardized&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Flipper Length (standardized)&quot;</span><span class="p">),</span>
@@ -706,13 +706,13 @@ to see if we can detect subtypes or groups in our data set.</p>
 </div>
 </div>
 </div>
-<div class="figure align-default" id="scatter-plot" style="width: 700px">
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length.</span><a class="headerlink" href="#scatter-plot" title="Permalink to this image">¶</a></p>
+<div class="figure align-default" id="scatter" style="width: 700px">
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length.</span><a class="headerlink" href="#scatter" title="Permalink to this image">¶</a></p>
 </div>
 <p>Based \index{ggplot}\index{ggplot!geom_point} on the visualization
-in <a class="reference internal" href="#scatter-plot"><span class="std std-numref">Fig. 2</span></a>,
+in <a class="reference internal" href="#scatter"><span class="std std-numref">Fig. 2</span></a>,
 we might suspect there are a few subtypes of penguins within our data set.
-We can see roughly 3 groups of observations in <a class="reference internal" href="#scatter-plot"><span class="std std-numref">Fig. 2</span></a>,
+We can see roughly 3 groups of observations in <a class="reference internal" href="#scatter"><span class="std std-numref">Fig. 2</span></a>,
 including:</p>
 <ol class="simple">
 <li><p>a small flipper and bill length group,</p></li>
@@ -732,10 +732,10 @@ In this chapter, we will focus on the <em>K-means</em> algorithm,
 combined with the <em>elbow method</em> \index{elbow method}
 for selecting the number of clusters.
 This procedure will separate the data into groups;
-<a class="reference internal" href="#colored-scatter-plot"><span class="std std-numref">Fig. 3</span></a> shows these groups
+<a class="reference internal" href="#colored-scatter"><span class="std std-numref">Fig. 3</span></a> shows these groups
 denoted by colored scatter points.</p>
-<div class="figure align-default" id="colored-scatter-plot" style="width: 700px">
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length with colored groups.</span><a class="headerlink" href="#colored-scatter-plot" title="Permalink to this image">¶</a></p>
+<div class="figure align-default" id="colored-scatter" style="width: 700px">
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Scatter plot of standardized bill length versus standardized flipper length with colored groups.</span><a class="headerlink" href="#colored-scatter" title="Permalink to this image">¶</a></p>
 </div>
 <p>What are the labels for these groups? Unfortunately, we don’t have any. K-means,
 like almost all clustering algorithms, just outputs meaningless “cluster labels”
@@ -1395,13 +1395,13 @@ of the cluster assignments for each point, as shown in <a class="reference inter
 <div class="figure align-default" id="cluster-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-0352fa1baf3642c4a15cd0afc1f57419"></div>
+<div id="altair-viz-fca61afac44b40e6a816348592ff6c26"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0352fa1baf3642c4a15cd0afc1f57419") {
-      outputDiv = document.getElementById("altair-viz-0352fa1baf3642c4a15cd0afc1f57419");
+    if (outputDiv.id !== "altair-viz-fca61afac44b40e6a816348592ff6c26") {
+      outputDiv = document.getElementById("altair-viz-fca61afac44b40e6a816348592ff6c26");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1733,13 +1733,13 @@ K-means clustering objects, and 2 for the clustering statistics:</p>
 <div class="figure align-default" id="elbow-plot" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-9278d2e144da49bd86bf00fa773a63aa"></div>
+<div id="altair-viz-70f7673d59b4446ea71faa418df75280"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9278d2e144da49bd86bf00fa773a63aa") {
-      outputDiv = document.getElementById("altair-viz-9278d2e144da49bd86bf00fa773a63aa");
+    if (outputDiv.id !== "altair-viz-70f7673d59b4446ea71faa418df75280") {
+      outputDiv = document.getElementById("altair-viz-70f7673d59b4446ea71faa418df75280");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1833,13 +1833,13 @@ the more likely we are to find a good clustering (if one exists).</p>
 <div class="figure align-default" id="elbow-plot2" style="width: 700px">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-9662f413ed7445818d2fb2a0e568ca7b"></div>
+<div id="altair-viz-9d57c7bca7984d36a79c2b04e0dd120a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9662f413ed7445818d2fb2a0e568ca7b") {
-      outputDiv = document.getElementById("altair-viz-9662f413ed7445818d2fb2a0e568ca7b");
+    if (outputDiv.id !== "altair-viz-9d57c7bca7984d36a79c2b04e0dd120a") {
+      outputDiv = document.getElementById("altair-viz-9d57c7bca7984d36a79c2b04e0dd120a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
