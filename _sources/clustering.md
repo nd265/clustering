@@ -193,7 +193,7 @@ scatter_plot = (
         labelFontSize=12,
         titleFontSize=12)
 )
-scatter_plot
+
 ```
 
 ```{code-cell} ipython3
@@ -245,7 +245,7 @@ denoted by colored scatter points.
 colors = ["orange", "blue", "brown"]
 
 colored_scatter_plot = (
-    alt.Chart(data, title="Scatter plot of standardized bill length versus standardized flipper length with colored groups.")
+    alt.Chart(data)
     .mark_circle().encode(
         x = alt.X("flipper_length_standardized", title="Flipper Length (standardized)"),
         y = alt.Y("bill_length_standardized", title="Bill Length (standardized)"),
